@@ -13,16 +13,19 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Source Files\db-connection">
+      <UniqueIdentifier>{84c82cc2-27f5-43d0-a1d9-96e914c7d894}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AT-InvMan.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="db-conn.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="..\resources\extensions\sqlite3.c">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\db-connection</Filter>
+    </ClCompile>
+    <ClCompile Include="db-conn.cpp">
+      <Filter>Source Files\db-connection</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -30,6 +33,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\resources\extensions\sqlite3.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="db-conn.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
