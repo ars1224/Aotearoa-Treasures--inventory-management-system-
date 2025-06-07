@@ -24,18 +24,61 @@ void employeeList() {
 
     // Execute the query and read the results
     cout << "Employee List:\n";
+    cout << endl;
+    cout << "ID  " << ", Name   " << ", Position  " << ", Status   " << endl;
+    cout << endl;
     while (sqlite3_step(stmt) == SQLITE_ROW) {
         int id = sqlite3_column_int(stmt, 0);
         const unsigned char* name = sqlite3_column_text(stmt, 1);
         const unsigned char* pos = sqlite3_column_text(stmt, 2);
         const unsigned char* status = sqlite3_column_text(stmt, 3);
 
-        cout << "ID: " << id
-            << ", Name: " << name
-            << ", Position: " << pos
-            << ", Status: " << status << endl;
+        
+        cout << " " <<  id << "    " << name << "    " << pos << "    " << status << "    " << endl;  
+        cout << "_________________________________________________________________________________" << endl;
+        cout << endl;
+		
     }
 
     sqlite3_finalize(stmt);
     closeDatabase(db);
+
+	int option;
+
+    cout << endl;
+    cout << "Related options on Employee" << endl;
+    cout << endl;
+	cout << "1. Add Employee" << endl;
+	cout << "2. Update Employee" << endl;
+    cout << "3. Delete Employee" << endl;
+    cout << "4. See Roster of Employees" << endl;
+	cout << "5. Back to Main Menu" << endl;
+    cout << endl;
+	cout << "Please select an option: ";
+  
+
+    cin >> option;
+    switch (option) {
+        case 1:
+            cout << endl;
+            addEmployee(); // Function to add an employee
+            break;
+        case 2:
+            updateEmployee(); // Function to update an employee
+            break;
+        case 3:
+           // deleteEmployee(); // Function to delete an employee
+            break;
+        case 4:
+            //roster(); // Recursive call to see the list again
+            break;
+        case 5:
+            return; // Back to main menu
+        default:
+
+           
+
+            cout << "Invalid option. Please try again." << endl; 
+            
+	}
 }

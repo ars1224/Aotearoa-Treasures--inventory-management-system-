@@ -124,6 +124,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\resources\extensions\sqlite3.c" />
+    <ClCompile Include="addEmployee.cpp" />
     <ClCompile Include="AT-InvMan.cpp" />
     <ClCompile Include="db-conn.cpp" />
     <ClCompile Include="employeeList.cpp" />
@@ -131,7 +132,9 @@
     <ClCompile Include="login.cpp" />
     <ClCompile Include="MainMenu.cpp" />
     <ClCompile Include="productInventory.cpp" />
+    <ClCompile Include="removeEmployee.cpp" />
     <ClCompile Include="salesReportMovement.cpp" />
+    <ClCompile Include="updateEmployee.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
