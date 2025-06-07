@@ -1,10 +1,17 @@
-#include "db-conn.h"
 #include <iostream>
+#include "db-conn.h"
+#include "login.h"
+using namespace std;
 
 int main() {
-    sqlite3* db = connectToDatabase();
+	
+	userLogin();
+	//invetory();//
+	//roster();//
+	//employeeList();//
+	//salesReport();//
 
-    //Log In
-    
+	connectToDatabase();
+
     return 0;
 }

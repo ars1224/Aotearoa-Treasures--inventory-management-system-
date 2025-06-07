@@ -16,6 +16,9 @@
     <Filter Include="Source Files\db-connection">
       <UniqueIdentifier>{84c82cc2-27f5-43d0-a1d9-96e914c7d894}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\features">
+      <UniqueIdentifier>{73e0dd93-d9a1-409a-b0d5-762c13d093af}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AT-InvMan.cpp">
@@ -27,6 +30,24 @@
     <ClCompile Include="db-conn.cpp">
       <Filter>Source Files\db-connection</Filter>
     </ClCompile>
+    <ClCompile Include="productInventory.cpp">
+      <Filter>Source Files\features</Filter>
+    </ClCompile>
+    <ClCompile Include="employeeList.cpp">
+      <Filter>Source Files\features</Filter>
+    </ClCompile>
+    <ClCompile Include="employeeRoster.cpp">
+      <Filter>Source Files\features</Filter>
+    </ClCompile>
+    <ClCompile Include="salesReportMovement.cpp">
+      <Filter>Source Files\features</Filter>
+    </ClCompile>
+    <ClCompile Include="MainMenu.cpp">
+      <Filter>Source Files\features</Filter>
+    </ClCompile>
+    <ClCompile Include="login.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -36,6 +57,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="db-conn.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="login.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

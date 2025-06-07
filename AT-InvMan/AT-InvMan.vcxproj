@@ -126,6 +126,12 @@
     <ClCompile Include="..\resources\extensions\sqlite3.c" />
     <ClCompile Include="AT-InvMan.cpp" />
     <ClCompile Include="db-conn.cpp" />
+    <ClCompile Include="employeeList.cpp" />
+    <ClCompile Include="employeeRoster.cpp" />
+    <ClCompile Include="login.cpp" />
+    <ClCompile Include="MainMenu.cpp" />
+    <ClCompile Include="productInventory.cpp" />
+    <ClCompile Include="salesReportMovement.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -133,6 +139,7 @@
   <ItemGroup>
     <ClInclude Include="..\resources\extensions\sqlite3.h" />
     <ClInclude Include="db-conn.h" />
+    <ClInclude Include="login.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
