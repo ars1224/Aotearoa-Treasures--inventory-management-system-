@@ -1,17 +1,17 @@
 #include <iostream>
 #include "db-conn.h"
-#include "login.h"
+#include "employee.h"
 using namespace std;
 
 int main() {
 	
-	userLogin();
+	//userLogin();
 	//invetory();//
 	//roster();//
-	//employeeList();//
+	employeeList();
 	//salesReport();//
 
-	connectToDatabase();
+	//connectToDatabase();
 
     return 0;
 }

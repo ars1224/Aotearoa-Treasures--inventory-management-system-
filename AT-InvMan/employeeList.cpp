@@ -3,6 +3,7 @@
 #include <iostream>
 #include <sqlite3.h>
 #include "db-conn.h"
+#include "employee.h"
 using namespace std;
 
 void employeeList() {

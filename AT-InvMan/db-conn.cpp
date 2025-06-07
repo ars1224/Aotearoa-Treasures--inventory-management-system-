@@ -10,14 +10,11 @@ sqlite3* connectToDatabase() {
         std::cerr << "Error opening DB: " << sqlite3_errmsg(DB) << std::endl;
         return nullptr;
     }
-
-    std::cout << "Opened database successfully!" << std::endl;
     return DB;
 }
 
 void closeDatabase(sqlite3* db) {
     if (db != nullptr) {
         sqlite3_close(db);
-        std::cout << "Database closed." << std::endl;
     }
 }

@@ -1,7 +1,7 @@
 //Jhon Aries
 #include <iostream>
 #include "db-conn.h"
-#include "login.h"
+#include "employee.h"
 using namespace std;
 
 void userLogin() {
@@ -12,7 +12,7 @@ void userLogin() {
 
 	cout << "Employee ID: ";  cin >> id;
 	cout << endl;
-	cout << "PASSWORD: "; cin >> id;
+	cout << "PASSWORD: "; cin >> password;
 	
 
 

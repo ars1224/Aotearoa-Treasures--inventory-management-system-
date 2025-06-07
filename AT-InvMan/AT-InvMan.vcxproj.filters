@@ -59,7 +59,7 @@
     <ClInclude Include="db-conn.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="login.h">
+    <ClInclude Include="employee.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
