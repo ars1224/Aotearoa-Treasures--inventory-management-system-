@@ -12,7 +12,7 @@ void addEmployee() {
         return;
     }
 
-    const char* sql = "INSERT INTO employee (Employee_ID, Employee_Name, Employee_Possition, Employee_Status, password_hash) VALUES (?, ?, ?, ?, ?);";
+    const char* sql = "INSERT INTO employee (Employee_ID, Employee_Name, Employee_Possition, Employee_Status, password_hash, branch) VALUES (?, ?, ?, ?, ?, ?);";
     sqlite3_stmt* stmt;
 
     if (sqlite3_prepare_v2(db, sql, -1, &stmt, nullptr) != SQLITE_OK) {
@@ -40,12 +40,16 @@ void addEmployee() {
     cout << "Password: ";
     getline(cin, emp.password);
 
+    cout << "Store Branch: ";
+    getline(cin, emp.branch);
+
     // Bind values
     sqlite3_bind_text(stmt, 1, emp.id.c_str(), -1, SQLITE_TRANSIENT);
     sqlite3_bind_text(stmt, 2, emp.name.c_str(), -1, SQLITE_TRANSIENT);
     sqlite3_bind_text(stmt, 3, emp.position.c_str(), -1, SQLITE_TRANSIENT);
     sqlite3_bind_text(stmt, 4, emp.status.c_str(), -1, SQLITE_TRANSIENT);
     sqlite3_bind_text(stmt, 5, emp.password.c_str(), -1, SQLITE_TRANSIENT);
+    sqlite3_bind_text(stmt, 6, emp.branch.c_str(), -1, SQLITE_TRANSIENT);
 
     // Execute
     if (sqlite3_step(stmt) != SQLITE_DONE) {
@@ -87,13 +91,12 @@ void addEmployee() {
             break;
         case 2:
             cout << endl;
-            //deleteEmployee(); // Function to update an employee
+            deleteEmployee(); // Function to update an employee
             break;
         case 3:
             cout << endl;
             //roster();; // Function to delete an employee
             break;
-            cout << endl;
         case 4:
             return; // Back to main menu
         default:

@@ -128,6 +128,7 @@
     <ClCompile Include="AT-InvMan.cpp" />
     <ClCompile Include="db-conn.cpp" />
     <ClCompile Include="employeeList.cpp" />
+    <ClCompile Include="employeeMasterList.cpp" />
     <ClCompile Include="employeeRoster.cpp" />
     <ClCompile Include="login.cpp" />
     <ClCompile Include="MainMenu.cpp" />

@@ -24,6 +24,7 @@ void updateEmployee() {
     cout << "2. Position\n";
     cout << "3. Status\n";
     cout << "4. Password\n";
+    cout << "5. Store branch\n";
     cout << endl;
     cout << "Enter your choice ";
     cin >> choice;
@@ -44,6 +45,9 @@ void updateEmployee() {
         break;
     case 4:
         column = "password_hash";
+        break;
+    case 5:
+        column = "branch";
         break;
     default:
         cout << "Invalid choice." << endl;

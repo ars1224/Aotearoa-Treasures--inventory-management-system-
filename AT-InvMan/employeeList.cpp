@@ -25,16 +25,17 @@ void employeeList() {
     // Execute the query and read the results
     cout << "Employee List:\n";
     cout << endl;
-    cout << "ID  " << ", Name   " << ", Position  " << ", Status   " << endl;
+    cout << "    " << "ID  " << "    " << " Name   " << "    " << " Position  " << "    " << " Status   " << "    " << " Branch   " << endl;
     cout << endl;
     while (sqlite3_step(stmt) == SQLITE_ROW) {
         int id = sqlite3_column_int(stmt, 0);
         const unsigned char* name = sqlite3_column_text(stmt, 1);
         const unsigned char* pos = sqlite3_column_text(stmt, 2);
         const unsigned char* status = sqlite3_column_text(stmt, 3);
+        const unsigned char* branch = sqlite3_column_text(stmt, 5);
 
         
-        cout << " " <<  id << "    " << name << "    " << pos << "    " << status << "    " << endl;  
+        cout << "    " << id << "    " << "    " << name << "    " << "    " << pos << "    " << "    " << status << "    " << "    " << branch << "    " << "    " << endl;
         cout << "_________________________________________________________________________________" << endl;
         cout << endl;
 		
@@ -53,6 +54,7 @@ void employeeList() {
     cout << "3. Delete Employee" << endl;
     cout << "4. See Roster of Employees" << endl;
 	cout << "5. Back to Main Menu" << endl;
+    cout << "6. Exit Program" << endl;
     cout << endl;
 	cout << "Please select an option: ";
   
@@ -67,16 +69,18 @@ void employeeList() {
             updateEmployee(); // Function to update an employee
             break;
         case 3:
-           // deleteEmployee(); // Function to delete an employee
+           deleteEmployee();
+           // Function to delete an employee
             break;
         case 4:
-            //roster(); // Recursive call to see the list again
+            roster(); // Recursive call to see the list again
             break;
         case 5:
+            //MainMenu();
+            break;
+        case 6:
             return; // Back to main menu
         default:
-
-           
 
             cout << "Invalid option. Please try again." << endl; 
             

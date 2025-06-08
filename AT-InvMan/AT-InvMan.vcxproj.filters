@@ -19,6 +19,9 @@
     <Filter Include="Source Files\features">
       <UniqueIdentifier>{73e0dd93-d9a1-409a-b0d5-762c13d093af}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\features\Employee">
+      <UniqueIdentifier>{31dcd5b8-0ec4-419f-9ff8-b22415e9b7a1}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AT-InvMan.cpp">
@@ -33,20 +36,32 @@
     <ClCompile Include="productInventory.cpp">
       <Filter>Source Files\features</Filter>
     </ClCompile>
-    <ClCompile Include="employeeList.cpp">
-      <Filter>Source Files\features</Filter>
-    </ClCompile>
-    <ClCompile Include="employeeRoster.cpp">
-      <Filter>Source Files\features</Filter>
-    </ClCompile>
     <ClCompile Include="salesReportMovement.cpp">
       <Filter>Source Files\features</Filter>
     </ClCompile>
     <ClCompile Include="MainMenu.cpp">
       <Filter>Source Files\features</Filter>
     </ClCompile>
+    <ClCompile Include="employeeList.cpp">
+      <Filter>Source Files\features\Employee</Filter>
+    </ClCompile>
+    <ClCompile Include="employeeRoster.cpp">
+      <Filter>Source Files\features\Employee</Filter>
+    </ClCompile>
+    <ClCompile Include="addEmployee.cpp">
+      <Filter>Source Files\features\Employee</Filter>
+    </ClCompile>
+    <ClCompile Include="removeEmployee.cpp">
+      <Filter>Source Files\features\Employee</Filter>
+    </ClCompile>
+    <ClCompile Include="updateEmployee.cpp">
+      <Filter>Source Files\features\Employee</Filter>
+    </ClCompile>
     <ClCompile Include="login.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\features</Filter>
+    </ClCompile>
+    <ClCompile Include="employeeMasterList.cpp">
+      <Filter>Source Files\features\Employee</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

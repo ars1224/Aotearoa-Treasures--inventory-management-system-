@@ -8,9 +8,9 @@ int main() {
 	//userLogin();
 	//invetory();//
 	//roster();//
-	employeeList();
+	//employeeList();
 	//salesReport();//
-
+	roster();
 	//connectToDatabase();
 
     return 0;
