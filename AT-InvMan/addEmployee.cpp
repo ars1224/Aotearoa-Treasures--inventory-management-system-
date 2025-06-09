@@ -95,7 +95,7 @@ void addEmployee() {
             break;
         case 3:
             cout << endl;
-            //roster();; // Function to delete an employee
+            roster();; // Function to delete an employee
             break;
         case 4:
             return; // Back to main menu

@@ -12,7 +12,7 @@ void employeeList() {
         return; // Failed to connect
     }
 
-    const char* sql = "SELECT * FROM employee;";
+    const char* sql = "SELECT * FROM employee WHERE Employee_Possition != 'Owner'";
     sqlite3_stmt* stmt;
 
     // Prepare the statement
