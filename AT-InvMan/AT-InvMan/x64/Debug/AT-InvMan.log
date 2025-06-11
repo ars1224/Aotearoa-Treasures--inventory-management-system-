@@ -1,5 +1,8 @@
-﻿  AT-InvMan.cpp
-  login.cpp
-C:\Users\aries\Desktop\Yoobee\Aotearoa-Treasures--inventory-management-system-\AT-InvMan\login.cpp(13,17): warning C4566: character represented by universal-character-name '\u274C' cannot be represented in the current code page (1252)
+﻿  addEmployee.cpp
+  employeeList.cpp
+  employeeRoster.cpp
+D:\YOOBEE\Aotearoa-Treasures--inventory-management-system\AT-InvMan\employeeRoster.cpp(41,25): warning C4566: character represented by universal-character-name '\u274C' cannot be represented in the current code page (1252)
+D:\YOOBEE\Aotearoa-Treasures--inventory-management-system\AT-InvMan\employeeRoster.cpp(48,21): warning C4566: character represented by universal-character-name '\u274C' cannot be represented in the current code page (1252)
+D:\YOOBEE\Aotearoa-Treasures--inventory-management-system\AT-InvMan\employeeRoster.cpp(70,21): warning C4566: character represented by universal-character-name '\u274C' cannot be represented in the current code page (1252)
   Generating Code...
-  AT-InvMan.vcxproj -> C:\Users\aries\Desktop\Yoobee\Aotearoa-Treasures--inventory-management-system-\AT-InvMan\x64\Debug\AT-InvMan.exe
+  AT-InvMan.vcxproj -> D:\YOOBEE\Aotearoa-Treasures--inventory-management-system\AT-InvMan\x64\Debug\AT-InvMan.exe

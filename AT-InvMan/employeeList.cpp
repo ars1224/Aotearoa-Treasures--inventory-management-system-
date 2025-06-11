@@ -4,6 +4,7 @@
 #include <sqlite3.h>
 #include "db-conn.h"
 #include "employee.h"
+#include "mainMenu.h"
 using namespace std;
 
 void employeeList() {
@@ -23,7 +24,9 @@ void employeeList() {
     }
 
     // Execute the query and read the results
-    cout << "Employee List:\n";
+    cout << "\n=======================================================================\n";
+    cout << "                            Employee List:\n";
+    cout << "=======================================================================\n";
     cout << endl;
     cout << "    " << "ID  " << "    " << " Name   " << "    " << " Position  " << "    " << " Status   " << "    " << " Branch   " << endl;
     cout << endl;
@@ -52,34 +55,37 @@ void employeeList() {
 	cout << "1. Add Employee" << endl;
 	cout << "2. Update Employee" << endl;
     cout << "3. Delete Employee" << endl;
-    cout << "4. See Roster of Employees" << endl;
+    cout << "4. View Roster of Employees" << endl;
 	cout << "5. Back to Main Menu" << endl;
     cout << "6. Exit Program" << endl;
     cout << endl;
 	cout << "Please select an option: ";
-  
-
     cin >> option;
+
+
     switch (option) {
         case 1:
             cout << endl;
-            addEmployee(); // Function to add an employee
+            addEmployee(); 
             break;
         case 2:
-            updateEmployee(); // Function to update an employee
+            cout << endl;
+            updateEmployee(); 
             break;
         case 3:
+            cout << endl;
            deleteEmployee();
-           // Function to delete an employee
+          
             break;
         case 4:
-            roster(); // Recursive call to see the list again
+            cout << endl;
+            roster(); 
             break;
         case 5:
-            //MainMenu();
+            mainMenu();
             break;
         case 6:
-            return; // Back to main menu
+            return; 
         default:
 
             cout << "Invalid option. Please try again." << endl; 

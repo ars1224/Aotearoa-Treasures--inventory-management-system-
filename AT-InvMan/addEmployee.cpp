@@ -23,6 +23,7 @@ void addEmployee() {
 
     // Input
     employee emp;
+
     cout << "Enter employee details:" << endl;
     cout << "ID: ";
     cin >> emp.id;

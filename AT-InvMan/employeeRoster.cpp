@@ -5,6 +5,7 @@
 #include <sqlite3.h>
 #include "db-conn.h"
 #include "employee.h"
+#include "MainMenu.h"
 using namespace std;
 
 void addRoster() {
@@ -15,8 +16,11 @@ void addRoster() {
     do {
         rosterEntry entry;
         string empName, empBranch, empPosition;
-
-        cout << "\nAdd New Schedule\n";
+        cout << endl;
+        cout << "\n=======================================================================\n";
+        cout << "                          Add New Schedule\n";
+        cout << "========================================================================\n";
+        cout << endl;
         cout << "Employee ID: ";
         cin >> entry.employeeID;
 
@@ -83,10 +87,10 @@ void addRoster() {
         }
 
         if (sqlite3_step(stmt) == SQLITE_DONE) {
-            cout << "\n✅ Schedule added successfully.\n";
+            cout << "\nSchedule added successfully.\n";
         }
         else {
-            cerr << "❌ Failed to add schedule: " << sqlite3_errmsg(db) << endl;
+            cerr << "Failed to add schedule: " << sqlite3_errmsg(db) << endl;
         }
 
         sqlite3_finalize(stmt);
@@ -101,6 +105,7 @@ void addRoster() {
 
     int option;
     cout << "\nRelated options on Employee\n";
+    cout << endl;
     cout << "1. View Roster\n";
     cout << "2. Update schedule\n";
     cout << "3. Add Employee\n";
@@ -197,6 +202,7 @@ void roster() {
 
     int option;
     cout << "\nRelated options on Employee\n";
+	cout << endl;   
     cout << "1. Make a new schedule\n";
     cout << "2. Update schedule\n";
     cout << "3. Add Employee\n";
@@ -214,15 +220,19 @@ void roster() {
         addRoster();
         break;
     case 2:
+        cout << endl;
         updateRoster();
         break;
     case 3:
+        cout << endl;
         addEmployee();
         break;
     case 4:
+        cout << endl;
         updateEmployee();
         break;
     case 5:
+        cout << endl;
         deleteEmployee();
         break;
     case 6:
@@ -242,10 +252,14 @@ void updateRoster() {
     if (db == nullptr) return;
 
     int scheduleID;
-    cout << "\nUpdate Schedule\n";
+    cout << "\n=======================================================================\n";
+    cout << "                         Update Schedule\n";
+    cout << "=======================================================================\n";
+    cout << endl;
     cout << "Enter Schedule ID to update: ";
     cin >> scheduleID;
     cin.ignore(); // flush newline
+	cout << endl;
 
     // Retrieve existing schedule
     const char* selectSQL = "SELECT * FROM schedules WHERE schedule_id = ?;";
@@ -278,6 +292,7 @@ void updateRoster() {
 
     do {
         cout << "\nCurrent Schedule (ID: " << scheduleID << ")\n";
+        cout << endl;
         cout << "1. Date      : " << date << "\n";
         cout << "2. Start Time: " << start << "\n";
         cout << "3. End Time  : " << end << "\n";
@@ -286,26 +301,32 @@ void updateRoster() {
         cout << "6. Save and Exit\n";
         cout << "Select a field to update (1-6): ";
         cin >> choice;
+        cout << endl;
         cin.ignore();
 
         switch (choice) {
         case 1:
+            cout << endl;
             cout << "New Date (YYYY-MM-DD): ";
             getline(cin, date);
             break;
         case 2:
+            cout << endl;
             cout << "New Start Time (HH:MM): ";
             getline(cin, start);
             break;
         case 3:
+            cout << endl;
             cout << "New End Time (HH:MM): ";
             getline(cin, end);
             break;
         case 4:
+            cout << endl;
             cout << "New Location: ";
             getline(cin, location);
             break;
         case 5:
+            cout << endl;
             cout << "New Note: ";
             getline(cin, note);
             break;
@@ -340,9 +361,11 @@ void updateRoster() {
 
     if (sqlite3_step(updateStmt) == SQLITE_DONE) {
         cout << "\n? Schedule updated successfully.\n";
+        cout << endl;
     }
     else {
         cerr << "\n? Failed to update schedule: " << sqlite3_errmsg(db) << endl;
+        cout << endl;
     }
 
     sqlite3_finalize(updateStmt);
@@ -350,12 +373,14 @@ void updateRoster() {
 
     int option;
     cout << "\nRelated options on Employee\n";
+    cout << endl;
     cout << "1. Make a new schedule\n";
     cout << "2. Add Employee\n";
     cout << "3. Update Employee\n";
     cout << "4. Delete Employee\n";
     cout << "5. Back to Main Menu\n";
     cout << "6. Exit Program\n";
+    cout << endl;
     cout << "Please select an option: ";
     cin >> option;
 
@@ -366,16 +391,20 @@ void updateRoster() {
         addRoster();
         break;
     case 2:
+        cout << endl;
         addEmployee();
         break;
     case 3:
+        cout << endl;
         updateEmployee();
         break;
     case 4:
+        cout << endl;
         deleteEmployee();
         break;
     case 5:
-        // mainMenu();
+        cout << endl;
+        mainMenu();
         break;
     case 6:
         return;
