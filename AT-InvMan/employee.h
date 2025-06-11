@@ -4,7 +4,6 @@
 #include <string>
 using namespace std;
 
-void userLogin();
 void employeeList();
 void addEmployee();
 void updateEmployee();

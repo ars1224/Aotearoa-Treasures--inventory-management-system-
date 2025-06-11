@@ -144,6 +144,8 @@
     <ClInclude Include="..\resources\extensions\sqlite3.h" />
     <ClInclude Include="db-conn.h" />
     <ClInclude Include="employee.h" />
+    <ClInclude Include="LogIn.h" />
+    <ClInclude Include="MainMenu.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

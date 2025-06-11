@@ -77,5 +77,11 @@
     <ClInclude Include="employee.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="MainMenu.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="LogIn.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

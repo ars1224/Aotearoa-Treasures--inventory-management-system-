@@ -5,6 +5,10 @@
     {
       "AbsoluteMoniker": "D:0:0:{278FE080-4CF3-41A1-85DD-0B1910710C98}|AT-InvMan.vcxproj|C:\\Users\\aries\\Desktop\\Yoobee\\Aotearoa-Treasures--inventory-management-system-\\AT-InvMan\\AT-InvMan.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{278FE080-4CF3-41A1-85DD-0B1910710C98}|AT-InvMan.vcxproj|solutionrelative:AT-InvMan.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{278FE080-4CF3-41A1-85DD-0B1910710C98}|AT-InvMan.vcxproj|C:\\Users\\aries\\Desktop\\Yoobee\\Aotearoa-Treasures--inventory-management-system-\\AT-InvMan\\login.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{278FE080-4CF3-41A1-85DD-0B1910710C98}|AT-InvMan.vcxproj|solutionrelative:login.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,17 +18,31 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "login.cpp",
+              "DocumentMoniker": "C:\\Users\\aries\\Desktop\\Yoobee\\Aotearoa-Treasures--inventory-management-system-\\AT-InvMan\\login.cpp",
+              "RelativeDocumentMoniker": "login.cpp",
+              "ToolTip": "C:\\Users\\aries\\Desktop\\Yoobee\\Aotearoa-Treasures--inventory-management-system-\\AT-InvMan\\login.cpp",
+              "RelativeToolTip": "login.cpp",
+              "ViewState": "AgIAABoAAAAAAAAAAAAUwDgAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-06-11T01:13:00.008Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "AT-InvMan.cpp",
               "DocumentMoniker": "C:\\Users\\aries\\Desktop\\Yoobee\\Aotearoa-Treasures--inventory-management-system-\\AT-InvMan\\AT-InvMan.cpp",
               "RelativeDocumentMoniker": "AT-InvMan.cpp",
-              "ToolTip": "C:\\Users\\aries\\Desktop\\Yoobee\\Aotearoa-Treasures--inventory-management-system-\\AT-InvMan\\AT-InvMan.cpp*",
-              "RelativeToolTip": "AT-InvMan.cpp*",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAABQAAAALAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\aries\\Desktop\\Yoobee\\Aotearoa-Treasures--inventory-management-system-\\AT-InvMan\\AT-InvMan.cpp",
+              "RelativeToolTip": "AT-InvMan.cpp",
+              "ViewState": "AgIAAEUAAAAAAAAAAAAUwGQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-06-08T11:11:44.535Z",
               "EditorCaption": ""
