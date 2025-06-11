@@ -45,7 +45,6 @@ void employeeList() {
     }
 
     sqlite3_finalize(stmt);
-    closeDatabase(db);
 
 	int option;
 
@@ -85,10 +84,10 @@ void employeeList() {
             mainMenu();
             break;
         case 6:
-            return; 
+            exit(0);
         default:
 
-            cout << "Invalid option. Please try again." << endl; 
-            
+            cout << "Invalid option. Please try again." << endl;        
 	}
+    closeDatabase(db);
 }
