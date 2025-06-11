@@ -1,10 +1,9 @@
 ﻿#include <iostream>
-#include "db-conn.h"
-#include "employee.h"
-#include "login.h"
-#include "MainMenu.h"
-#include <conio.h> // For _getch() on Windows
+#include <sqlite3.h>
+#include <conio.h> 
 #include <string>
+#include "db-conn.h"
+#include "main-functions.h"
 using namespace std;
 
 string getHiddenPassword() {
@@ -48,7 +47,7 @@ string getNumericID() {
 }
 
 int main() {
-    int id;
+ int id;
     string pass;
     bool loggedIn = false;
 
@@ -94,7 +93,8 @@ int main() {
 
     } while (!loggedIn);
 
-    // Proceed to MainMenu or next steps here...
+    // Proceed to MainMenu or next steps here... 
 
+    
     return 0;
 }

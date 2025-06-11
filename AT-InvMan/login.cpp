@@ -1,16 +1,15 @@
 ﻿// Jhon Aries
 #include <iostream>
 #include <sqlite3.h>
-#include <string>
 #include "db-conn.h"
-#include "mainmenu.h"
-
+#include "main-functions.h"
 using namespace std;
 
 bool login(int empID, const string& password) {
-    sqlite3* db = connectToDatabase();  // ✅ Only call once
+    sqlite3* db = connectToDatabase();
+
     if (db == nullptr) {
-        cerr << "❌ Could not open database.\n";
+        cerr << " Could not open database.\n";
         return false;
     }
 
@@ -32,8 +31,8 @@ bool login(int empID, const string& password) {
             cout << "=======================================================================\n";
             cout << endl;
             cout << endl;
-            mainMenu();
-            success = true;
+
+            success = true; // ✅ set this first
         }
         else {
             cout << "\n=======================================================================\n";
@@ -42,16 +41,22 @@ bool login(int empID, const string& password) {
             cout << "\n=======================================================================\n";
             cout << "                      Invalid ID or password.!\n";
             cout << "=======================================================================";
-            cout << endl;       
+            cout << endl;
             cout << endl;
         }
-        sqlite3_finalize(stmt);
+        sqlite3_finalize(stmt); // ✅ finalize before doing anything else
     }
     else {
         cerr << " Failed to prepare login query.\n";
     }
 
-    sqlite3_close(db);
+    sqlite3_close(db); // ✅ close before branching into other logic
+
+    if (success) {
+        mainMenu(); // ✅ safe to do now — no open DB
+    }
+
     return success;
 }
+
     

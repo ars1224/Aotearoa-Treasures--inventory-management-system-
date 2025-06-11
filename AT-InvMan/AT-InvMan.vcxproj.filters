@@ -22,6 +22,9 @@
     <Filter Include="Source Files\features\Employee">
       <UniqueIdentifier>{31dcd5b8-0ec4-419f-9ff8-b22415e9b7a1}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\testing">
+      <UniqueIdentifier>{003ae4a0-1151-41a7-8394-cb1b3f97732d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AT-InvMan.cpp">
@@ -63,6 +66,9 @@
     <ClCompile Include="employeeMasterList.cpp">
       <Filter>Source Files\features\Employee</Filter>
     </ClCompile>
+    <ClCompile Include="testInput.cpp">
+      <Filter>Source Files\testing</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -74,13 +80,7 @@
     <ClInclude Include="db-conn.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="employee.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="MainMenu.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="LogIn.h">
+    <ClInclude Include="main-functions.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

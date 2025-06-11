@@ -1,16 +1,16 @@
 ﻿// Jhon Aries
 
 #include <iostream>
+#include <iomanip>
 #include <sqlite3.h>
 #include "db-conn.h"
-#include "employee.h"
-#include "MainMenu.h"
+#include "main-functions.h"
 using namespace std;
 
 void addEmployee() {
-    char choice = 'y';
+    char choice;
 
-    while (choice == 'y' || choice == 'Y') {
+    do {
         sqlite3* db = connectToDatabase();
         if (db == nullptr) return;
 
@@ -25,8 +25,7 @@ void addEmployee() {
 
         // Input
         employee emp;
-
-        cout << "Enter employee details: " << endl;
+        cout << "\nEnter Employee Details:\n";
         cout << "ID: ";
         cin >> emp.id;
         cin.ignore();
@@ -43,7 +42,7 @@ void addEmployee() {
         cout << "Password: ";
         getline(cin, emp.password);
 
-        cout << "Store Branch: ";
+        cout << "Branch: ";
         getline(cin, emp.branch);
 
         // Bind values
@@ -59,52 +58,47 @@ void addEmployee() {
             cerr << "Insert failed: " << sqlite3_errmsg(db) << endl;
         }
         else {
-            cout << "Employee added successfully!" << endl << endl;
+            cout << "\n✅ Employee added successfully!\n";
         }
 
-        // Cleanup
         sqlite3_finalize(stmt);
-        closeDatabase(db); // ✅ Important!
+        closeDatabase(db);
 
-        cout << "Do you want to add another employee? (y/n): ";
+        cout << "\nDo you want to add another employee? (y/n): ";
         cin >> choice;
         cin.ignore();
-    }
 
+    } while (choice == 'y' || choice == 'Y');
 
     // Post-input menu
-    cout << "Exiting employee addition." << endl << endl;
     int option;
-
-    cout << "Related options on Employee" << endl << endl;
-    cout << "1. Update Employee" << endl;
-    cout << "2. Delete Employee" << endl;
-    cout << "3. See Roster of Employees" << endl;
-    cout << "4. Back to Main Menu" << endl;
-    cout << "5. Exit the program" << endl << endl;
+    cout << "\n========== Related Employee Options ==========\n";
+    cout << "1. Update Employee\n";
+    cout << "2. Delete Employee\n";
+    cout << "3. See Roster of Employees\n";
+    cout << "4. Back to Main Menu\n";
+    cout << "5. Exit Program\n";
+    cout << "=============================================\n";
     cout << "Please select an option: ";
-
     cin >> option;
+
     switch (option) {
     case 1:
-        cout << endl;
         updateEmployee();
         break;
     case 2:
-        cout << endl;
         deleteEmployee();
         break;
     case 3:
-        cout << endl;
         roster();
         break;
     case 4:
-        cout << endl;
         mainMenu();
         break;
     case 5:
         exit(0);
     default:
-        cout << "Invalid option. Please try again." << endl;
+        cout << "Invalid option. Please try again.\n";
+        break;
     }
 }

@@ -4,9 +4,9 @@
 #include <iomanip>
 #include <sqlite3.h>
 #include "db-conn.h"
-#include "employee.h"
-#include "MainMenu.h"
+#include "main-functions.h"
 using namespace std;
+
 
 void addRoster() {
     sqlite3* db = connectToDatabase();

@@ -135,6 +135,7 @@
     <ClCompile Include="productInventory.cpp" />
     <ClCompile Include="removeEmployee.cpp" />
     <ClCompile Include="salesReportMovement.cpp" />
+    <ClCompile Include="testInput.cpp" />
     <ClCompile Include="updateEmployee.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -143,9 +144,7 @@
   <ItemGroup>
     <ClInclude Include="..\resources\extensions\sqlite3.h" />
     <ClInclude Include="db-conn.h" />
-    <ClInclude Include="employee.h" />
-    <ClInclude Include="LogIn.h" />
-    <ClInclude Include="MainMenu.h" />
+    <ClInclude Include="main-functions.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

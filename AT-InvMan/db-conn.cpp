@@ -11,8 +11,7 @@ sqlite3* connectToDatabase() {
         return nullptr;
     }
 
-    // ⏱️ Allow SQLite to wait up to 5 seconds if the DB is locked
-    sqlite3_busy_timeout(DB, 5000);
+ 
 
     return DB;
 }
