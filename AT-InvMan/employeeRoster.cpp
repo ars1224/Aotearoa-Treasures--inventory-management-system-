@@ -159,6 +159,11 @@ void roster() {
 
     sqlite3_stmt* stmt;
     if (sqlite3_prepare_v2(db, sql, -1, &stmt, nullptr) == SQLITE_OK) {
+        cout << endl;
+        cout << "\n=======================================================================\n";
+        cout << "                    Roster Schedule (Next 4 Weeks):\n";
+        cout << "========================================================================\n";
+        cout << endl;
         cout << "\nRoster Schedule (Next 4 Weeks):\n";
         cout << left << setw(5) << "ID"
             << setw(12) << "Emp #"
