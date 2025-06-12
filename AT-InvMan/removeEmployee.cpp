@@ -3,17 +3,22 @@
 #include <sqlite3.h>
 #include "db-conn.h"
 #include "main-functions.h"
+#include "auth.h"
 using namespace std;
 
 void deleteEmployee() {
+    if (!isAdmin() && !isStoreManager()) {
+        cout << "\u274c You do not have permission to delete employees.\n";
+        return;
+    }
+
     sqlite3* db = connectToDatabase();
     if (db == nullptr) return;
 
     char choice;
-
     do {
         string empID;
-        cout << "\nEnter Employee ID to delete: ";
+        cout << "Enter Employee ID to delete: ";
         cin >> empID;
 
         const char* sql = "DELETE FROM employee WHERE Employee_ID = ?;";
@@ -30,31 +35,25 @@ void deleteEmployee() {
             cerr << "Failed to delete employee: " << sqlite3_errmsg(db) << endl;
         }
         else {
-            cout << "Employee with ID " << empID << " deleted successfully!\n";
+            cout << "Employee with ID " << empID << " deleted successfully!";
         }
 
         sqlite3_finalize(stmt);
 
-        // Input validation loop
         while (true) {
-            cout << "\nDo you want to delete another employee? (Y/N): ";
-            cin >> choice;
+            cout << " Do you want to delete another employee ? (Y / N) : ";
+                cin >> choice;
 
-            // Clear input buffer
-            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            cin.ignore(numeric_limits<streamsize>::max());
 
-            if (choice == 'Y' || choice == 'y' || choice == 'N' || choice == 'n') {
-                break; // valid input
-            }
-            else {
-                cout << " Invalid input. Please enter 'Y' or 'N' only.\n";
-            }
+                if (choice == 'Y' || choice == 'y' || choice == 'N' || choice == 'n') {
+                    break;
+                }
+                else {
+                    cout << " Invalid input. Please enter 'Y' or 'N' only.";
+                }
         }
-
     } while (choice == 'Y' || choice == 'y');
 
     closeDatabase(db);
-
-    // Show employee list at the end
-    employeeList();
 }

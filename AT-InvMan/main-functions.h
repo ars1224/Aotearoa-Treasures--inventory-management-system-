@@ -40,8 +40,4 @@ bool login(int empID, const string& password);
 // FUNCTIONS FOR MENUS
 void mainMenu();
 
-//test functions will delete later
-//void testInput();
-
-
 #endif

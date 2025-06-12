@@ -22,8 +22,8 @@
     <Filter Include="Source Files\features\Employee">
       <UniqueIdentifier>{31dcd5b8-0ec4-419f-9ff8-b22415e9b7a1}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\testing">
-      <UniqueIdentifier>{003ae4a0-1151-41a7-8394-cb1b3f97732d}</UniqueIdentifier>
+    <Filter Include="Source Files\session">
+      <UniqueIdentifier>{989856b9-097f-4758-8777-40ed62439c91}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -66,8 +66,8 @@
     <ClCompile Include="employeeMasterList.cpp">
       <Filter>Source Files\features\Employee</Filter>
     </ClCompile>
-    <ClCompile Include="testInput.cpp">
-      <Filter>Source Files\testing</Filter>
+    <ClCompile Include="session.cpp">
+      <Filter>Source Files\session</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -81,6 +81,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="main-functions.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="session.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="auth.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

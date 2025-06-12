@@ -1,14 +1,17 @@
-﻿// add-roster.cpp
-
-#include <iostream>
+﻿#include <iostream>
 #include <iomanip>
 #include <sqlite3.h>
 #include "db-conn.h"
 #include "main-functions.h"
+#include "auth.h"
 using namespace std;
 
-
 void addRoster() {
+    if (!isAdmin() && !isStoreManager()) {
+        cout << "\u274c You do not have permission to add schedules.\n";
+        return;
+    }
+
     sqlite3* db = connectToDatabase();
     if (db == nullptr) return;
 
@@ -17,14 +20,13 @@ void addRoster() {
         rosterEntry entry;
         string empName, empBranch, empPosition;
         cout << endl;
-        cout << "\n=======================================================================\n";
-        cout << "                          Add New Schedule\n";
-        cout << "========================================================================\n";
+        cout << "====================================================================== =";
+        cout <<"                          Add New Schedule";
+        cout << "========================================================================";
         cout << endl;
         cout << "Employee ID: ";
         cin >> entry.employeeID;
 
-        // Look up employee name, branch, and position
         const char* lookupSQL = "SELECT Employee_Name, branch, Employee_Possition FROM employee WHERE Employee_ID = ?;";
         sqlite3_stmt* lookupStmt;
         if (sqlite3_prepare_v2(db, lookupSQL, -1, &lookupStmt, nullptr) == SQLITE_OK) {
@@ -38,8 +40,8 @@ void addRoster() {
                 cout << "Employee Position: " << empPosition << endl;
             }
             else {
-                cerr << "❌ Employee ID not found. Cancelling.\n";
-                sqlite3_finalize(lookupStmt);
+                cerr << "❌ Employee ID not found. Cancelling.";
+                    sqlite3_finalize(lookupStmt);
                 break;
             }
             sqlite3_finalize(lookupStmt);
@@ -87,7 +89,7 @@ void addRoster() {
         }
 
         if (sqlite3_step(stmt) == SQLITE_DONE) {
-            cout << "\nSchedule added successfully.\n";
+            cout << "Schedule added successfully.";
         }
         else {
             cerr << "Failed to add schedule: " << sqlite3_errmsg(db) << endl;
@@ -95,52 +97,14 @@ void addRoster() {
 
         sqlite3_finalize(stmt);
 
-        cout << "\nDo you want to make another schedule? (y/n): ";
-        cin >> repeat;
-        cin.ignore(); // remove leftover newline
-
+        cout << "Do you want to make another schedule ? (y / n) : ";
+            cin >> repeat;
+        cin.ignore();
     } while (repeat == "y" || repeat == "Y");
 
     closeDatabase(db);
-
-    int option;
-    cout << "\nRelated options on Employee\n";
-    cout << endl;
-    cout << "1. View Roster\n";
-    cout << "2. Update schedule\n";
-    cout << "3. Add Employee\n";
-    cout << "4. Update Employee\n";
-    cout << "5. Delete Employee\n";
-    cout << "6. Back to Main Menu\n";
-    cout << "7. Exit Program\n";
-    cout << "Please select an option: ";
-    cin >> option;
-
-    switch (option) {
-    case 1:
-        roster();
-        break;
-    case 2:
-        updateRoster();
-        break;
-    case 3:
-        addEmployee();
-        break;
-    case 4:
-        updateEmployee();
-        break;
-    case 5:
-        deleteEmployee();
-        break;
-    case 6:
-        // mainMenu();
-        break;
-    case 7:
-        return;
-    default:
-        cout << "Invalid option. Please try again." << endl;
-    }
 }
+
 
 
 
@@ -241,10 +205,11 @@ void roster() {
         deleteEmployee();
         break;
     case 6:
-        // mainMenu();
+        mainMenu();
         break;
     case 7:
         return;
+        exit(0);
     default:
         cout << "Invalid option. Please try again." << endl;
     }
@@ -253,6 +218,11 @@ void roster() {
 
 
 void updateRoster() {
+    if (!isAdmin() && !isStoreManager()) {
+        cout << "\u274c You do not have permission to update schedules.\n";
+        return;
+    }
+
     sqlite3* db = connectToDatabase();
     if (db == nullptr) return;
 
@@ -337,6 +307,7 @@ void updateRoster() {
             break;
         case 6:
             break;
+            exit(0);
         default:
             cout << "Invalid option.\n";
         }
@@ -396,7 +367,7 @@ void updateRoster() {
         addRoster();
         break;
     case 2:
-        cout << endl;
+        cout << endl;   
         addEmployee();
         break;
     case 3:
@@ -413,6 +384,7 @@ void updateRoster() {
         break;
     case 6:
         return;
+        exit(0);
     default:
         cout << "Invalid option. Please try again." << endl;
     }

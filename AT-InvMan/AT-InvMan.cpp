@@ -4,6 +4,9 @@
 #include <string>
 #include "db-conn.h"
 #include "main-functions.h"
+#include <iomanip>
+#include "auth.h"
+using namespace std;
 using namespace std;
 
 string getHiddenPassword() {
