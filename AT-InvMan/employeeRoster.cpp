@@ -6,67 +6,83 @@
 #include "auth.h"
 using namespace std;
 
-void roster() {
+void roster()
+{
     sqlite3* db = connectToDatabase();
-    if (db == nullptr) return;
+    if (db == NULL) return;
 
     const char* sql = R"(
-        SELECT * FROM schedules
-        WHERE DATE(shift_date) BETWEEN DATE('now') AND DATE('now', '+28 days')
-        ORDER BY shift_date ASC;
+        SELECT schedules.schedule_id, schedules.Employee_ID, schedules.Employee_Name,
+               schedules.Monday, schedules.Tuesday, schedules.Wednesday,
+               schedules.Thursday, schedules.Friday
+        FROM schedules;
     )";
 
     sqlite3_stmt* stmt;
-    if (sqlite3_prepare_v2(db, sql, -1, &stmt, nullptr) == SQLITE_OK) {
+
+    if (sqlite3_prepare_v2(db, sql, -1, &stmt, NULL) == SQLITE_OK) {
         cout << endl;
-        cout << "\n=======================================================================\n";
-        cout << "                    Roster Schedule (Next 4 Weeks):\n";
-        cout << "========================================================================\n";
-        cout << endl;
-        cout << "\nRoster Schedule (Next 4 Weeks):\n";
-        cout << left << setw(5) << "ID"
-            << setw(12) << "Emp #"
-            << setw(20) << "Name"
-            << setw(15) << "Position"
-            << setw(12) << "Date"
-            << setw(10) << "Start"
-            << setw(10) << "End"
-            << setw(15) << "Location"
-            << "Note" << endl;
-        cout << string(115, '-') << endl;
+        cout << "Opening Hours: 8 am to " << endl;
+        cout << string(122, '=') << endl;
+        cout << "                                                 Employee Roster Schedule" << endl;
+        cout << string(122, '=') << endl;
+
+        cout<< left << setw(10) << "  ID"
+            << left << setw(15) << "Name"
+            << left << setw(15) << "Monday"
+            << left << setw(15) << "Tuesday"
+            << left << setw(15) << "Wednesday"
+            << left << setw(15) << "Thursday"
+            << left << setw(15) << "Friday"
+            << left << setw(15) << "Saturday"
+            << left << setw(15) << "Sunday"
+            << endl;
+
+        cout << string(122, '=') << endl;
 
         bool hasData = false;
+
         while (sqlite3_step(stmt) == SQLITE_ROW) {
             hasData = true;
-            int id = sqlite3_column_int(stmt, 0);
-            int empID = sqlite3_column_int(stmt, 1);
-            const unsigned char* name = sqlite3_column_text(stmt, 2);
-            const unsigned char* poss = sqlite3_column_text(stmt, 3);
-            const unsigned char* date = sqlite3_column_text(stmt, 4);
-            const unsigned char* start = sqlite3_column_text(stmt, 5);
-            const unsigned char* end = sqlite3_column_text(stmt, 6);
-            const unsigned char* location = sqlite3_column_text(stmt, 7);
-            const unsigned char* note = sqlite3_column_text(stmt, 8);
-            if (!note) note = (const unsigned char*)"";
 
-            printf("%-5d %-12d %-20s %-15s %-12s %-10s %-10s %-15s %s\n",
-                id, empID, name, poss, date, start, end, location, note);
+            int id = sqlite3_column_int(stmt, 0);
+            int empId = sqlite3_column_int(stmt, 1);
+            const unsigned char* name = sqlite3_column_text(stmt, 2);
+            const unsigned char* monday = sqlite3_column_text(stmt, 3);
+            const unsigned char* tuesday = sqlite3_column_text(stmt, 4);
+            const unsigned char* wednesday = sqlite3_column_text(stmt, 5);
+            const unsigned char* thursday = sqlite3_column_text(stmt, 6);
+            const unsigned char* friday = sqlite3_column_text(stmt, 7);
+            const unsigned char* saturday = sqlite3_column_text(stmt, 7);
+            const unsigned char* sunday = sqlite3_column_text(stmt, 7);
+
+            cout << left << setw(5) << id
+                << setw(20) << (const char*)name
+                << setw(10) << (const char*)monday
+                << setw(10) << (const char*)tuesday
+                << setw(10) << (const char*)wednesday
+                << setw(10) << (const char*)thursday
+                << setw(10) << (const char*)friday
+                << setw(10) << (const char*)saturday 
+                << setw(10) << (const char*)sunday << endl;
         }
 
         if (!hasData) {
-            cout << "No schedules found for the next 4 weeks.\n";
+            cout << "No schedules found for the roster." << endl;
         }
+
     }
     else {
-        cerr << "Failed to view roster: " << sqlite3_errmsg(db) << endl;
+        cout << "Failed to view roster: " << sqlite3_errmsg(db) << endl;
     }
 
     sqlite3_finalize(stmt);
     closeDatabase(db);
 
     int option;
-    cout << "\nRelated options on Employee\n";
-	cout << endl;   
+    cout << endl;
+    cout << "Related options on Employee\n";
+    cout << endl;
     cout << "1. Make a new schedule\n";
     cout << "2. Update schedule\n";
     cout << "3. Add Employee\n";
@@ -74,8 +90,8 @@ void roster() {
     cout << "5. Delete Employee\n";
     cout << "6. Back to Main Menu\n";
     cout << "7. Exit Program\n";
-    cout << "Please select an option: ";
-    cin >> option;
+
+    cout << "Please select an option: "; cin >> option;
 
     switch (option) {
     case 1:
@@ -109,3 +125,4 @@ void roster() {
         cout << "Invalid option. Please try again." << endl;
     }
 }
+

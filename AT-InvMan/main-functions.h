@@ -35,6 +35,21 @@ struct rosterEntry {
     string note;
 };
 
+// STRUCT FOR ROSTERS
+/*struct rosterEntry {
+    int scheduleId;
+    int employeeId;
+    string employeeName;
+    string monday;
+    string tuesday;
+    string wednesday;
+    string thursday;
+    string friday;
+    string saturday;
+    string sunday;
+};*/
+
+
 // FUNCTIONS FOR LOGIN
 bool login(int empID, const string& password);
 
