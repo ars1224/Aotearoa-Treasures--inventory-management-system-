@@ -30,9 +30,10 @@ bool hasExistingShift(sqlite3* db, int empID, const string& date) {
     return exists;
 }
 
-void addRoster() {
+void addRoster()
+{
     if (!isAdmin() && !isStoreManager()) {
-        cout << "\u274c You do not have permission to add schedules.\n";
+        cout << "❌ You do not have permission to add schedules.\n";
         return;
     }
 
@@ -42,99 +43,81 @@ void addRoster() {
     string repeat;
     do {
         rosterEntry entry;
-        string empName, empBranch, empPosition;
+        string empName;
+
         cout << "\n======================================================================\n";
-        cout << "                          Add New Schedule\n";
+        cout << "                         Add New Schedule\n";
         cout << "======================================================================\n";
 
         cout << "Employee ID: ";
-        cin >> entry.employeeID;
+        cin >> entry.employeeId;
 
-        const char* lookupSQL = "SELECT Employee_Name, branch, Employee_Possition FROM employee WHERE Employee_ID = ?";
+        // Look up employee details first
+        const char* lookupSQL = "SELECT Employee_Name FROM employee WHERE Employee_ID = ?";
         sqlite3_stmt* lookupStmt;
+
         if (sqlite3_prepare_v2(db, lookupSQL, -1, &lookupStmt, nullptr) == SQLITE_OK) {
-            sqlite3_bind_int(lookupStmt, 1, entry.employeeID);
+            sqlite3_bind_int(lookupStmt, 1, entry.employeeId);
             if (sqlite3_step(lookupStmt) == SQLITE_ROW) {
                 empName = reinterpret_cast<const char*>(sqlite3_column_text(lookupStmt, 0));
-                empBranch = reinterpret_cast<const char*>(sqlite3_column_text(lookupStmt, 1));
-                empPosition = reinterpret_cast<const char*>(sqlite3_column_text(lookupStmt, 2));
-                cout << "Employee Name    : " << empName << endl;
-                cout << "Employee Branch  : " << empBranch << endl;
-                cout << "Employee Position: " << empPosition << endl;
+                cout << "Employee Name: " << empName << endl;
             }
             else {
-                cerr << "❌ Employee ID not found. Cancelling.\n";
+                cout << "❌ Employee not found.\n";
                 sqlite3_finalize(lookupStmt);
                 break;
             }
             sqlite3_finalize(lookupStmt);
         }
         else {
-            cerr << "❌ Failed to prepare employee lookup: " << sqlite3_errmsg(db) << endl;
+            cout << "❌ Failed to prepare statement.\n";
             break;
         }
 
-        do {
-            cout << "Shift Date (YYYY-MM-DD): ";
-            cin >> entry.shiftDate;
-            if (!isValidDate(entry.shiftDate)) cout << "❌ Invalid date format. Try again.\n";
-        } while (!isValidDate(entry.shiftDate));
+        // Gather schedules for each day
+        cout << "Monday (shift info or leave blank): "; cin.ignore(); getline(cin, entry.monday);
+        cout << "Tuesday (shift info or leave blank): "; getline(cin, entry.tuesday);
+        cout << "Wednesday (shift info or leave blank): "; getline(cin, entry.wednesday);
+        cout << "Thursday (shift info or leave blank): "; getline(cin, entry.thursday);
+        cout << "Friday (shift info or leave blank): "; getline(cin, entry.friday);
+        cout << "Saturday (shift info or leave blank): "; getline(cin, entry.saturday);
+        cout << "Sunday (shift info or leave blank): "; getline(cin, entry.sunday);
 
-        if (hasExistingShift(db, entry.employeeID, entry.shiftDate)) {
-            cout << "❌ This employee already has a shift scheduled on " << entry.shiftDate << ". Try another date.\n";
-            continue; // skip the rest and repeat
-        }
-
-        do {
-            cout << "Start Time (HH:MM): ";
-            cin >> entry.startTime;
-            if (!isValidTime(entry.startTime)) cout << "❌ Invalid time format. Try again.\n";
-        } while (!isValidTime(entry.startTime));
-
-        do {
-            cout << "End Time (HH:MM): ";
-            cin >> entry.endTime;
-            if (!isValidTime(entry.endTime)) cout << "❌ Invalid time format. Try again.\n";
-        } while (!isValidTime(entry.endTime));
-
-        cin.ignore();
-        cout << "Note (optional, press Enter to skip): ";
-        getline(cin, entry.note);
-
-        const char* sql = R"(
-            INSERT INTO schedules (
-                Employee_ID, Employee_Name, Employee_Possition, shift_date, start_time, end_time, location, note
-            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+        // Insert into schedules
+        const char* insertSQL = R"(
+            INSERT INTO schedules (Employee_ID, Employee_Name, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
         )";
 
-        sqlite3_stmt* stmt;
-        if (sqlite3_prepare_v2(db, sql, -1, &stmt, nullptr) != SQLITE_OK) {
-            cerr << "❌ Failed to prepare insert: " << sqlite3_errmsg(db) << endl;
-            break;
-        }
+        sqlite3_stmt* insertStmt;
 
-        sqlite3_bind_int(stmt, 1, entry.employeeID);
-        sqlite3_bind_text(stmt, 2, empName.c_str(), -1, SQLITE_STATIC);
-        sqlite3_bind_text(stmt, 3, empPosition.c_str(), -1, SQLITE_STATIC);
-        sqlite3_bind_text(stmt, 4, entry.shiftDate.c_str(), -1, SQLITE_STATIC);
-        sqlite3_bind_text(stmt, 5, entry.startTime.c_str(), -1, SQLITE_STATIC);
-        sqlite3_bind_text(stmt, 6, entry.endTime.c_str(), -1, SQLITE_STATIC);
-        sqlite3_bind_text(stmt, 7, empBranch.c_str(), -1, SQLITE_STATIC);
-        entry.note.empty() ? sqlite3_bind_null(stmt, 8) :
-            sqlite3_bind_text(stmt, 8, entry.note.c_str(), -1, SQLITE_STATIC);
+        if (sqlite3_prepare_v2(db, insertSQL, -1, &insertStmt, nullptr) == SQLITE_OK) {
+            sqlite3_bind_int(insertStmt, 1, entry.employeeId);
+            sqlite3_bind_text(insertStmt, 2, empName.c_str(), -1, SQLITE_STATIC);
+            sqlite3_bind_text(insertStmt, 3, entry.monday.c_str(), -1, SQLITE_STATIC);
+            sqlite3_bind_text(insertStmt, 4, entry.tuesday.c_str(), -1, SQLITE_STATIC);
+            sqlite3_bind_text(insertStmt, 5, entry.wednesday.c_str(), -1, SQLITE_STATIC);
+            sqlite3_bind_text(insertStmt, 6, entry.thursday.c_str(), -1, SQLITE_STATIC);
+            sqlite3_bind_text(insertStmt, 7, entry.friday.c_str(), -1, SQLITE_STATIC);
+            sqlite3_bind_text(insertStmt, 8, entry.saturday.c_str(), -1, SQLITE_STATIC);
+            sqlite3_bind_text(insertStmt, 9, entry.sunday.c_str(), -1, SQLITE_STATIC);
 
-        if (sqlite3_step(stmt) == SQLITE_DONE) {
-            cout << "✅ Schedule added successfully.\n";
+            if (sqlite3_step(insertStmt) == SQLITE_DONE) {
+                cout << "✅ Schedule added successfully.\n";
+            }
+            else {
+                cout << "❌ Failed to add schedule: " << sqlite3_errmsg(db) << endl;
+            }
+
+            sqlite3_finalize(insertStmt);
         }
         else {
-            cerr << "❌ Failed to add schedule: " << sqlite3_errmsg(db) << endl;
+            cout << "❌ Failed to prepare insert: " << sqlite3_errmsg(db) << endl;
         }
 
-        sqlite3_finalize(stmt);
-
-        cout << "Do you want to make another schedule? (y / n): ";
+        cout << "Do you want to add another schedule? (y/n): ";
         cin >> repeat;
-        cin.ignore();
+
     } while (repeat == "y" || repeat == "Y");
 
     closeDatabase(db);
