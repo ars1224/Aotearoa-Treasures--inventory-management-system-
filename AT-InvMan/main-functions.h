@@ -1,3 +1,4 @@
+#pragma once
 #ifndef MAIN_FUNCTIONS_H
 #define MAIN_FUNCTIONS_H
 

@@ -69,6 +69,12 @@
     <ClCompile Include="session.cpp">
       <Filter>Source Files\session</Filter>
     </ClCompile>
+    <ClCompile Include="addRoster.cpp">
+      <Filter>Source Files\features\Employee</Filter>
+    </ClCompile>
+    <ClCompile Include="updateRoster.cpp">
+      <Filter>Source Files\features\Employee</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
