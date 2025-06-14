@@ -51,10 +51,10 @@ string getNumericID() {
 
 int main() {
  int id;
-    string pass;
-    bool loggedIn = false;
+ string pass;
+bool loggedIn = false;
 
-    cout << R"(
+    cout << setw(75) << R"(
  __      __       .__                                            
 /  \    /  \ ____ |  |   ____  ____   _____   ____               
 \   \/\/   // __ \|  | _/ ___\/  _ \ /     \_/ __ \              
@@ -96,8 +96,5 @@ int main() {
 
     } while (!loggedIn);
 
-    // Proceed to MainMenu or next steps here... 
-
-    
     return 0;
 }

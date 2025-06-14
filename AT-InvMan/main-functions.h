@@ -26,20 +26,12 @@ struct employee {
 };
 
 // STRUCT FOR ROSTERS
-/*struct rosterEntry {
-    int employeeID;
-    string shiftDate;
-    string startTime;
-    string endTime;
-    string location;
-    string note;
-};*/
-
-// STRUCT FOR ROSTERS
 struct rosterEntry {
     int scheduleId;
     int employeeId;
     string employeeName;
+    string employeePossition;
+	string employeeBranch;
     string monday;
     string tuesday;
     string wednesday;
