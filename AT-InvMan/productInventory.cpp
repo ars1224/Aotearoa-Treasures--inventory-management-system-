@@ -9,7 +9,7 @@
 #include "InventoryManager.h"
 
 using namespace std;
-#include <iostream>
+
 
 string generateNextSKU(sqlite3* db) {
     string nextSKU = "AT0001";

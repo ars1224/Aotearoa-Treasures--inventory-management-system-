@@ -86,6 +86,8 @@ void roster()
         cout << "Failed to view roster: " << sqlite3_errmsg(db) << endl;
     }
 
+    cout << string(150, '=') << endl;
+
     sqlite3_finalize(stmt);
     closeDatabase(db);
 
