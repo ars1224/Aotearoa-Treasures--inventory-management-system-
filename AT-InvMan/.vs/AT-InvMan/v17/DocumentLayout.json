@@ -1,17 +1,37 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\aries\\Desktop\\Yoobee\\Aotearoa-Treasures--inventory-management-system-\\AT-InvMan\\",
+  "WorkspaceRootPath": "D:\\YOOBEE\\Aotearoa-Treasures--inventory-management-system\\AT-InvMan\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{278FE080-4CF3-41A1-85DD-0B1910710C98}|AT-InvMan.vcxproj|C:\\Users\\aries\\Desktop\\Yoobee\\Aotearoa-Treasures--inventory-management-system-\\AT-InvMan\\updateRoster.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{278FE080-4CF3-41A1-85DD-0B1910710C98}|AT-InvMan.vcxproj|solutionrelative:updateRoster.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{278FE080-4CF3-41A1-85DD-0B1910710C98}|AT-InvMan.vcxproj|D:\\YOOBEE\\Aotearoa-Treasures--inventory-management-system\\AT-InvMan\\productInventory.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{278FE080-4CF3-41A1-85DD-0B1910710C98}|AT-InvMan.vcxproj|solutionrelative:productInventory.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{278FE080-4CF3-41A1-85DD-0B1910710C98}|AT-InvMan.vcxproj|C:\\Users\\aries\\Desktop\\Yoobee\\Aotearoa-Treasures--inventory-management-system-\\AT-InvMan\\employeeRoster.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{278FE080-4CF3-41A1-85DD-0B1910710C98}|AT-InvMan.vcxproj|D:\\YOOBEE\\Aotearoa-Treasures--inventory-management-system\\AT-InvMan\\db-conn.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{278FE080-4CF3-41A1-85DD-0B1910710C98}|AT-InvMan.vcxproj|solutionrelative:db-conn.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{278FE080-4CF3-41A1-85DD-0B1910710C98}|AT-InvMan.vcxproj|D:\\YOOBEE\\Aotearoa-Treasures--inventory-management-system\\AT-InvMan\\db-conn.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{278FE080-4CF3-41A1-85DD-0B1910710C98}|AT-InvMan.vcxproj|solutionrelative:db-conn.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{278FE080-4CF3-41A1-85DD-0B1910710C98}|AT-InvMan.vcxproj|D:\\YOOBEE\\Aotearoa-Treasures--inventory-management-system\\AT-InvMan\\employeeRoster.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{278FE080-4CF3-41A1-85DD-0B1910710C98}|AT-InvMan.vcxproj|solutionrelative:employeeRoster.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{278FE080-4CF3-41A1-85DD-0B1910710C98}|AT-InvMan.vcxproj|C:\\Users\\aries\\Desktop\\Yoobee\\Aotearoa-Treasures--inventory-management-system-\\AT-InvMan\\addRoster.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{278FE080-4CF3-41A1-85DD-0B1910710C98}|AT-InvMan.vcxproj|D:\\YOOBEE\\Aotearoa-Treasures--inventory-management-system\\AT-InvMan\\MainMenu.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{278FE080-4CF3-41A1-85DD-0B1910710C98}|AT-InvMan.vcxproj|solutionrelative:MainMenu.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{278FE080-4CF3-41A1-85DD-0B1910710C98}|AT-InvMan.vcxproj|D:\\YOOBEE\\Aotearoa-Treasures--inventory-management-system\\AT-InvMan\\main-functions.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{278FE080-4CF3-41A1-85DD-0B1910710C98}|AT-InvMan.vcxproj|solutionrelative:main-functions.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{278FE080-4CF3-41A1-85DD-0B1910710C98}|AT-InvMan.vcxproj|D:\\YOOBEE\\Aotearoa-Treasures--inventory-management-system\\AT-InvMan\\updateRoster.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{278FE080-4CF3-41A1-85DD-0B1910710C98}|AT-InvMan.vcxproj|solutionrelative:updateRoster.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{278FE080-4CF3-41A1-85DD-0B1910710C98}|AT-InvMan.vcxproj|D:\\YOOBEE\\Aotearoa-Treasures--inventory-management-system\\AT-InvMan\\addRoster.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{278FE080-4CF3-41A1-85DD-0B1910710C98}|AT-InvMan.vcxproj|solutionrelative:addRoster.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
@@ -22,16 +42,81 @@
       "DocumentGroups": [
         {
           "DockedWidth": 312,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "db-conn.h",
+              "DocumentMoniker": "D:\\YOOBEE\\Aotearoa-Treasures--inventory-management-system\\AT-InvMan\\db-conn.h",
+              "RelativeDocumentMoniker": "db-conn.h",
+              "ToolTip": "D:\\YOOBEE\\Aotearoa-Treasures--inventory-management-system\\AT-InvMan\\db-conn.h",
+              "RelativeToolTip": "db-conn.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-06-15T09:11:33.394Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "db-conn.cpp",
+              "DocumentMoniker": "D:\\YOOBEE\\Aotearoa-Treasures--inventory-management-system\\AT-InvMan\\db-conn.cpp",
+              "RelativeDocumentMoniker": "db-conn.cpp",
+              "ToolTip": "D:\\YOOBEE\\Aotearoa-Treasures--inventory-management-system\\AT-InvMan\\db-conn.cpp",
+              "RelativeToolTip": "db-conn.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-06-15T08:59:37.883Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "MainMenu.cpp",
+              "DocumentMoniker": "D:\\YOOBEE\\Aotearoa-Treasures--inventory-management-system\\AT-InvMan\\MainMenu.cpp",
+              "RelativeDocumentMoniker": "MainMenu.cpp",
+              "ToolTip": "D:\\YOOBEE\\Aotearoa-Treasures--inventory-management-system\\AT-InvMan\\MainMenu.cpp",
+              "RelativeToolTip": "MainMenu.cpp",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAB8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-06-15T08:45:27.13Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "main-functions.h",
+              "DocumentMoniker": "D:\\YOOBEE\\Aotearoa-Treasures--inventory-management-system\\AT-InvMan\\main-functions.h",
+              "RelativeDocumentMoniker": "main-functions.h",
+              "ToolTip": "D:\\YOOBEE\\Aotearoa-Treasures--inventory-management-system\\AT-InvMan\\main-functions.h",
+              "RelativeToolTip": "main-functions.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-06-15T08:43:07.699Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "productInventory.cpp",
+              "DocumentMoniker": "D:\\YOOBEE\\Aotearoa-Treasures--inventory-management-system\\AT-InvMan\\productInventory.cpp",
+              "RelativeDocumentMoniker": "productInventory.cpp",
+              "ToolTip": "D:\\YOOBEE\\Aotearoa-Treasures--inventory-management-system\\AT-InvMan\\productInventory.cpp",
+              "RelativeToolTip": "productInventory.cpp",
+              "ViewState": "AgIAABgAAAAAAAAAAAAAACYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-06-15T08:42:45.955Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "updateRoster.cpp",
-              "DocumentMoniker": "C:\\Users\\aries\\Desktop\\Yoobee\\Aotearoa-Treasures--inventory-management-system-\\AT-InvMan\\updateRoster.cpp",
+              "DocumentMoniker": "D:\\YOOBEE\\Aotearoa-Treasures--inventory-management-system\\AT-InvMan\\updateRoster.cpp",
               "RelativeDocumentMoniker": "updateRoster.cpp",
-              "ToolTip": "C:\\Users\\aries\\Desktop\\Yoobee\\Aotearoa-Treasures--inventory-management-system-\\AT-InvMan\\updateRoster.cpp*",
-              "RelativeToolTip": "updateRoster.cpp*",
+              "ToolTip": "D:\\YOOBEE\\Aotearoa-Treasures--inventory-management-system\\AT-InvMan\\updateRoster.cpp",
+              "RelativeToolTip": "updateRoster.cpp",
               "ViewState": "AgIAAGUAAAAAAAAAAAAQwIMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-06-15T07:09:28.577Z",
@@ -39,11 +124,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 7,
               "Title": "addRoster.cpp",
-              "DocumentMoniker": "C:\\Users\\aries\\Desktop\\Yoobee\\Aotearoa-Treasures--inventory-management-system-\\AT-InvMan\\addRoster.cpp",
+              "DocumentMoniker": "D:\\YOOBEE\\Aotearoa-Treasures--inventory-management-system\\AT-InvMan\\addRoster.cpp",
               "RelativeDocumentMoniker": "addRoster.cpp",
-              "ToolTip": "C:\\Users\\aries\\Desktop\\Yoobee\\Aotearoa-Treasures--inventory-management-system-\\AT-InvMan\\addRoster.cpp",
+              "ToolTip": "D:\\YOOBEE\\Aotearoa-Treasures--inventory-management-system\\AT-InvMan\\addRoster.cpp",
               "RelativeToolTip": "addRoster.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAC4AAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
@@ -51,13 +136,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "employeeRoster.cpp",
-              "DocumentMoniker": "C:\\Users\\aries\\Desktop\\Yoobee\\Aotearoa-Treasures--inventory-management-system-\\AT-InvMan\\employeeRoster.cpp",
+              "DocumentMoniker": "D:\\YOOBEE\\Aotearoa-Treasures--inventory-management-system\\AT-InvMan\\employeeRoster.cpp",
               "RelativeDocumentMoniker": "employeeRoster.cpp",
-              "ToolTip": "C:\\Users\\aries\\Desktop\\Yoobee\\Aotearoa-Treasures--inventory-management-system-\\AT-InvMan\\employeeRoster.cpp",
+              "ToolTip": "D:\\YOOBEE\\Aotearoa-Treasures--inventory-management-system\\AT-InvMan\\employeeRoster.cpp",
               "RelativeToolTip": "employeeRoster.cpp",
-              "ViewState": "AgIAAB4AAAAAAAAAAADwvy8AAAAZAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEcAAAAzAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-06-12T10:21:25.759Z",
               "EditorCaption": ""

@@ -15,6 +15,10 @@ void roster();
 void employeeMasterList();
 void updateRoster();
 
+// FUNCTIONS FOR INVENTORY
+
+void inventory();
+
 // STRUCT FOR EMPLOYEES
 struct employee {
     string id;

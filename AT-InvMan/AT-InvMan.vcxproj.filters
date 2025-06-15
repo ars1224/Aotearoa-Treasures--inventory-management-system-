@@ -25,6 +25,12 @@
     <Filter Include="Source Files\session">
       <UniqueIdentifier>{989856b9-097f-4758-8777-40ed62439c91}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\features\Stock">
+      <UniqueIdentifier>{fc03b567-9654-4d85-8751-039de2bd3035}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\features\main">
+      <UniqueIdentifier>{f983e50b-2f33-489a-90eb-0d8dc5445495}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AT-InvMan.cpp">
@@ -35,15 +41,6 @@
     </ClCompile>
     <ClCompile Include="db-conn.cpp">
       <Filter>Source Files\db-connection</Filter>
-    </ClCompile>
-    <ClCompile Include="productInventory.cpp">
-      <Filter>Source Files\features</Filter>
-    </ClCompile>
-    <ClCompile Include="salesReportMovement.cpp">
-      <Filter>Source Files\features</Filter>
-    </ClCompile>
-    <ClCompile Include="MainMenu.cpp">
-      <Filter>Source Files\features</Filter>
     </ClCompile>
     <ClCompile Include="employeeList.cpp">
       <Filter>Source Files\features\Employee</Filter>
@@ -60,9 +57,6 @@
     <ClCompile Include="updateEmployee.cpp">
       <Filter>Source Files\features\Employee</Filter>
     </ClCompile>
-    <ClCompile Include="login.cpp">
-      <Filter>Source Files\features</Filter>
-    </ClCompile>
     <ClCompile Include="employeeMasterList.cpp">
       <Filter>Source Files\features\Employee</Filter>
     </ClCompile>
@@ -74,6 +68,18 @@
     </ClCompile>
     <ClCompile Include="updateRoster.cpp">
       <Filter>Source Files\features\Employee</Filter>
+    </ClCompile>
+    <ClCompile Include="login.cpp">
+      <Filter>Source Files\features\main</Filter>
+    </ClCompile>
+    <ClCompile Include="MainMenu.cpp">
+      <Filter>Source Files\features\main</Filter>
+    </ClCompile>
+    <ClCompile Include="productInventory.cpp">
+      <Filter>Source Files\features\Stock</Filter>
+    </ClCompile>
+    <ClCompile Include="salesReportMovement.cpp">
+      <Filter>Source Files\features\Stock</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -93,6 +99,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="auth.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="InventoryManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
