@@ -23,29 +23,29 @@ void roster()
     sqlite3_stmt* stmt;
 
     if (sqlite3_prepare_v2(db, sql, -1, &stmt, NULL) == SQLITE_OK) {
-        cout << string(200, '=') << endl;
-        cout <<right << setw(105)<< "Employee Roster Schedule" << endl;
-        cout << string(200, '=') << endl;
+        cout << string(150, '=') << endl;
+        cout <<right << setw(100)<< "Employee Roster Schedule" << endl;
+        cout << string(150, '=') << endl;
         cout << endl;
-        cout << setw(110) << "Opening Shift: 7am to 3:30pm " << endl;
-        cout << setw(110) << "Closing Shift: 10:30am to 7pm " << endl;
+        cout << setw(100) << "Opening Shift: 7am to 3:30pm " << endl;
+        cout << setw(100) << "Closing Shift: 10:30am to 7pm " << endl;
         cout << endl;
-        cout << string(200, '=') << endl;
+        cout << string(150, '=') << endl;
 
-        cout<< setw(20) <<"Employee ID"
-            << setw(15) << "Name"
+        cout<< setw(5) <<"EmpID"
+            << setw(10) << "Name"
             << setw(20) << "Position"
-            << setw(15) << "Branch"
-            << setw(15) << "Monday"
-            << setw(15) << "Tuesday"
-            << setw(15) << "Wednesday"
-            << setw(15) << "Thursday"
-            << setw(15) << "Friday"
-            << setw(15) << "Saturday"
-            << setw(15) << "Sunday"
+            << setw(20) << "Branch"
+            << setw(13) << "Monday"
+            << setw(13) << "Tuesday"
+            << setw(13) << "Wednesday"
+            << setw(13) << "Thursday"
+            << setw(13) << "Friday"
+            << setw(13) << "Saturday"
+            << setw(13) << "Sunday"
             << endl;
-
-        cout << string(200, '=') << endl;
+        
+        cout << string(150, '=') << endl;
 
         bool hasData = false;
 
@@ -64,17 +64,17 @@ void roster()
             const unsigned char* saturday = sqlite3_column_text(stmt, 9);
             const unsigned char* sunday = sqlite3_column_text(stmt, 10);
 
-            cout << setw(20) << empId
-                << setw(15) << (const char*)name
+            cout << setw(5) << empId
+                << setw(10) << (const char*)name
                 << setw(20) << (const char*)position
-                << setw(15) << (const char*)branch
-                << setw(15) << (const char*)monday
-                << setw(15) << (const char*)tuesday
-                << setw(15) << (const char*)wednesday
-                << setw(15) << (const char*)thursday
-                << setw(15) << (const char*)friday
-                << setw(15) << (const char*)saturday
-                << setw(15) << (const char*)sunday << endl;
+                << setw(20) << (const char*)branch
+                << setw(13) << (const char*)monday
+                << setw(13) << (const char*)tuesday
+                << setw(13) << (const char*)wednesday
+                << setw(13) << (const char*)thursday
+                << setw(13) << (const char*)friday
+                << setw(13) << (const char*)saturday
+                << setw(13) << (const char*)sunday << endl;
         }
 
         if (!hasData) {
