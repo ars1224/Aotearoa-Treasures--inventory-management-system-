@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\aries\\Desktop\\Yoobee\\Aotearoa-Treasures--inventory-management-system-\\AT-InvMan\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{278FE080-4CF3-41A1-85DD-0B1910710C98}|AT-InvMan.vcxproj|C:\\Users\\aries\\Desktop\\Yoobee\\Aotearoa-Treasures--inventory-management-system-\\AT-InvMan\\updateRoster.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{278FE080-4CF3-41A1-85DD-0B1910710C98}|AT-InvMan.vcxproj|solutionrelative:updateRoster.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{278FE080-4CF3-41A1-85DD-0B1910710C98}|AT-InvMan.vcxproj|C:\\Users\\aries\\Desktop\\Yoobee\\Aotearoa-Treasures--inventory-management-system-\\AT-InvMan\\employeeRoster.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{278FE080-4CF3-41A1-85DD-0B1910710C98}|AT-InvMan.vcxproj|solutionrelative:employeeRoster.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
@@ -18,11 +22,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 312,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
+              "Title": "updateRoster.cpp",
+              "DocumentMoniker": "C:\\Users\\aries\\Desktop\\Yoobee\\Aotearoa-Treasures--inventory-management-system-\\AT-InvMan\\updateRoster.cpp",
+              "RelativeDocumentMoniker": "updateRoster.cpp",
+              "ToolTip": "C:\\Users\\aries\\Desktop\\Yoobee\\Aotearoa-Treasures--inventory-management-system-\\AT-InvMan\\updateRoster.cpp*",
+              "RelativeToolTip": "updateRoster.cpp*",
+              "ViewState": "AgIAAGUAAAAAAAAAAAAQwIMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-06-15T07:09:28.577Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "addRoster.cpp",
               "DocumentMoniker": "C:\\Users\\aries\\Desktop\\Yoobee\\Aotearoa-Treasures--inventory-management-system-\\AT-InvMan\\addRoster.cpp",
               "RelativeDocumentMoniker": "addRoster.cpp",
@@ -34,12 +51,12 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "employeeRoster.cpp",
               "DocumentMoniker": "C:\\Users\\aries\\Desktop\\Yoobee\\Aotearoa-Treasures--inventory-management-system-\\AT-InvMan\\employeeRoster.cpp",
               "RelativeDocumentMoniker": "employeeRoster.cpp",
-              "ToolTip": "C:\\Users\\aries\\Desktop\\Yoobee\\Aotearoa-Treasures--inventory-management-system-\\AT-InvMan\\employeeRoster.cpp*",
-              "RelativeToolTip": "employeeRoster.cpp*",
+              "ToolTip": "C:\\Users\\aries\\Desktop\\Yoobee\\Aotearoa-Treasures--inventory-management-system-\\AT-InvMan\\employeeRoster.cpp",
+              "RelativeToolTip": "employeeRoster.cpp",
               "ViewState": "AgIAAB4AAAAAAAAAAADwvy8AAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-06-12T10:21:25.759Z",
