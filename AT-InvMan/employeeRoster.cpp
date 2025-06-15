@@ -23,14 +23,14 @@ void roster()
     sqlite3_stmt* stmt;
 
     if (sqlite3_prepare_v2(db, sql, -1, &stmt, NULL) == SQLITE_OK) {
-        cout << string(122, '=') << endl;
-        cout << "                                                 Employee Roster Schedule" << endl;
-        cout << string(122, '=') << endl;
+        cout << string(200, '=') << endl;
+        cout <<right << setw(105)<< "Employee Roster Schedule" << endl;
+        cout << string(200, '=') << endl;
         cout << endl;
-        cout << setw(75) << "Opening Shift: 7am to 3:30pm " << endl;
-        cout << setw(75) << "Closing Shift: 10:30am to 7pm " << endl;
+        cout << setw(110) << "Opening Shift: 7am to 3:30pm " << endl;
+        cout << setw(110) << "Closing Shift: 10:30am to 7pm " << endl;
         cout << endl;
-        cout << string(140, '=') << endl;
+        cout << string(200, '=') << endl;
 
         cout<< setw(20) <<"Employee ID"
             << setw(15) << "Name"
@@ -45,7 +45,7 @@ void roster()
             << setw(15) << "Sunday"
             << endl;
 
-        cout << string(140, '=') << endl;
+        cout << string(200, '=') << endl;
 
         bool hasData = false;
 
@@ -100,7 +100,7 @@ void roster()
     cout << "5. Delete Employee\n";
     cout << "6. Back to Main Menu\n";
     cout << "7. Exit Program\n";
-
+    cout << endl;
     cout << "Please select an option: ";
     cin >> option;
 
@@ -130,7 +130,7 @@ void roster()
         mainMenu();
         break;
     case 7:
-        return;
+		exit(0);
     default:
         cout << "Invalid option. Please try again." << endl;
     }

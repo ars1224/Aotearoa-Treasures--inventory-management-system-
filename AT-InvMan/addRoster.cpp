@@ -7,32 +7,25 @@
 #include <regex>
 using namespace std;
 
-bool hasExistingShiftForDay(sqlite3* db, int empID, const string& dayColumn) {
-    string checkSQL = "SELECT " + dayColumn + " FROM schedules WHERE Employee_ID = ?";
 
-    sqlite3_stmt* stmt;
+// Check if a schedule already exists for the given Employee_ID
+bool scheduleExists(sqlite3* db, int employeeId) {
+    sqlite3_stmt* stmt = nullptr;
+    const char* check = "SELECT Employee_ID FROM schedules WHERE Employee_ID = ?";
+    bool exists = false;
 
-    if (sqlite3_prepare_v2(db, checkSQL.c_str(), -1, &stmt, nullptr) == SQLITE_OK) {
-        sqlite3_bind_int(stmt, 1, empID);
-
-        bool exists = false;
+    if (sqlite3_prepare_v2(db, check, -1, &stmt, NULL) == SQLITE_OK) {
+        sqlite3_bind_int(stmt, 1, employeeId);
         if (sqlite3_step(stmt) == SQLITE_ROW) {
-            const unsigned char* day = sqlite3_column_text(stmt, 0);
-            if (day && strcmp(reinterpret_cast<const char*>(day), "Rest") &&
-                strcmp(reinterpret_cast<const char*>(day), "Leave") &&
-                strcmp(reinterpret_cast<const char*>(day), "") &&
-                strcmp(reinterpret_cast<const char*>(day), " "))
-            {
-                exists = true;
-            }
+            exists = true;
         }
-        sqlite3_finalize(stmt);
-        return exists;
     }
     else {
-        cout << "❌ Failed to prepare statement to check shift for day: " << sqlite3_errmsg(db) << endl;
-        return false;
+        cout << "❌ Failed to prepare scheduleExists statement: " << sqlite3_errmsg(db) << endl;
     }
+
+    sqlite3_finalize(stmt);
+    return exists;
 }
 
 void addRoster()
@@ -49,14 +42,26 @@ void addRoster()
     do {
         rosterEntry entry;
 
-        cout << "\n======================================================================\n";
-        cout << "                         Add New Schedule\n";
-        cout << "======================================================================\n";
+        cout << string(140, '=') << endl;
+        cout << "                                    Add New Schedule\n";
+        cout << string(140, '=') << endl;
 
-        cout << "Employee ID: "; cin >> entry.employeeId;
+        cout << "Employee ID: ";
+        cin >> entry.employeeId;
+
+        if (scheduleExists(db, entry.employeeId)) {
+            cout << endl;
+            cout << "❌ Schedule already exists for this Employee ID.\n";
+            cout << "Please use a different Employee ID or update instead.\n";
+            cout << endl;
+            cout << "Do you want to add another schedule? (y/n): ";
+            cout << endl;
+            cin >> repeat;
+            continue;
+        }
 
         // Look up employee details first
-        const char* lookupSQL = "SELECT Employee_Name, Employee_Possition FROM employee WHERE Employee_ID = ?";
+        const char* lookupSQL = "SELECT Employee_Name, Employee_Possition, branch FROM employee WHERE Employee_ID = ?";
         sqlite3_stmt* lookupStmt;
 
         if (sqlite3_prepare_v2(db, lookupSQL, -1, &lookupStmt, nullptr) == SQLITE_OK) {
@@ -64,7 +69,7 @@ void addRoster()
             if (sqlite3_step(lookupStmt) == SQLITE_ROW) {
                 entry.employeeName = reinterpret_cast<const char*>(sqlite3_column_text(lookupStmt, 0)); // Name
                 entry.employeePossition = reinterpret_cast<const char*>(sqlite3_column_text(lookupStmt, 1)); // Position
-                entry.employeeBranch = reinterpret_cast<const char*>(sqlite3_column_text(lookupStmt, 1)); // Position
+                entry.employeeBranch = reinterpret_cast<const char*>(sqlite3_column_text(lookupStmt, 2)); // Position
 
                 cout << "Employee Name: " << entry.employeeName << endl;
                 cout << "Employee Position: " << entry.employeePossition << endl;
@@ -111,8 +116,8 @@ void addRoster()
 
         // Insert into schedules
         const char* insertSQL = R"(
-            INSERT INTO schedules (Employee_ID, Employee_Name, Employee_Possition, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday)
-        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            INSERT INTO schedules (Employee_ID, Employee_Name, Employee_Possition, branch, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
 
         )";
 
