@@ -3,6 +3,7 @@
 #include <sqlite3.h>
 #include "db-conn.h"
 #include "main-functions.h"
+#include "IventoryManager.h"
 #include "auth.h"
 using namespace std;
 
@@ -36,7 +37,7 @@ void mainMenu() {
         switch (choice) {
         case '1':
             if (isAdmin() || isStoreManager()) {
-                // inventoryManagement();
+                inventory();
             }
             else {
                 cout << "❌ Access denied.\n";
