@@ -54,7 +54,7 @@ int main() {
  string pass;
 bool loggedIn = false;
 
-    cout << setw(75) << R"(
+    cout << right<<setw(75) << R"(                        
  __      __       .__                                            
 /  \    /  \ ____ |  |   ____  ____   _____   ____               
 \   \/\/   // __ \|  | _/ ___\/  _ \ /     \_/ __ \              
@@ -69,9 +69,10 @@ bool loggedIn = false;
         \/                        \/            \/     \/     \/ 
 )" << endl;
 
-    cout << "\n=======================================================================\n";
-    cout << "                            AT-InvMan Login\n";
-    cout << "=======================================================================\n\n";
+    cout << string(140, '=') << endl;
+    cout<<right<<setw(75) << "AT-InvMan Login\n";
+    cout << string(140, '=') << endl;
+    cout << endl;
 
     do {
         string idStr = getNumericID();

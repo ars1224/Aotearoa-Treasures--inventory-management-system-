@@ -27,11 +27,10 @@ bool login(int empID, const string& password) {
             currentUser.position = reinterpret_cast<const char*>(sqlite3_column_text(stmt, 1));
             currentUser.branch = reinterpret_cast<const char*>(sqlite3_column_text(stmt, 2));
 
-            cout << "\n=======================================================================\n";
-            cout << "                           Log In Successful\n";
-            cout << "-----------------------------------------------------------------------\n";
-            cout << "                     Welcome, " << currentUser.name << " (" << currentUser.position << ")\n";
-            cout << "=======================================================================\n\n";
+            cout<< string(63, '-') << right << setw(10) << "Log In Successful" << string(60, '-') << endl;
+            cout << string(53, '-') << right << setw(10) << "Welcome, " << currentUser.name << " (" << currentUser.position << ")" << string(53, '-') << endl;
+            cout << endl;
+            
 
             success = true;
         }
