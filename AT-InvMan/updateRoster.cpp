@@ -1,4 +1,4 @@
-#include <iostream>
+﻿#include <iostream>
 #include <iomanip>
 #include <sqlite3.h>
 #include "db-conn.h"
@@ -9,57 +9,80 @@ using namespace std;
 
 void updateRoster()
 {
-    int scheduleId;
+    int employeeId;
 
-    cout << "Enter Schedule ID to update: "; cin >> scheduleId;
+    cout << "Enter Employee ID to update: ";
+    cin >> employeeId;
 
     sqlite3* db = connectToDatabase();
     if (db == nullptr) return;
 
-    // (load the schedule first)
-    cout << "Enter new shift date: ";
-    string newDate;
-    cin >> newDate;
+    // Check if the schedule exists first
+    const char* check = "SELECT Employee_ID FROM schedules WHERE Employee_ID = ?";
+    sqlite3_stmt* chkStmt;
 
-    cout << "Enter new start time: ";
-    string newStart;
-    cin >> newStart;
+    if (sqlite3_prepare_v2(db, check, -1, &chkStmt, NULL) == SQLITE_OK) {
+        sqlite3_bind_int(chkStmt, 1, employeeId);
+        if (sqlite3_step(chkStmt) == SQLITE_ROW) {
+            cout << "Schedule found for Employee_ID " << employeeId << ".\n";
 
-    cout << "Enter new end time: ";
-    string newEnd;
-    cin >> newEnd;
-
-    cout << "Enter new location: ";
-    string newLocation;
-    cin >> newLocation;
-
-    cout << "Enter new note: ";
-    cin.ignore();
-    string newNote;
-    getline(cin, newNote);
-
-    // update
-    const char* update = "UPDATE schedules SET shift_date = ?, start_time = ?, end_time = ?, location = ?, note = ? WHERE schedule_id = ?";
-    sqlite3_stmt* stmt;
-
-    if (sqlite3_prepare_v2(db, update, -1, &stmt, NULL) == SQLITE_OK) {
-        sqlite3_bind_text(stmt, 1, newDate.c_str(), -1, SQLITE_TRANSIENT);
-        sqlite3_bind_text(stmt, 2, newStart.c_str(), -1, SQLITE_TRANSIENT);
-        sqlite3_bind_text(stmt, 3, newEnd.c_str(), -1, SQLITE_TRANSIENT);
-        sqlite3_bind_text(stmt, 4, newLocation.c_str(), -1, SQLITE_TRANSIENT);
-        sqlite3_bind_text(stmt, 5, newNote.c_str(), -1, SQLITE_TRANSIENT);
-        sqlite3_bind_int(stmt, 6, scheduleId);
-
-        if (sqlite3_step(stmt) == SQLITE_DONE) {
-            cout << "Schedule updated successfully!" << endl;
+            sqlite3_finalize(chkStmt);
         }
         else {
-            cout << "Failed to update schedule!" << endl;
+            cout << "❌ Schedule not found for this Employee_ID.\n";
+            sqlite3_finalize(chkStmt);
+            closeDatabase(db);
+            return;
         }
-        sqlite3_finalize(stmt);
     }
     else {
-        cout << "Failed to prepare update!" << endl;
+        cout << "❌ Failed to prepare statement: " << sqlite3_errmsg(db) << endl;
+        closeDatabase(db);
+        return;
+    }
+
+    // Provide predefined options for each day
+    vector<string> options = { "Opening", "Closing", "Rest", "Leave" };
+    string dayNames[7] = { "Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday" };
+    string newValues[7];
+    for (int i = 0; i < 7; ++i) {
+        cout << dayNames[i] << ":\n";
+        cout << "  1. Opening\n  2. Closing\n  3. Rest\n  4. Leave\nSelect (1-4): ";
+        int choice;
+        cin >> choice;
+
+        if (choice < 1 || choice > 4) {
+            cout << "Invalid choice. Setting to Rest by default.\n";
+            choice = 3;
+        }
+        newValues[i] = options[choice - 1];
+    }
+
+    // Perform the update
+    const char* update = R"(
+        UPDATE schedules
+        SET Monday = ?, Tuesday = ?, Wednesday = ?, Thursday = ?, Friday = ?, Saturday = ?, Sunday = ?
+        WHERE Employee_ID = ?
+    )";
+
+    sqlite3_stmt* updateStmt = NULL;
+
+    if (sqlite3_prepare_v2(db, update, -1, &updateStmt, NULL) == SQLITE_OK) {
+        for (int i = 0; i < 7; ++i) {
+            sqlite3_bind_text(updateStmt, i + 1, newValues[i].c_str(), -1, SQLITE_TRANSIENT);
+        }
+        sqlite3_bind_int(updateStmt, 8, employeeId);
+
+        if (sqlite3_step(updateStmt) == SQLITE_DONE) {
+            cout << "✅ Schedule updated successfully!" << endl;
+        }
+        else {
+            cout << "❌ Failed to update schedule!" << endl;
+        }
+        sqlite3_finalize(updateStmt);
+    }
+    else {
+        cout << "❌ Failed to prepare update!" << endl;
     }
 
     closeDatabase(db);
@@ -106,3 +129,4 @@ void updateRoster()
         cout << "Invalid option. Please try again." << endl;
     }
 }
+
