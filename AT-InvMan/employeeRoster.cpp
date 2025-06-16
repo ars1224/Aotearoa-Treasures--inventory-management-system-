@@ -24,11 +24,11 @@ void roster()
 
     if (sqlite3_prepare_v2(db, sql, -1, &stmt, NULL) == SQLITE_OK) {
         cout << string(150, '=') << endl;
-        cout <<right << setw(100)<< "Employee Roster Schedule" << endl;
+        cout <<right << setw(85)<< "Employee Roster Schedule" << endl;
         cout << string(150, '=') << endl;
         cout << endl;
-        cout << setw(100) << "Opening Shift: 7am to 3:30pm " << endl;
-        cout << setw(100) << "Closing Shift: 10:30am to 7pm " << endl;
+        cout << setw(90) << "Opening Shift: 7am to 3:30pm " << endl;
+        cout << setw(90) << "Closing Shift: 10:30am to 7pm " << endl;
         cout << endl;
         cout << string(150, '=') << endl;
 
@@ -96,12 +96,13 @@ void roster()
     cout << "Related options on Employee\n";
     cout << endl;
     cout << "1. Make a new schedule\n";
-    cout << "2. Update schedule\n";
-    cout << "3. Add Employee\n";
-    cout << "4. Update Employee\n";
-    cout << "5. Delete Employee\n";
-    cout << "6. Back to Main Menu\n";
-    cout << "7. Exit Program\n";
+    cout << "2. Delete Schedule\n";
+    cout << "3. Update schedule\n";
+    cout << "4. Add Employee\n";
+    cout << "5. Update Employee\n";
+    cout << "6. Delete Employee\n";
+    cout << "7. Back to Main Menu\n";
+    cout << "8. Exit Program\n";
     cout << endl;
     cout << "Please select an option: ";
     cin >> option;
@@ -109,29 +110,34 @@ void roster()
     switch (option) {
     case 1:
         cout << endl;
-        employeeMasterList();
+        employeeMasterlist();
         addRoster();
         break;
     case 2:
         cout << endl;
-        updateRoster();
+        deleteRoster();
         break;
     case 3:
         cout << endl;
-        addEmployee();
+        employeeMasterlist();
+		updateRoster();
         break;
     case 4:
         cout << endl;
-        updateEmployee();
+        addEmployee();
         break;
     case 5:
         cout << endl;
-        deleteEmployee();
+        updateEmployee();
         break;
     case 6:
-        mainMenu();
+        cout << endl;
+        deleteEmployee();
         break;
     case 7:
+        mainMenu();
+        break;
+    case 8:
 		exit(0);
     default:
         cout << "Invalid option. Please try again." << endl;

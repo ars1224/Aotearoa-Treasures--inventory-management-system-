@@ -12,8 +12,10 @@ void updateEmployee();
 void deleteEmployee();
 void addRoster();
 void roster();
-void employeeMasterList();
 void updateRoster();
+void deleteRoster();
+void rosterlist();
+void employeeMasterlist();
 
 // FUNCTIONS FOR INVENTORY
 

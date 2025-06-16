@@ -57,9 +57,6 @@
     <ClCompile Include="updateEmployee.cpp">
       <Filter>Source Files\features\Employee</Filter>
     </ClCompile>
-    <ClCompile Include="employeeMasterList.cpp">
-      <Filter>Source Files\features\Employee</Filter>
-    </ClCompile>
     <ClCompile Include="session.cpp">
       <Filter>Source Files\session</Filter>
     </ClCompile>
@@ -80,6 +77,15 @@
     </ClCompile>
     <ClCompile Include="salesReportMovement.cpp">
       <Filter>Source Files\features\Stock</Filter>
+    </ClCompile>
+    <ClCompile Include="deleteRoster.cpp">
+      <Filter>Source Files\features\Employee</Filter>
+    </ClCompile>
+    <ClCompile Include="rosterList.cpp">
+      <Filter>Source Files\features\Employee</Filter>
+    </ClCompile>
+    <ClCompile Include="employees.cpp">
+      <Filter>Source Files\features\Employee</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

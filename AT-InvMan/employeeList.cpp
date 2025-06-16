@@ -37,10 +37,11 @@ void employeeList() {
         sqlite3_bind_int(stmt, 1, currentUser.id);
     }
 
-    cout << "\n=======================================================================\n";
-    cout << "                            Employee List:\n";
-    cout << "=======================================================================\n";
-    cout << "\n    ID      Name        Position    Status     Branch\n\n";
+    cout << string(140, '-') << endl;
+    cout <<right<<setw(60)<< " Employee List:\n";
+    cout << string(140, '-') << endl;
+    cout << right << setw(5) << "ID" << right << setw(20) << "Name" << right << setw(30) << "Position" << right << setw(30) << "Status" << right << setw(30) << "Branch" << endl;
+    cout << string(140, '-') << endl;
 
     while (sqlite3_step(stmt) == SQLITE_ROW) {
         int id = sqlite3_column_int(stmt, 0);
@@ -49,9 +50,9 @@ void employeeList() {
         const unsigned char* status = sqlite3_column_text(stmt, 3);
         const unsigned char* branch = sqlite3_column_text(stmt, 5);
 
-        cout << "    " << id << "    " << name << "    " << pos << "    " << status << "    " << branch << endl;
-        cout << "_________________________________________________________________________________" << endl << endl;
+        cout << right << setw(5) << id << right << setw(20) << name << right << setw(30) << pos << right << setw(30) << status << right << setw(30) << branch << endl;
     }
+    cout << string(140, '-') << endl;
 
     sqlite3_finalize(stmt);
     closeDatabase(db);

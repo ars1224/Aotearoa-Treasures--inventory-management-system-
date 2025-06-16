@@ -128,13 +128,15 @@
     <ClCompile Include="addRoster.cpp" />
     <ClCompile Include="AT-InvMan.cpp" />
     <ClCompile Include="db-conn.cpp" />
+    <ClCompile Include="deleteRoster.cpp" />
     <ClCompile Include="employeeList.cpp" />
-    <ClCompile Include="employeeMasterList.cpp" />
     <ClCompile Include="employeeRoster.cpp" />
+    <ClCompile Include="employees.cpp" />
     <ClCompile Include="login.cpp" />
     <ClCompile Include="MainMenu.cpp" />
     <ClCompile Include="productInventory.cpp" />
     <ClCompile Include="removeEmployee.cpp" />
+    <ClCompile Include="rosterList.cpp" />
     <ClCompile Include="salesReportMovement.cpp" />
     <ClCompile Include="session.cpp" />
     <ClCompile Include="updateEmployee.cpp" />

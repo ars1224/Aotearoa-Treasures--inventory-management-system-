@@ -75,9 +75,11 @@ void updateRoster()
 
         if (sqlite3_step(updateStmt) == SQLITE_DONE) {
             cout << "✅ Schedule updated successfully!" << endl;
+            rosterlist();
         }
         else {
             cout << "❌ Failed to update schedule!" << endl;
+            rosterlist();
         }
         sqlite3_finalize(updateStmt);
     }
@@ -103,7 +105,7 @@ void updateRoster()
     switch (option) {
     case 1:
         cout << endl;
-        employeeMasterList();
+        employeeMasterlist();
         addRoster();
         break;
     case 2:

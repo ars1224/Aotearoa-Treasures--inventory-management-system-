@@ -16,7 +16,7 @@ void updateEmployee() {
     int choice;
     string newValue;
 
-    employeeMasterList();
+    employeeMasterlist();
     cout << endl;
     cout << "Enter Employee ID to update: ";
     cin >> empID;

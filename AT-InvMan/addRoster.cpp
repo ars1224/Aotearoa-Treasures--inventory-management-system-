@@ -139,9 +139,11 @@ void addRoster()
 
             if (sqlite3_step(insertStmt) == SQLITE_DONE) {
                 cout << "✅ Schedule added successfully.\n";
+                rosterlist();
             }
             else {
                 cout << "❌ Failed to add schedule: " << sqlite3_errmsg(db) << endl;
+                rosterlist();
             }
 
             sqlite3_finalize(insertStmt);
