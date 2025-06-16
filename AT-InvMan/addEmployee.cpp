@@ -44,7 +44,7 @@ void addEmployee()
 {
     if (!isAdmin() && !isStoreManager()) {
         cout << "\u274c You do not have permission to add employees.\n";
-        return;
+        return; 
     }
 
     char choice;

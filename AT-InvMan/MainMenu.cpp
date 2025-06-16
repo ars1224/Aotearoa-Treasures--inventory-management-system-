@@ -13,7 +13,7 @@ void mainMenu()
     char choice;
 
     cout << string(140, '=') << endl;
-    cout<<right <<setw(100) << "     Welcome to Aotearoa Treasures’ Inventory Management System\n";
+    cout<<right <<setw(100) << "Welcome to Aotearoa Treasures’ Inventory Management System\n";
     cout << string(140, '=') << endl;
 
     while (true)
@@ -23,6 +23,9 @@ void mainMenu()
         cout << string(140, '=') << endl;
         cout << endl;
 
+      /* if (isAdmin()) {
+            alert();
+        }*/
 
         if (isAdmin() || isStoreManager()) {
             cout << "1. Inventory Management" << endl;

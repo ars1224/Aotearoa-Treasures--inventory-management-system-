@@ -51,6 +51,7 @@ void inventory() {
         cout << "5. Return to Main Menu\n";
         cout << "Select an option: ";
         cin >> choice;
+		cout << endl;   
         cin.ignore(numeric_limits<streamsize>::max(), '\n');
 
         switch (choice) {
@@ -65,43 +66,138 @@ void inventory() {
 }
 
 void productList(sqlite3* db) {
-    const char* sql = "SELECT Product_Code, Product_Name, Catagory, CHCH_Qty, ALK_Qty, WLG_Qty, Product_Price FROM product;";
-    sqlite3_stmt* stmt;
+    sqlite3_stmt* stmt = NULL;
 
-    if (sqlite3_prepare_v2(db, sql, -1, &stmt, nullptr) != SQLITE_OK) {
+    // Filter based on role
+    string sql;
+
+    int choice = 0;
+
+    if (isAdmin()) {
+        // Administrator — view everything
+        sql = "SELECT Product_Code, Product_Name, Catagory, CHCH_Qty, ALK_Qty, WLG_Qty, Product_Price FROM product;";
+    }
+    else if (isStoreManager()) {
+        cout << "View (1) this store or (2) all stores? ";
+        cin >> choice;
+
+        switch (choice) {
+        case 1:
+            if (currentUser.branch == "Christchurch") {
+                sql = "SELECT Product_Code, Product_Name, Catagory, CHCH_Qty, Product_Price FROM product;";
+            }
+            else if (currentUser.branch == "Auckland") {
+                sql = "SELECT Product_Code, Product_Name, Catagory, ALK_Qty, Product_Price FROM product;";
+            }
+            else if (currentUser.branch == "Wellington") {
+                sql = "SELECT Product_Code, Product_Name, Catagory, WLG_Qty, Product_Price FROM product;";
+            }
+            break;
+
+        case 2:
+            // View everything
+            sql = "SELECT Product_Code, Product_Name, Catagory, CHCH_Qty, ALK_Qty, WLG_Qty, Product_Price FROM product;";
+            break;
+
+        default:
+            cout << "Invalid choice.\n";
+            return;
+        }
+    }
+
+    else if (isEmployee()) {
+        // Employees — view their own store only
+        if (currentUser.branch == "Christchurch") {
+            sql = "SELECT Product_Code, Product_Name, Catagory, CHCH_Qty, Product_Price FROM product;";
+        }
+        else if (currentUser.branch == "Auckland") {
+            sql = "SELECT Product_Code, Product_Name, Catagory, ALK_Qty, Product_Price FROM product;";
+        }
+        else if (currentUser.branch == "Wellington") {
+            sql = "SELECT Product_Code, Product_Name, Catagory, WLG_Qty, Product_Price FROM product;";
+        }
+    }
+
+    if (sqlite3_prepare_v2(db, sql.c_str(), -1, &stmt, NULL) == SQLITE_OK) {
+        cout << left << setw(12) << "SKU"
+            << setw(35) << "Product"
+            << setw(17) << "Catagory";
+
+        if (isAdmin()) {
+            cout << setw(10) << "CHCH Qty" << setw(10) << "ALK Qty" << setw(10) << "WLG Qty";
+        }
+        else if (isStoreManager()) {
+            switch (choice){
+
+                case 1:
+                if (currentUser.branch == "Christchurch") {
+                    cout << setw(10) << "CHCH Qty";
+                }
+                else if (currentUser.branch == "Auckland") {
+                    cout << setw(10) << "ALK Qty";
+                }
+                else if (currentUser.branch == "Wellington") {
+                    cout << setw(10) << "WLG Qty";
+                }
+				break;
+                case 2:
+					cout << setw(10) << "CHCH Qty" << setw(10) << "ALK Qty" << setw(10) << "WLG Qty";
+            default:
+                break;
+            }
+        }
+        else if (isEmployee()) {
+            cout << setw(10) << "Qty";
+        }
+
+        cout << setw(30) << "Price" << endl;
+
+        cout << string(90, '-') << endl;
+
+        // Loop through the results
+        while (sqlite3_step(stmt) == SQLITE_ROW) {
+            string code = reinterpret_cast<const char*>(sqlite3_column_text(stmt, 0));
+            string name = reinterpret_cast<const char*>(sqlite3_column_text(stmt, 1));
+            string catagory = reinterpret_cast<const char*>(sqlite3_column_text(stmt, 2));
+
+            cout << left << setw(12) << code << setw(35) << name << setw(17) << catagory;
+
+            if (isAdmin()) {
+                cout << setw(10) << sqlite3_column_int(stmt, 3)
+                    << setw(10) << sqlite3_column_int(stmt, 4)
+                    << setw(10) << sqlite3_column_int(stmt, 5);
+                cout << "$" << fixed << setprecision(2) << sqlite3_column_double(stmt, 6) << endl;
+            }
+            else if (isStoreManager()) {
+                if (choice == 2) {
+                    cout << setw(10) << sqlite3_column_int(stmt, 3)
+                        << setw(10) << sqlite3_column_int(stmt, 4)
+                        << setw(10) << sqlite3_column_int(stmt, 5);
+                    cout << "$" << fixed << setprecision(2) << sqlite3_column_double(stmt, 6) << endl;
+                }
+                else if (choice == 1) {
+                    cout << setw(10) << sqlite3_column_int(stmt, 3);
+                    cout << "$" << fixed << setprecision(2) << sqlite3_column_double(stmt, 4) << endl;
+                }
+            }
+            else if (isEmployee()) {
+                cout << setw(10) << sqlite3_column_int(stmt, 3);
+                cout << "$" << fixed << setprecision(2) << sqlite3_column_double(stmt, 4) << endl;
+            }
+        }
+
+        sqlite3_finalize(stmt);
+    }
+    else {
         cerr << "Failed to fetch product list: " << sqlite3_errmsg(db) << endl;
-        return;
     }
-
-    cout << "\n=== Product List ===\n";
-    cout << left << setw(12) << "SKU"
-        << setw(35) << "Product"
-        << setw(17) << "Catagory"
-        << setw(10) << "CHCH_Qty"
-        << setw(10) << "ALK_Qty"
-        << setw(10) << "WLG_Qty"
-        << setw(10) << "Price" << endl;
-    cout << string(90, '-') << endl;
-
-    while (sqlite3_step(stmt) == SQLITE_ROW) {
-        string code = reinterpret_cast<const char*>(sqlite3_column_text(stmt, 0));
-        string name = reinterpret_cast<const char*>(sqlite3_column_text(stmt, 1));
-        string catagory = reinterpret_cast<const char*>(sqlite3_column_text(stmt, 2));
-        int chch = sqlite3_column_int(stmt, 3);
-        int alk = sqlite3_column_int(stmt, 4);
-        int wlg = sqlite3_column_int(stmt, 5);
-        double price = sqlite3_column_double(stmt, 6);
-
-        cout << left << setw(12) << code
-            << setw(35) << name
-            << setw(17) << catagory
-            << setw(10) << chch
-            << setw(10) << alk
-            << setw(10) << wlg
-            << "$" << fixed << setprecision(2) << price << endl;
-    }
-    sqlite3_finalize(stmt);
 }
+
+
+
+
+
+
 
 void addProduct(sqlite3* db) {
     string name, catagory, location;
@@ -163,8 +259,9 @@ void updateProduct(sqlite3* db) {
         cin >> choice;
         cin.ignore();
 
-        sqlite3_stmt* stmt;
+        sqlite3_stmt* stmt = NULL;
         string sql;
+
         int result;
 
         switch (choice) {
@@ -174,7 +271,7 @@ void updateProduct(sqlite3* db) {
             getline(cin, newName);
 
             sql = "UPDATE product SET Product_Name = ? WHERE Product_Code = ?;";
-            sqlite3_prepare_v2(db, sql.c_str(), -1, &stmt, nullptr);
+            sqlite3_prepare_v2(db, sql.c_str(), -1, &stmt, NULL);
             sqlite3_bind_text(stmt, 1, newName.c_str(), -1, SQLITE_TRANSIENT);
             sqlite3_bind_text(stmt, 2, code.c_str(), -1, SQLITE_TRANSIENT);
             break;
@@ -185,7 +282,7 @@ void updateProduct(sqlite3* db) {
             getline(cin, newCategory);
 
             sql = "UPDATE product SET Catagory = ? WHERE Product_Code = ?;";
-            sqlite3_prepare_v2(db, sql.c_str(), -1, &stmt, nullptr);
+            sqlite3_prepare_v2(db, sql.c_str(), -1, &stmt, NULL);
             sqlite3_bind_text(stmt, 1, newCategory.c_str(), -1, SQLITE_TRANSIENT);
             sqlite3_bind_text(stmt, 2, code.c_str(), -1, SQLITE_TRANSIENT);
             break;
@@ -196,75 +293,117 @@ void updateProduct(sqlite3* db) {
             cin >> newPrice;
 
             sql = "UPDATE product SET Product_Price = ? WHERE Product_Code = ?;";
-            sqlite3_prepare_v2(db, sql.c_str(), -1, &stmt, nullptr);
+            sqlite3_prepare_v2(db, sql.c_str(), -1, &stmt, NULL);
             sqlite3_bind_double(stmt, 1, newPrice);
             sqlite3_bind_text(stmt, 2, code.c_str(), -1, SQLITE_TRANSIENT);
             break;
         }
         case '4': {
-            string location;
             int newQty;
-            cout << "Enter location to update (CHCH, AKL, WLG): ";
-            cin >> location;
 
             string column;
-            if (location == "CHCH") column = "CHCH_Qty";
-            else if (location == "ALK") column = "ALK_Qty";
-            else if (location == "WLG") column = "WLG_Qty";
-            else {
-                cout << "Invalid location.\n";
-                continue;
+
+            if (isAdmin()) {
+                // Administrator can choose which location
+                string location;
+                cout << "Enter location to update (CHCH, ALK, WLG): ";
+                cin >> location;
+
+                if (location == "Christchurch") column = "CHCH_Qty";
+                else if (location == "Auckland") column = "ALK_Qty";
+                else if (location == "Wellington") column = "WLG_Qty";
+                else {
+                    cout << "Invalid location.\n";
+                    continue;
+                }
+            }
+            else if (isStoreManager() ||
+                isEmployee()) {
+                // Store manager or employee can ONLY modify their own branch
+                if (currentUser.branch == "Christchurch") column = "CHCH_Qty";
+                else if (currentUser.branch == "Auckland") column = "ALK_Qty";
+                else if (currentUser.branch == "Wellington") column = "WLG_Qty";
+
+                cout << "Enter new quantity for " << currentUser.branch << ": ";
+                cin >> newQty;
+
+                // Now prepare the statement
+                sql = "UPDATE product SET " + column + " = ? WHERE Product_Code = ?;";
+                sqlite3_prepare_v2(db, sql.c_str(), -1, &stmt, NULL);
+                sqlite3_bind_int(stmt, 1, newQty);
+                sqlite3_bind_text(stmt, 2, code.c_str(), -1, SQLITE_TRANSIENT);
+                break;
+
             }
 
-            cout << "Enter new quantity for " << location << ": ";
+            cout << "Enter new quantity: ";
             cin >> newQty;
 
             sql = "UPDATE product SET " + column + " = ? WHERE Product_Code = ?;";
-            sqlite3_prepare_v2(db, sql.c_str(), -1, &stmt, nullptr);
+            sqlite3_prepare_v2(db, sql.c_str(), -1, &stmt, NULL);
             sqlite3_bind_int(stmt, 1, newQty);
             sqlite3_bind_text(stmt, 2, code.c_str(), -1, SQLITE_TRANSIENT);
             break;
+
         }
+
         case '5': {
+            if (!isAdmin() && !isStoreManager()) {
+                cout << "Transfer is only allowed for Administrator or Store Manager.\n";
+
+                continue;
+            }
+
             string fromLoc, toLoc;
             int transferQty;
 
-            cout << "Enter location to transfer FROM (CHCH, ALK, WLG): ";
-            cin >> fromLoc;
-            cout << "Enter location to transfer TO (CHCH, ALK, WLG): ";
-            cin >> toLoc;
+            if (isStoreManager()) {
+                // Store Manager's from location is their own store
+                fromLoc = currentUser.branch;
+                cout << "Transferring FROM your store: " << fromLoc << endl;
 
-            if (fromLoc == toLoc) {
-                cout << "Source and destination must be different.\n";
-                continue;
+                cout << "Enter quantity to transfer: ";
+                cin >> transferQty;
+
+                // Store Manager can transfer within their own store (depending on your policy).
+                // So normally TO should be the SAME store.
+                toLoc = currentUser.branch;
+
+            }
+            else if (isAdmin()) {
+                cout << "Enter location to transfer FROM (CHCH, ALK, WLG): ";
+                cin >> fromLoc;
+
+                cout << "Enter location to transfer TO (CHCH, ALK, WLG): ";
+                cin >> toLoc;
+
+                if (fromLoc == toLoc) {
+                    cout << "Source and destination must be different.\n";
+                    continue;
+                }
+
+                cout << "Enter quantity to transfer: ";
+                cin >> transferQty;
             }
 
-            cout << "Enter quantity to transfer: ";
-            cin >> transferQty;
-
+            // Determine column names
             string fromCol, toCol;
-            if (fromLoc == "CHCH") fromCol = "CHCH_Qty";
-            else if (fromLoc == "ALK") fromCol = "ALK_Qty";
-            else if (fromLoc == "WLG") fromCol = "WLG_Qty";
-            else {
-                cout << "Invalid source location.\n";
-                continue;
-            }
 
-            if (toLoc == "CHCH") toCol = "CHCH_Qty";
-            else if (toLoc == "ALK") toCol = "ALK_Qty";
-            else if (toLoc == "WLG") toCol = "WLG_Qty";
-            else {
-                cout << "Invalid destination location.\n";
-                continue;
-            }
+            if (fromLoc == "Christchurch") fromCol = "CHCH_Qty";
+            else if (fromLoc == "AucklandALK") fromCol = "ALK_Qty";
+            else if (fromLoc == "Wellington") fromCol = "WLG_Qty";
 
-            // Fetch current stock for validation
+            if (toLoc == "Christchurch") toCol = "CHCH_Qty";
+            else if (toLoc == "Auckland") toCol = "ALK_Qty";
+            else if (toLoc == "Wellington") toCol = "WLG_Qty";
+
+            // Check available first
             string fetchSQL = "SELECT " + fromCol + ", " + toCol + " FROM product WHERE Product_Code = ?;";
-            sqlite3_prepare_v2(db, fetchSQL.c_str(), -1, &stmt, nullptr);
+            sqlite3_prepare_v2(db, fetchSQL.c_str(), -1, &stmt, NULL);
             sqlite3_bind_text(stmt, 1, code.c_str(), -1, SQLITE_TRANSIENT);
 
             int fromStock = 0, toStock = 0;
+
             if (sqlite3_step(stmt) == SQLITE_ROW) {
                 fromStock = sqlite3_column_int(stmt, 0);
                 toStock = sqlite3_column_int(stmt, 1);
@@ -285,15 +424,25 @@ void updateProduct(sqlite3* db) {
             int newToStock = toStock + transferQty;
 
             string updateSQL = "UPDATE product SET " + fromCol + " = ?, " + toCol + " = ? WHERE Product_Code = ?;";
-            sqlite3_prepare_v2(db, updateSQL.c_str(), -1, &stmt, nullptr);
+            sqlite3_prepare_v2(db, updateSQL.c_str(), -1, &stmt, NULL);
             sqlite3_bind_int(stmt, 1, newFromStock);
             sqlite3_bind_int(stmt, 2, newToStock);
             sqlite3_bind_text(stmt, 3, code.c_str(), -1, SQLITE_TRANSIENT);
 
+            if (sqlite3_step(stmt) == SQLITE_DONE) {
+                cout << "Transfer successful.\n";
+            }
+            else {
+                cout << "Transfer failed: " << sqlite3_errmsg(db) << endl;
+            }
+
+            sqlite3_finalize(stmt);
             break;
         }
+
         case '6':
             return;
+
         default:
             cout << "Invalid choice. Try again.\n";
             continue;
@@ -311,7 +460,6 @@ void updateProduct(sqlite3* db) {
 
     } while (true);
 }
-
 
 void deleteProduct(sqlite3* db) {
     string code;
