@@ -20,6 +20,7 @@ void employeeMasterlist();
 // FUNCTIONS FOR INVENTORY
 
 void inventory();
+void alert();
 
 // STRUCT FOR EMPLOYEES
 struct employee {

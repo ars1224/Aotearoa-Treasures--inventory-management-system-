@@ -23,6 +23,9 @@ void mainMenu()
         cout << string(140, '=') << endl;
         cout << endl;
 
+        if (isAdmin()) {
+            alert();
+        }
 
         if (isAdmin() || isStoreManager()) {
             cout << "1. Inventory Management" << endl;

@@ -1,6 +1,5 @@
-﻿  addEmployee.cpp
-C:\Users\aries\Desktop\Yoobee\Aotearoa-Treasures--inventory-management-system-\AT-InvMan\addEmployee.cpp(46,17): warning C4566: character represented by universal-character-name '\u274C' cannot be represented in the current code page (1252)
-C:\Users\aries\Desktop\Yoobee\Aotearoa-Treasures--inventory-management-system-\AT-InvMan\addEmployee.cpp(95,29): warning C4566: character represented by universal-character-name '\u274C' cannot be represented in the current code page (1252)
-C:\Users\aries\Desktop\Yoobee\Aotearoa-Treasures--inventory-management-system-\AT-InvMan\addEmployee.cpp(135,21): warning C4566: character represented by universal-character-name '\u26A0' cannot be represented in the current code page (1252)
-C:\Users\aries\Desktop\Yoobee\Aotearoa-Treasures--inventory-management-system-\AT-InvMan\addEmployee.cpp(152,21): warning C4566: character represented by universal-character-name '\u2705' cannot be represented in the current code page (1252)
-  AT-InvMan.vcxproj -> C:\Users\aries\Desktop\Yoobee\Aotearoa-Treasures--inventory-management-system-\AT-InvMan\x64\Debug\AT-InvMan.exe
+﻿  lowStockAlert.cpp
+C:\Users\rr_ob\OneDrive\Documents\yoobee-group5-dhonarepo\SD103-InventoryManageSystem\Aotearoa-Treasures--inventory-management-system-\AT-InvMan\lowStockAlert.cpp(54,37): warning C4566: character represented by universal-character-name '\u2705' cannot be represented in the current code page (1252)
+C:\Users\rr_ob\OneDrive\Documents\yoobee-group5-dhonarepo\SD103-InventoryManageSystem\Aotearoa-Treasures--inventory-management-system-\AT-InvMan\lowStockAlert.cpp(69,41): warning C4566: character represented by universal-character-name '\u2705' cannot be represented in the current code page (1252)
+C:\Users\rr_ob\OneDrive\Documents\yoobee-group5-dhonarepo\SD103-InventoryManageSystem\Aotearoa-Treasures--inventory-management-system-\AT-InvMan\lowStockAlert.cpp(84,39): warning C4566: character represented by universal-character-name '\u2705' cannot be represented in the current code page (1252)
+  AT-InvMan.vcxproj -> C:\Users\rr_ob\OneDrive\Documents\yoobee-group5-dhonarepo\SD103-InventoryManageSystem\Aotearoa-Treasures--inventory-management-system-\AT-InvMan\x64\Debug\AT-InvMan.exe
