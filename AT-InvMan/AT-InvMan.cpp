@@ -69,9 +69,9 @@ bool loggedIn = false;
         \/                        \/            \/     \/     \/ 
 )" << endl;
 
-    cout << string(140, '=') << endl;
-    cout<<right<<setw(75) << "AT-InvMan Login\n";
-    cout << string(140, '=') << endl;
+    cout << string(120, '-') << endl;
+    cout<<right<<setw(70) << "AT-InvMan Login\n";
+    cout << string(120, '-') << endl;
     cout << endl;
 
     do {
@@ -88,12 +88,9 @@ bool loggedIn = false;
 
         cout << "Password      : ";
         pass = getHiddenPassword();
+        cout << endl;
 
         loggedIn = login(id, pass);
-
-        if (!loggedIn) {
-            cout << "Login failed! Please try again.\n";
-        }
 
     } while (!loggedIn);
 

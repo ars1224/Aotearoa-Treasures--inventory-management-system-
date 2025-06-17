@@ -16,11 +16,12 @@ struct Product {
 };
 
 // Function declarations
-void inventory();
-void inventory();
 void productList();
-void addProduct(sqlite3* db);
+void addProduct();
 void updateProduct(sqlite3* db);
 void deleteProduct(sqlite3* db);
+void inventory();
+void productList();
+string generateNextSKU();
 
 #endif

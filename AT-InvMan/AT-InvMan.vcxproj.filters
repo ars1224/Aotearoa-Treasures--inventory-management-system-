@@ -87,6 +87,21 @@
     <ClCompile Include="employees.cpp">
       <Filter>Source Files\features\Employee</Filter>
     </ClCompile>
+    <ClCompile Include="inventoryMenu.cpp">
+      <Filter>Source Files\features\Stock</Filter>
+    </ClCompile>
+    <ClCompile Include="addProduct.cpp">
+      <Filter>Source Files\features\Stock</Filter>
+    </ClCompile>
+    <ClCompile Include="generateSku.cpp">
+      <Filter>Source Files\features\Stock</Filter>
+    </ClCompile>
+    <ClCompile Include="updateProduct.cpp">
+      <Filter>Source Files\features\Stock</Filter>
+    </ClCompile>
+    <ClCompile Include="deleteProduct.cpp">
+      <Filter>Source Files\features\Stock</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

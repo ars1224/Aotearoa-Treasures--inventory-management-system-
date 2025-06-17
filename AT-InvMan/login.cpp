@@ -27,25 +27,26 @@ bool login(int empID, const string& password) {
             currentUser.position = reinterpret_cast<const char*>(sqlite3_column_text(stmt, 1));
             currentUser.branch = reinterpret_cast<const char*>(sqlite3_column_text(stmt, 2));
 
-            cout<< string(63, '-') << right << setw(10) << "Log In Successful" << string(60, '-') << endl;
-            cout << string(53, '-') << right << setw(10) << "Welcome, " << currentUser.name << " (" << currentUser.position << ")" << string(53, '-') << endl;
+            cout << string(120, '-') << endl;
+            cout<< right << setw(70) << "Log In Successful" << endl;
+			cout << right << setw(50) << "Welcome, " << currentUser.name << " (" << currentUser.position << " @" << currentUser.branch << ")" << endl;
+            cout << string(120, '-') << endl;
+            cout << endl;
             cout << endl;
             
-
             success = true;
         }
         else {
-            cout << "\n=======================================================================\n";
-            cout << "                          Login failed. \n";
-            cout << "=======================================================================\n";
-            cout << "                      Invalid ID or password.\n";
-            cout << "=======================================================================\n\n";
+            cout << string(120, '-') << endl;
+            cout << right << setw(70) << "Login failed. \n" << endl;
+            cout << right << setw(73)<< "Invalid ID or password.\n";
+            cout << string(120, '-') << endl;
+            cout << endl;
         }
-
         sqlite3_finalize(stmt);
     }
     else {
-        cerr << "Failed to prepare login query.\n";
+        cout << endl;
     }
 
     sqlite3_close(db);

@@ -11,16 +11,16 @@ using namespace std;
 void mainMenu()
 {
     char choice;
-
-    cout << string(140, '=') << endl;
-    cout<<right <<setw(100) << "Welcome to Aotearoa Treasures’ Inventory Management System\n";
-    cout << string(140, '=') << endl;
+    cout << endl;
+    cout << string(120, '-') << endl;
+    cout<<right <<setw(90) << "Welcome to Aotearoa Treasures’ Inventory Management System\n";
+    cout << string(120, '-') << endl;
 
     while (true)
     {
-        cout << string(140, '=') << endl;
-        cout <<right<<setw(75)<< "Main Menu\n";
-        cout << string(140, '=') << endl;
+        cout << string(120, '-') << endl;
+        cout <<right<<setw(65)<< "Main Menu\n";
+        cout << string(120, '-') << endl;
         cout << endl;
 
       /* if (isAdmin()) {
@@ -39,7 +39,7 @@ void mainMenu()
 
             switch (choice) {
             case '1':
-                inventory();
+                productList();
                 break;
 
             case '2':
