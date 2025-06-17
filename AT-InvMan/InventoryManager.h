@@ -18,14 +18,9 @@ struct Product {
 // Function declarations
 void inventory();
 void inventory();
-void productList(sqlite3* db);
+void productList();
 void addProduct(sqlite3* db);
 void updateProduct(sqlite3* db);
 void deleteProduct(sqlite3* db);
-
-// Optional DB helper functions
-void initializeInventoryDB(const string& dbFile);
-bool connectInventoryDB();
-void closeInventoryDB();
 
 #endif

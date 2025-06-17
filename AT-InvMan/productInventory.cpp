@@ -33,14 +33,9 @@ string generateNextSKU(sqlite3* db) {
     return nextSKU;
 }
 
-void inventory() {
+void inventory()
+{
     char choice;
-    sqlite3* db;
-
-    if (sqlite3_open("../db/at-invman.db", &db) != SQLITE_OK) {
-        cerr << "Failed to open database: " << sqlite3_errmsg(db) << endl;
-        return;
-    }
 
     do {
         cout << "\n========== Inventory Management ==========\n";
@@ -51,25 +46,54 @@ void inventory() {
         cout << "5. Return to Main Menu\n";
         cout << "Select an option: ";
         cin >> choice;
-		cout << endl;   
+        cout << endl;
         cin.ignore(numeric_limits<streamsize>::max(), '\n');
 
         switch (choice) {
-        case '1': productList(db); break;
-        case '2': addProduct(db); break;
-        case '3': updateProduct(db); break;
-        case '4': deleteProduct(db); break;
-        case '5': sqlite3_close(db); return;
-        default: cout << "\u274C Invalid selection. Please try again.\n";
+        case '1': productList(); break;
+        case '2': {
+            sqlite3* db = connectToDatabase();
+            if (db) {
+                addProduct(db);
+                closeDatabase(db);
+            }
+            break;
+        }
+        case '3': {
+            sqlite3* db = connectToDatabase();
+            if (db) {
+                updateProduct(db);
+                closeDatabase(db);
+            }
+            break;
+        }
+        case '4': {
+            sqlite3* db = connectToDatabase();
+            if (db) {
+                deleteProduct(db);
+                closeDatabase(db);
+            }
+            break;
+        }
+        case '5': return;
+
+        default:
+            cout << "Invalid selection. Please try again.\n";
         }
     } while (true);
 }
 
-void productList(sqlite3* db) {
+
+
+void productList()
+{
+    sqlite3* db = connectToDatabase();
+    if (db == nullptr) return;
+
     sqlite3_stmt* stmt = NULL;
 
     // Filter based on role
-    string sql;
+    std::string sql;
 
     int choice = 0;
 
@@ -81,8 +105,7 @@ void productList(sqlite3* db) {
         cout << "View (1) this store or (2) all stores? ";
         cin >> choice;
 
-        switch (choice) {
-        case 1:
+        if (choice == 1) {
             if (currentUser.branch == "Christchurch") {
                 sql = "SELECT Product_Code, Product_Name, Catagory, CHCH_Qty, Product_Price FROM product;";
             }
@@ -92,19 +115,17 @@ void productList(sqlite3* db) {
             else if (currentUser.branch == "Wellington") {
                 sql = "SELECT Product_Code, Product_Name, Catagory, WLG_Qty, Product_Price FROM product;";
             }
-            break;
-
-        case 2:
+        }
+        else if (choice == 2) {
             // View everything
             sql = "SELECT Product_Code, Product_Name, Catagory, CHCH_Qty, ALK_Qty, WLG_Qty, Product_Price FROM product;";
-            break;
-
-        default:
+        }
+        else {
             cout << "Invalid choice.\n";
+            closeDatabase(db);
             return;
         }
     }
-
     else if (isEmployee()) {
         // Employees — view their own store only
         if (currentUser.branch == "Christchurch") {
@@ -127,23 +148,13 @@ void productList(sqlite3* db) {
             cout << setw(10) << "CHCH Qty" << setw(10) << "ALK Qty" << setw(10) << "WLG Qty";
         }
         else if (isStoreManager()) {
-            switch (choice){
-
-                case 1:
-                if (currentUser.branch == "Christchurch") {
-                    cout << setw(10) << "CHCH Qty";
-                }
-                else if (currentUser.branch == "Auckland") {
-                    cout << setw(10) << "ALK Qty";
-                }
-                else if (currentUser.branch == "Wellington") {
-                    cout << setw(10) << "WLG Qty";
-                }
-				break;
-                case 2:
-					cout << setw(10) << "CHCH Qty" << setw(10) << "ALK Qty" << setw(10) << "WLG Qty";
-            default:
-                break;
+            if (choice == 1) {
+                if (currentUser.branch == "Christchurch") cout << setw(10) << "CHCH Qty";
+                if (currentUser.branch == "Auckland") cout << setw(10) << "ALK Qty";
+                if (currentUser.branch == "Wellington") cout << setw(10) << "WLG Qty";
+            }
+            else if (choice == 2) {
+                cout << setw(10) << "CHCH Qty" << setw(10) << "ALK Qty" << setw(10) << "WLG Qty";
             }
         }
         else if (isEmployee()) {
@@ -156,9 +167,9 @@ void productList(sqlite3* db) {
 
         // Loop through the results
         while (sqlite3_step(stmt) == SQLITE_ROW) {
-            string code = reinterpret_cast<const char*>(sqlite3_column_text(stmt, 0));
-            string name = reinterpret_cast<const char*>(sqlite3_column_text(stmt, 1));
-            string catagory = reinterpret_cast<const char*>(sqlite3_column_text(stmt, 2));
+            std::string code = reinterpret_cast<const char*>(sqlite3_column_text(stmt, 0));
+            std::string name = reinterpret_cast<const char*>(sqlite3_column_text(stmt, 1));
+            std::string catagory = reinterpret_cast<const char*>(sqlite3_column_text(stmt, 2));
 
             cout << left << setw(12) << code << setw(35) << name << setw(17) << catagory;
 
@@ -191,6 +202,30 @@ void productList(sqlite3* db) {
     else {
         cerr << "Failed to fetch product list: " << sqlite3_errmsg(db) << endl;
     }
+
+    // Product menu afterwards
+    int productMenuChoice;
+    do {
+        cout << "\n========== Inventory Management ==========\n";
+        cout << "1. Add New Product\n";
+        cout << "2. Update Existing Product\n";
+        cout << "3. Delete Product\n";
+        cout << "4. Return to Main Menu\n";
+        cout << "Select an option: ";
+        cin >> productMenuChoice;
+        cout << endl;
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+
+        switch (productMenuChoice) {
+        case 1: addProduct(db); break;
+        case 2: updateProduct(db); break;
+        case 3: deleteProduct(db); break;
+        case 4:
+            closeDatabase(db);
+            return;
+        default: cout << "Invalid selection. Please try again.\n";
+        }
+    } while (true);
 }
 
 
@@ -411,7 +446,7 @@ void updateProduct(sqlite3* db) {
             else {
                 cout << "Product not found.\n";
                 sqlite3_finalize(stmt);
-                continue;
+                continue;   
             }
             sqlite3_finalize(stmt);
 
