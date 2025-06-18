@@ -1,18 +1,46 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\YOOBEE\\Aotearoa-Treasures--inventory-management-system\\AT-InvMan\\",
+  "WorkspaceRootPath": "C:\\Users\\Administrator\\Desktop\\New folder\\Aotearoa-Treasures--inventory-management-system-\\AT-InvMan\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{278FE080-4CF3-41A1-85DD-0B1910710C98}|AT-InvMan.vcxproj|D:\\YOOBEE\\Aotearoa-Treasures--inventory-management-system\\AT-InvMan\\addEmployee.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{278FE080-4CF3-41A1-85DD-0B1910710C98}|AT-InvMan.vcxproj|C:\\Users\\Administrator\\Desktop\\New folder\\Aotearoa-Treasures--inventory-management-system-\\AT-InvMan\\MainMenu.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{278FE080-4CF3-41A1-85DD-0B1910710C98}|AT-InvMan.vcxproj|solutionrelative:MainMenu.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{278FE080-4CF3-41A1-85DD-0B1910710C98}|AT-InvMan.vcxproj|C:\\Users\\Administrator\\Desktop\\New folder\\Aotearoa-Treasures--inventory-management-system-\\AT-InvMan\\main-functions.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{278FE080-4CF3-41A1-85DD-0B1910710C98}|AT-InvMan.vcxproj|solutionrelative:main-functions.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{278FE080-4CF3-41A1-85DD-0B1910710C98}|AT-InvMan.vcxproj|C:\\Users\\Administrator\\Desktop\\New folder\\Aotearoa-Treasures--inventory-management-system-\\AT-InvMan\\ReportMenu.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{278FE080-4CF3-41A1-85DD-0B1910710C98}|AT-InvMan.vcxproj|solutionrelative:ReportMenu.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{278FE080-4CF3-41A1-85DD-0B1910710C98}|AT-InvMan.vcxproj|C:\\Users\\Administrator\\Desktop\\New folder\\Aotearoa-Treasures--inventory-management-system-\\AT-InvMan\\WeeklysalesReport.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{278FE080-4CF3-41A1-85DD-0B1910710C98}|AT-InvMan.vcxproj|solutionrelative:WeeklysalesReport.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{278FE080-4CF3-41A1-85DD-0B1910710C98}|AT-InvMan.vcxproj|C:\\Users\\Administrator\\Desktop\\New folder\\Aotearoa-Treasures--inventory-management-system-\\AT-InvMan\\MonthlySalesReport.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{278FE080-4CF3-41A1-85DD-0B1910710C98}|AT-InvMan.vcxproj|solutionrelative:MonthlySalesReport.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{278FE080-4CF3-41A1-85DD-0B1910710C98}|AT-InvMan.vcxproj|C:\\Users\\Administrator\\Desktop\\New folder\\Aotearoa-Treasures--inventory-management-system-\\AT-InvMan\\StockMovementReport.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{278FE080-4CF3-41A1-85DD-0B1910710C98}|AT-InvMan.vcxproj|solutionrelative:StockMovementReport.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{278FE080-4CF3-41A1-85DD-0B1910710C98}|AT-InvMan.vcxproj|C:\\Users\\Administrator\\Desktop\\New folder\\Aotearoa-Treasures--inventory-management-system-\\AT-InvMan\\YearlySalesReport.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{278FE080-4CF3-41A1-85DD-0B1910710C98}|AT-InvMan.vcxproj|solutionrelative:YearlySalesReport.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{278FE080-4CF3-41A1-85DD-0B1910710C98}|AT-InvMan.vcxproj|C:\\Users\\Administrator\\Desktop\\New folder\\Aotearoa-Treasures--inventory-management-system-\\AT-InvMan\\addProduct.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{278FE080-4CF3-41A1-85DD-0B1910710C98}|AT-InvMan.vcxproj|solutionrelative:addProduct.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{278FE080-4CF3-41A1-85DD-0B1910710C98}|AT-InvMan.vcxproj|C:\\Users\\Administrator\\Desktop\\New folder\\Aotearoa-Treasures--inventory-management-system-\\AT-InvMan\\addEmployee.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{278FE080-4CF3-41A1-85DD-0B1910710C98}|AT-InvMan.vcxproj|solutionrelative:addEmployee.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{278FE080-4CF3-41A1-85DD-0B1910710C98}|AT-InvMan.vcxproj|D:\\YOOBEE\\Aotearoa-Treasures--inventory-management-system\\AT-InvMan\\InventoryManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{278FE080-4CF3-41A1-85DD-0B1910710C98}|AT-InvMan.vcxproj|C:\\Users\\Administrator\\Desktop\\New folder\\Aotearoa-Treasures--inventory-management-system-\\AT-InvMan\\InventoryManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{278FE080-4CF3-41A1-85DD-0B1910710C98}|AT-InvMan.vcxproj|solutionrelative:InventoryManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{278FE080-4CF3-41A1-85DD-0B1910710C98}|AT-InvMan.vcxproj|D:\\YOOBEE\\Aotearoa-Treasures--inventory-management-system\\AT-InvMan\\addProduct.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{278FE080-4CF3-41A1-85DD-0B1910710C98}|AT-InvMan.vcxproj|solutionrelative:addProduct.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,15 +50,106 @@
       "DocumentGroups": [
         {
           "DockedWidth": 312,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "StockMovementReport.cpp",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\New folder\\Aotearoa-Treasures--inventory-management-system-\\AT-InvMan\\StockMovementReport.cpp",
+              "RelativeDocumentMoniker": "StockMovementReport.cpp",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\New folder\\Aotearoa-Treasures--inventory-management-system-\\AT-InvMan\\StockMovementReport.cpp",
+              "RelativeToolTip": "StockMovementReport.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-06-18T08:11:21.076Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "YearlySalesReport.cpp",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\New folder\\Aotearoa-Treasures--inventory-management-system-\\AT-InvMan\\YearlySalesReport.cpp",
+              "RelativeDocumentMoniker": "YearlySalesReport.cpp",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\New folder\\Aotearoa-Treasures--inventory-management-system-\\AT-InvMan\\YearlySalesReport.cpp",
+              "RelativeToolTip": "YearlySalesReport.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-06-18T08:07:53.33Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "MonthlySalesReport.cpp",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\New folder\\Aotearoa-Treasures--inventory-management-system-\\AT-InvMan\\MonthlySalesReport.cpp",
+              "RelativeDocumentMoniker": "MonthlySalesReport.cpp",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\New folder\\Aotearoa-Treasures--inventory-management-system-\\AT-InvMan\\MonthlySalesReport.cpp",
+              "RelativeToolTip": "MonthlySalesReport.cpp",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAGEAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-06-18T08:04:55.052Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "WeeklysalesReport.cpp",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\New folder\\Aotearoa-Treasures--inventory-management-system-\\AT-InvMan\\WeeklysalesReport.cpp",
+              "RelativeDocumentMoniker": "WeeklysalesReport.cpp",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\New folder\\Aotearoa-Treasures--inventory-management-system-\\AT-InvMan\\WeeklysalesReport.cpp",
+              "RelativeToolTip": "WeeklysalesReport.cpp",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-06-18T08:03:23.114Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ReportMenu.cpp",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\New folder\\Aotearoa-Treasures--inventory-management-system-\\AT-InvMan\\ReportMenu.cpp",
+              "RelativeDocumentMoniker": "ReportMenu.cpp",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\New folder\\Aotearoa-Treasures--inventory-management-system-\\AT-InvMan\\ReportMenu.cpp",
+              "RelativeToolTip": "ReportMenu.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-06-18T05:53:39.174Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "main-functions.h",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\New folder\\Aotearoa-Treasures--inventory-management-system-\\AT-InvMan\\main-functions.h",
+              "RelativeDocumentMoniker": "main-functions.h",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\New folder\\Aotearoa-Treasures--inventory-management-system-\\AT-InvMan\\main-functions.h",
+              "RelativeToolTip": "main-functions.h",
+              "ViewState": "AgIAACEAAAAAMzMzMzMLwCgAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-06-18T05:55:34.586Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MainMenu.cpp",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\New folder\\Aotearoa-Treasures--inventory-management-system-\\AT-InvMan\\MainMenu.cpp",
+              "RelativeDocumentMoniker": "MainMenu.cpp",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\New folder\\Aotearoa-Treasures--inventory-management-system-\\AT-InvMan\\MainMenu.cpp",
+              "RelativeToolTip": "MainMenu.cpp",
+              "ViewState": "AgIAACsAAABAMzMzMzMrwEQAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-06-18T05:52:33.837Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
               "Title": "InventoryManager.h",
-              "DocumentMoniker": "D:\\YOOBEE\\Aotearoa-Treasures--inventory-management-system\\AT-InvMan\\InventoryManager.h",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\New folder\\Aotearoa-Treasures--inventory-management-system-\\AT-InvMan\\InventoryManager.h",
               "RelativeDocumentMoniker": "InventoryManager.h",
-              "ToolTip": "D:\\YOOBEE\\Aotearoa-Treasures--inventory-management-system\\AT-InvMan\\InventoryManager.h",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\New folder\\Aotearoa-Treasures--inventory-management-system-\\AT-InvMan\\InventoryManager.h",
               "RelativeToolTip": "InventoryManager.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAswAsAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
@@ -39,26 +158,26 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 8,
               "Title": "addEmployee.cpp",
-              "DocumentMoniker": "D:\\YOOBEE\\Aotearoa-Treasures--inventory-management-system\\AT-InvMan\\addEmployee.cpp",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\New folder\\Aotearoa-Treasures--inventory-management-system-\\AT-InvMan\\addEmployee.cpp",
               "RelativeDocumentMoniker": "addEmployee.cpp",
-              "ToolTip": "D:\\YOOBEE\\Aotearoa-Treasures--inventory-management-system\\AT-InvMan\\addEmployee.cpp",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\New folder\\Aotearoa-Treasures--inventory-management-system-\\AT-InvMan\\addEmployee.cpp",
               "RelativeToolTip": "addEmployee.cpp",
-              "ViewState": "AgIAAGAAAAAAAAAAAAAAAGwAAAATAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-06-17T11:44:32.159Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 7,
               "Title": "addProduct.cpp",
-              "DocumentMoniker": "D:\\YOOBEE\\Aotearoa-Treasures--inventory-management-system\\AT-InvMan\\addProduct.cpp",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\New folder\\Aotearoa-Treasures--inventory-management-system-\\AT-InvMan\\addProduct.cpp",
               "RelativeDocumentMoniker": "addProduct.cpp",
-              "ToolTip": "D:\\YOOBEE\\Aotearoa-Treasures--inventory-management-system\\AT-InvMan\\addProduct.cpp",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\New folder\\Aotearoa-Treasures--inventory-management-system-\\AT-InvMan\\addProduct.cpp",
               "RelativeToolTip": "addProduct.cpp",
-              "ViewState": "AgIAAAQAAAAAAAAAAAAswFIAAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFIAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-06-17T09:53:09.851Z",
               "EditorCaption": ""

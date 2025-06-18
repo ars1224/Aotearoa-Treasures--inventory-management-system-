@@ -43,6 +43,9 @@ struct rosterEntry {
     string sunday;
 };
 
+// FUNCTIONS FOR REPORTS
+void salesReportMenu();
+void runSalesReport(sqlite3* db);
 
 // FUNCTIONS FOR LOGIN
 bool login(int empID, const string& password);

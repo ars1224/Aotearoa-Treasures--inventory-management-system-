@@ -31,6 +31,9 @@
     <Filter Include="Source Files\features\main">
       <UniqueIdentifier>{f983e50b-2f33-489a-90eb-0d8dc5445495}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\features\Reports">
+      <UniqueIdentifier>{c09f277f-abab-49e6-8d7f-f3cd2823d5f2}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AT-InvMan.cpp">
@@ -101,6 +104,21 @@
     </ClCompile>
     <ClCompile Include="deleteProduct.cpp">
       <Filter>Source Files\features\Stock</Filter>
+    </ClCompile>
+    <ClCompile Include="ReportMenu.cpp">
+      <Filter>Source Files\features\Reports</Filter>
+    </ClCompile>
+    <ClCompile Include="WeeklysalesReport.cpp">
+      <Filter>Source Files\features\Reports</Filter>
+    </ClCompile>
+    <ClCompile Include="MonthlySalesReport.cpp">
+      <Filter>Source Files\features\Reports</Filter>
+    </ClCompile>
+    <ClCompile Include="YearlySalesReport.cpp">
+      <Filter>Source Files\features\Reports</Filter>
+    </ClCompile>
+    <ClCompile Include="StockMovementReport.cpp">
+      <Filter>Source Files\features\Reports</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

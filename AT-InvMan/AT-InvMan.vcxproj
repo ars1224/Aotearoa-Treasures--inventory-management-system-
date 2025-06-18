@@ -138,14 +138,19 @@
     <ClCompile Include="inventoryMenu.cpp" />
     <ClCompile Include="login.cpp" />
     <ClCompile Include="MainMenu.cpp" />
+    <ClCompile Include="MonthlySalesReport.cpp" />
     <ClCompile Include="productInventory.cpp" />
     <ClCompile Include="removeEmployee.cpp" />
     <ClCompile Include="rosterList.cpp" />
+    <ClCompile Include="ReportMenu.cpp" />
     <ClCompile Include="salesReportMovement.cpp" />
     <ClCompile Include="session.cpp" />
+    <ClCompile Include="StockMovementReport.cpp" />
     <ClCompile Include="updateEmployee.cpp" />
     <ClCompile Include="updateProduct.cpp" />
     <ClCompile Include="updateRoster.cpp" />
+    <ClCompile Include="WeeklysalesReport.cpp" />
+    <ClCompile Include="YearlySalesReport.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

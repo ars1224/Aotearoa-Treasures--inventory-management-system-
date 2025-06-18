@@ -62,8 +62,7 @@ void mainMenu()
 
             case '4':
                 if (isAdmin() || isStoreManager()) {
-                    // salesReport();
-                    cout << "Sales Report is not implemented yet.\n";
+                    salesReportMenu();
                 }
                 else {
                     cout << "❌ Access denied.\n";
