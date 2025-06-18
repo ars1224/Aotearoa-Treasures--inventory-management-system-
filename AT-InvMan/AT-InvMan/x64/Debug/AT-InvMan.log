@@ -1,2 +1,14 @@
 ﻿  addProduct.cpp
+D:\YOOBEE\Aotearoa-Treasures--inventory-management-system\AT-InvMan\addProduct.cpp(36,17): warning C4566: character represented by universal-character-name '\u26A0' cannot be represented in the current code page (1252)
+D:\YOOBEE\Aotearoa-Treasures--inventory-management-system\AT-InvMan\addProduct.cpp(46,21): warning C4566: character represented by universal-character-name '\u2705' cannot be represented in the current code page (1252)
+D:\YOOBEE\Aotearoa-Treasures--inventory-management-system\AT-InvMan\addProduct.cpp(49,21): warning C4566: character represented by universal-character-name '\u274C' cannot be represented in the current code page (1252)
+D:\YOOBEE\Aotearoa-Treasures--inventory-management-system\AT-InvMan\addProduct.cpp(54,17): warning C4566: character represented by universal-character-name '\u274C' cannot be represented in the current code page (1252)
+D:\YOOBEE\Aotearoa-Treasures--inventory-management-system\AT-InvMan\addProduct.cpp(61,17): warning C4566: character represented by universal-character-name '\u274C' cannot be represented in the current code page (1252)
+D:\YOOBEE\Aotearoa-Treasures--inventory-management-system\AT-InvMan\addProduct.cpp(81,21): warning C4566: character represented by universal-character-name '\u26A0' cannot be represented in the current code page (1252)
+D:\YOOBEE\Aotearoa-Treasures--inventory-management-system\AT-InvMan\addProduct.cpp(141,25): warning C4566: character represented by universal-character-name '\u2705' cannot be represented in the current code page (1252)
+D:\YOOBEE\Aotearoa-Treasures--inventory-management-system\AT-InvMan\addProduct.cpp(144,25): warning C4566: character represented by universal-character-name '\u274C' cannot be represented in the current code page (1252)
+D:\YOOBEE\Aotearoa-Treasures--inventory-management-system\AT-InvMan\addProduct.cpp(150,21): warning C4566: character represented by universal-character-name '\u274C' cannot be represented in the current code page (1252)
+  updateProduct.cpp
+D:\YOOBEE\Aotearoa-Treasures--inventory-management-system\AT-InvMan\updateProduct.cpp(37,13): warning C4101: 'result': unreferenced local variable
+  Generating Code...
   AT-InvMan.vcxproj -> D:\YOOBEE\Aotearoa-Treasures--inventory-management-system\AT-InvMan\x64\Debug\AT-InvMan.exe

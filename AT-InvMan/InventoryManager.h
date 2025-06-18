@@ -9,8 +9,8 @@ struct Product {
     string Product_Code;
     string Product_Name;
     string Category;
+    int ALK_Qty;   
     int CHCH_Qty;
-    int AKL_Qty;
     int WLG_Qty;
     double price;
 };
