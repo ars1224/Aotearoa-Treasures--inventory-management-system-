@@ -1,4 +1,4 @@
-#include <iostream>
+﻿#include <iostream>
 #include <iomanip>
 #include <sqlite3.h>
 #include "db-conn.h"
@@ -10,79 +10,155 @@
 
 using namespace std;
 
-void addProduct()
-{
-    sqlite3* db = connectToDatabase();
-    if (db == nullptr) return;
+bool productExists(sqlite3* db, const string& name) {
+    const char* checkSQL = "SELECT 1 FROM product WHERE Product_Name = ? LIMIT 1;";
+    sqlite3_stmt* stmt;
+    bool exists = false;
 
-    sqlite3_stmt* stmt = NULL;
+    if (sqlite3_prepare_v2(db, checkSQL, -1, &stmt, NULL) == SQLITE_OK) {
+        sqlite3_bind_text(stmt, 1, name.c_str(), -1, SQLITE_TRANSIENT);
 
-    string name, catagory;
-    int qtyCHCH = 0;
-    int qtyALK = 0;
-    int qtyWLG = 0;
-    double price = 0.0;
+        if (sqlite3_step(stmt) == SQLITE_ROW) {
+            exists = true;
+        }
 
-    string code = generateNextSKU();
-    cout << "Generated SKU: " << code << endl;
-
-    cout << "Enter product name: ";
-    getline(cin >> ws, name);
-
-    cout << "Enter category: ";
-    getline(cin >> ws, catagory);
-
-    if (isAdmin()) {
-        cout << "Enter quantity for CHCH: "; cin >> qtyCHCH;
-        cout << "Enter quantity for ALK: "; cin >> qtyALK;
-        cout << "Enter quantity for WLG: "; cin >> qtyWLG;
+        sqlite3_finalize(stmt);
     }
-    else if (isStoreManager()) {
-        cout << "Using store's location: " << currentUser.branch << endl;
+    return exists;
+}
 
-        cout << "Enter quantity for " << currentUser.branch << ": ";
-        int qty = 0;
-        cin >> qty;
-
-        if (currentUser.branch == "CHCH") qtyCHCH = qty;
-        else if (currentUser.branch == "ALK") qtyALK = qty;
-        else if (currentUser.branch == "WLG") qtyWLG = qty;
-    }
+void updateBranchStock(sqlite3* db, const string& name, const string& branch, int qty) {
+    string sql;
+    if (branch == "Christchurch") sql = "UPDATE product SET CHCH_Qty = CHCH_Qty + ? WHERE Product_Name = ?;";
+    else if (branch == "Auckland")    sql = "UPDATE product SET ALK_Qty = ALK_Qty + ? WHERE Product_Name = ?;";
+    else if (branch == "Wellington")  sql = "UPDATE product SET WLG_Qty = WLG_Qty + ? WHERE Product_Name = ?;";
     else {
-        cout << "You do not have permission to add products.\n";
-        closeDatabase(db);
+        cout << "⚠ Unknown branch.\n";
         return;
     }
 
-    cout << "Enter price: ";
-    cin >> price;
-
-    // Prepare the SQL statement with parameter binding
-    string sql = "INSERT INTO product (Product_Code, Product_Name, Catagory, ALK_Qty, CHCH_Qty, WLG_Qty, Product_Price) VALUES (?, ?, ?, ?, ?, ?, ?);";
-
+    sqlite3_stmt* stmt;
     if (sqlite3_prepare_v2(db, sql.c_str(), -1, &stmt, NULL) == SQLITE_OK) {
-        sqlite3_bind_text(stmt, 1, code.c_str(), -1, SQLITE_TRANSIENT);
+        sqlite3_bind_int(stmt, 1, qty);
         sqlite3_bind_text(stmt, 2, name.c_str(), -1, SQLITE_TRANSIENT);
-        sqlite3_bind_text(stmt, 3, catagory.c_str(), -1, SQLITE_TRANSIENT);
-        sqlite3_bind_int(stmt, 4, qtyALK);
-        sqlite3_bind_int(stmt, 5, qtyCHCH);
-        sqlite3_bind_int(stmt, 6, qtyWLG);
-        sqlite3_bind_double(stmt, 7, price);
 
         if (sqlite3_step(stmt) == SQLITE_DONE) {
-            cout << "Product added successfully!" << endl;
-            inventory();
+            cout << "\u2705 Stock updated for " << branch << " branch.\n";
         }
         else {
-            cout << "Insertion failed: " << sqlite3_errmsg(db) << endl;
+            cout << "❌ Failed to update stock: " << sqlite3_errmsg(db) << endl;
         }
         sqlite3_finalize(stmt);
     }
     else {
-        cout << "Failed to prepare insert: " << sqlite3_errmsg(db) << endl;
+        cout << "❌ Prepare failed: " << sqlite3_errmsg(db) << endl;
     }
-
-    closeDatabase(db);
 }
 
+
+void addProduct() {
+    if (!isAdmin() && !isStoreManager() && !isStockClerk()) {
+        cout << "\u274c You do not have permission to add products.\n";
+        return;
+    }
+
+    char choice;
+    do {
+        sqlite3* db = connectToDatabase();
+        if (db == nullptr) return;
+
+        Product prod;
+
+        cout << "\nEnter Product Details:\n";
+        cout << "--------------------------------\n";
+
+        // Name
+        cout << "Product Name: ";
+        getline(cin >> ws, prod.Product_Name);
+
+        // Check if product already exists
+        if (productExists(db, prod.Product_Name)) {
+            cout << "\u26A0 Product already exists.\n";
+
+            if (!isAdmin()) {
+                int qty;
+                cout << "Enter quantity to add to " << currentUser.branch << ": ";
+                cin >> qty;
+                cin.ignore();
+
+                updateBranchStock(db, prod.Product_Name, currentUser.branch, qty);
+                closeDatabase(db);
+                return;
+            }
+            else {
+                cout << "Admins should update stock via a separate function (not from here).\n";
+                closeDatabase(db);
+                return;
+            }
+        }
+
+        // Continue new product entry
+        prod.Product_Code = generateNextSKU();
+        cout << "Generated Product Code: " << prod.Product_Code << endl;
+
+        cout << "Category: ";
+        getline(cin >> ws, prod.Category);
+
+        prod.CHCH_Qty = 0; prod.ALK_Qty = 0; prod.WLG_Qty = 0;
+
+        if (isAdmin()) {
+            cout << "Enter quantity for Christchurch: "; cin >> prod.CHCH_Qty;
+            cout << "Enter quantity for Auckland: "; cin >> prod.ALK_Qty;
+            cout << "Enter quantity for Wellington: "; cin >> prod.WLG_Qty;
+        }
+        else if (isStoreManager() || isStockClerk()) {
+            cout << "Using store's location: " << currentUser.branch << endl;
+            int qty;
+            cout << "Enter quantity for " << currentUser.branch << ": ";
+            cin >> qty;
+
+            if (currentUser.branch == "Christchurch") prod.CHCH_Qty = qty;
+            else if (currentUser.branch == "Auckland") prod.ALK_Qty = qty;
+            else if (currentUser.branch == "Wellington") prod.WLG_Qty = qty;
+        }
+
+        cout << "Enter product price: $";
+        cin >> prod.price;
+
+        const char* sql = "INSERT INTO product (Product_Code, Product_Name, Catagory, ALK_Qty, CHCH_Qty, WLG_Qty, Product_Price) VALUES (?, ?, ?, ?, ?, ?, ?);";
+        sqlite3_stmt* stmt;
+
+        if (sqlite3_prepare_v2(db, sql, -1, &stmt, NULL) == SQLITE_OK) {
+            sqlite3_bind_text(stmt, 1, prod.Product_Code.c_str(), -1, SQLITE_TRANSIENT);
+            sqlite3_bind_text(stmt, 2, prod.Product_Name.c_str(), -1, SQLITE_TRANSIENT);
+            sqlite3_bind_text(stmt, 3, prod.Category.c_str(), -1, SQLITE_TRANSIENT);
+            sqlite3_bind_int(stmt, 4, prod.ALK_Qty);
+            sqlite3_bind_int(stmt, 5, prod.CHCH_Qty);
+            sqlite3_bind_int(stmt, 6, prod.WLG_Qty);
+            sqlite3_bind_double(stmt, 7, prod.price);
+
+            if (sqlite3_step(stmt) == SQLITE_DONE) {
+                cout << "\n\u2705 Product added successfully!\n";
+            }
+            else {
+                cout << "❌ Insert failed: " << sqlite3_errmsg(db) << endl;
+            }
+
+            sqlite3_finalize(stmt);
+        }
+        else {
+            cout << "❌ Prepare failed: " << sqlite3_errmsg(db) << endl;
+        }
+
+        closeDatabase(db);
+
+        cout << "\nDo you want to add another product? (y/n): ";
+        cin >> choice;
+        cin.ignore();
+
+    } while (choice == 'y' || choice == 'Y');
+
+    cout << endl;
+    inventory(); // Refresh the product list
+}
 

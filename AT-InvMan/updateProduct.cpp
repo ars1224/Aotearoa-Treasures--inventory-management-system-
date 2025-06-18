@@ -23,10 +23,13 @@ void updateProduct(sqlite3* db) {
         cout << "3. Price\n";
         cout << "4. Quantity at a specific location\n";
         cout << "5. Transfer stock between locations\n";
-        cout << "6. Cancel / Exit\n";
-        cout << "Select an option (1-6): ";
+        cout << "6. Back To Inventory Menu\n";
+        cout << "7. Back To Main Menu\n";
+        cout << "Select an option above (1-7): ";
         cin >> choice;
         cin.ignore();
+        cout << endl;
+
 
         sqlite3_stmt* stmt = NULL;
         string sql;
@@ -210,7 +213,11 @@ void updateProduct(sqlite3* db) {
         }
 
         case '6':
-            return;
+            inventory();
+			break;
+
+        case '7':
+            mainMenu();
 
         default:
             cout << "Invalid choice. Try again.\n";
