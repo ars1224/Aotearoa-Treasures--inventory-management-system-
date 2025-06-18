@@ -127,6 +127,7 @@
     <ClCompile Include="addEmployee.cpp" />
     <ClCompile Include="addProduct.cpp" />
     <ClCompile Include="addRoster.cpp" />
+    <ClCompile Include="lowStockAlert.cpp" />
     <ClCompile Include="AT-InvMan.cpp" />
     <ClCompile Include="db-conn.cpp" />
     <ClCompile Include="deleteProduct.cpp" />
