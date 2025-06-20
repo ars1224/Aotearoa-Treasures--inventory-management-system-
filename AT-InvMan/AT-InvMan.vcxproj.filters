@@ -34,6 +34,9 @@
     <Filter Include="Source Files\features\Reports">
       <UniqueIdentifier>{c09f277f-abab-49e6-8d7f-f3cd2823d5f2}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\features\roster">
+      <UniqueIdentifier>{477347d3-dbb6-4786-baf5-b54153d918b9}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AT-InvMan.cpp">
@@ -45,10 +48,7 @@
     <ClCompile Include="db-conn.cpp">
       <Filter>Source Files\db-connection</Filter>
     </ClCompile>
-    <ClCompile Include="employeeList.cpp">
-      <Filter>Source Files\features\Employee</Filter>
-    </ClCompile>
-    <ClCompile Include="employeeRoster.cpp">
+    <ClCompile Include="employeeListwithmenu.cpp">
       <Filter>Source Files\features\Employee</Filter>
     </ClCompile>
     <ClCompile Include="addEmployee.cpp">
@@ -63,29 +63,17 @@
     <ClCompile Include="session.cpp">
       <Filter>Source Files\session</Filter>
     </ClCompile>
-    <ClCompile Include="addRoster.cpp">
-      <Filter>Source Files\features\Employee</Filter>
-    </ClCompile>
-    <ClCompile Include="updateRoster.cpp">
-      <Filter>Source Files\features\Employee</Filter>
-    </ClCompile>
     <ClCompile Include="login.cpp">
       <Filter>Source Files\features\main</Filter>
     </ClCompile>
     <ClCompile Include="MainMenu.cpp">
       <Filter>Source Files\features\main</Filter>
     </ClCompile>
-    <ClCompile Include="productInventory.cpp">
+    <ClCompile Include="productList.cpp">
       <Filter>Source Files\features\Stock</Filter>
     </ClCompile>
     <ClCompile Include="salesReportMovement.cpp">
       <Filter>Source Files\features\Stock</Filter>
-    </ClCompile>
-    <ClCompile Include="deleteRoster.cpp">
-      <Filter>Source Files\features\Employee</Filter>
-    </ClCompile>
-    <ClCompile Include="rosterList.cpp">
-      <Filter>Source Files\features\Employee</Filter>
     </ClCompile>
     <ClCompile Include="employees.cpp">
       <Filter>Source Files\features\Employee</Filter>
@@ -119,6 +107,33 @@
     </ClCompile>
     <ClCompile Include="StockMovementReport.cpp">
       <Filter>Source Files\features\Reports</Filter>
+    </ClCompile>
+    <ClCompile Include="lowStockAlert.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="updateRoster.cpp">
+      <Filter>Source Files\features\roster</Filter>
+    </ClCompile>
+    <ClCompile Include="rosterList.cpp">
+      <Filter>Source Files\features\roster</Filter>
+    </ClCompile>
+    <ClCompile Include="employeeRoster.cpp">
+      <Filter>Source Files\features\roster</Filter>
+    </ClCompile>
+    <ClCompile Include="deleteRoster.cpp">
+      <Filter>Source Files\features\roster</Filter>
+    </ClCompile>
+    <ClCompile Include="addRoster.cpp">
+      <Filter>Source Files\features\roster</Filter>
+    </ClCompile>
+    <ClCompile Include="EmployeeMenu.cpp">
+      <Filter>Source Files\features\Employee</Filter>
+    </ClCompile>
+    <ClCompile Include="listOnly.cpp">
+      <Filter>Source Files\features\Stock</Filter>
+    </ClCompile>
+    <ClCompile Include="RosterMenu.cpp">
+      <Filter>Source Files\features\roster</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
