@@ -10,13 +10,16 @@ void employeeList();
 void addEmployee();
 void updateEmployee();
 void deleteEmployee();
+void employeeMenu(char skipOption = '\0');
+
+// FUNCTIONS FOR ROSTERS
+void rosterlist(); 
+void RosterMenu(char skipOption = '\0');
 void addRoster();
-void roster();
 void updateRoster();
 void deleteRoster();
 void rosterlist();
-void employeeMasterlist();
-void employees();
+void employeeWithoutSchedule();
 
 // STRUCT FOR EMPLOYEES
 struct employee {

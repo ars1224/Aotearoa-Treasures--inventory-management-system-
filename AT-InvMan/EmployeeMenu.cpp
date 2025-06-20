@@ -10,30 +10,30 @@
 
 using namespace std;
 
-void employees()
-{
+void employeeMenu(char skipOption) {
     char choice;
 
     do {
         if (isAdmin() || isStoreManager()) {
             cout << "\n========== Employee Management ==========\n";
-            cout << "1. Employee List\n";
-            cout << "2. Add New Employee\n";
-            cout << "3. Update Employee\n";
-            cout << "4. Remove Employee\n";
-            cout << "5. Roster Management\n";
-            cout << "6. Return to Main Menu\n";
+            if (skipOption != '1') cout << "1. Employee List\n";
+            if (skipOption != '2') cout << "2. Add New Employee\n";
+            if (skipOption != '3') cout << "3. Update Employee\n";
+            if (skipOption != '4') cout << "4. Remove Employee\n";
+            if (skipOption != '5') cout << "5. Roster Management\n";
+            if (skipOption != '6') cout << "6. Return to Main Menu\n";
+
             cout << "Select an option: ";
             cin >> choice;
             cout << endl;
             cin.ignore(numeric_limits<streamsize>::max(), '\n');
 
             switch (choice) {
-            case '1': employeeList(); break;
-            case '2': addEmployee(); break;
-            case '3': updateEmployee(); break;
-            case '4': deleteEmployee(); break;
-            case '5': /*rosterMenu();*/ break;
+            case '1': employeeList(); employeeMenu('1'); break;
+            case '2': addEmployee();  employeeMenu('2'); break;
+            case '3': updateEmployee();  employeeMenu('3'); break;
+            case '4': deleteEmployee();  employeeMenu('4'); break;
+            case '5': /*rosterMenu();*/  employeeMenu('5'); break;
             case '6': mainMenu(); break;
             default:
                 cout << "Invalid selection. Please try again.\n";
@@ -41,15 +41,16 @@ void employees()
         }
         else if (isEmployee()) {
             cout << "\n========== Inventory Management ==========\n";
-            cout << "1. Roster Management\n";
-            cout << "2. Return to Main Menu\n";
+            if (skipOption != '1') cout << "1. Roster Management\n";
+            if (skipOption != '2') cout << "2. Return to Main Menu\n";
+
             cout << "Select an option: ";
             cin >> choice;
             cout << endl;
             cin.ignore(numeric_limits<streamsize>::max(), '\n');
 
             switch (choice) {
-            case '1': employeeList(); break;
+            case '1': employeeList(); employeeMenu('1'); break;
             case '2': mainMenu(); break;
             default:
                 cout << "Invalid selection. Please try again.\n";
@@ -57,3 +58,4 @@ void employees()
         }
     } while (true);
 }
+

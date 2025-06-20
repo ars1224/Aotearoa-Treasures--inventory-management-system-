@@ -48,9 +48,6 @@
     <ClCompile Include="db-conn.cpp">
       <Filter>Source Files\db-connection</Filter>
     </ClCompile>
-    <ClCompile Include="employeeListwithmenu.cpp">
-      <Filter>Source Files\features\Employee</Filter>
-    </ClCompile>
     <ClCompile Include="addEmployee.cpp">
       <Filter>Source Files\features\Employee</Filter>
     </ClCompile>
@@ -74,9 +71,6 @@
     </ClCompile>
     <ClCompile Include="salesReportMovement.cpp">
       <Filter>Source Files\features\Stock</Filter>
-    </ClCompile>
-    <ClCompile Include="employees.cpp">
-      <Filter>Source Files\features\Employee</Filter>
     </ClCompile>
     <ClCompile Include="inventoryMenu.cpp">
       <Filter>Source Files\features\Stock</Filter>
@@ -117,9 +111,6 @@
     <ClCompile Include="rosterList.cpp">
       <Filter>Source Files\features\roster</Filter>
     </ClCompile>
-    <ClCompile Include="employeeRoster.cpp">
-      <Filter>Source Files\features\roster</Filter>
-    </ClCompile>
     <ClCompile Include="deleteRoster.cpp">
       <Filter>Source Files\features\roster</Filter>
     </ClCompile>
@@ -129,10 +120,16 @@
     <ClCompile Include="EmployeeMenu.cpp">
       <Filter>Source Files\features\Employee</Filter>
     </ClCompile>
+    <ClCompile Include="RosterMenu.cpp">
+      <Filter>Source Files\features\roster</Filter>
+    </ClCompile>
+    <ClCompile Include="EmployeeList.cpp">
+      <Filter>Source Files\features\Employee</Filter>
+    </ClCompile>
     <ClCompile Include="listOnly.cpp">
       <Filter>Source Files\features\Stock</Filter>
     </ClCompile>
-    <ClCompile Include="RosterMenu.cpp">
+    <ClCompile Include="NoSchedules.cpp">
       <Filter>Source Files\features\roster</Filter>
     </ClCompile>
   </ItemGroup>

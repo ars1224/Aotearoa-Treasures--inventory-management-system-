@@ -30,13 +30,17 @@ bool scheduleExists(sqlite3* db, int employeeId) {
 
 void addRoster()
 {
-    if (!isAdmin() && !isStoreManager()) {
 
+
+    if (isAdmin() || isStoreManager()) {
+       
         sqlite3* db = connectToDatabase();
         if (db == nullptr) return;
 
         string repeat;
         do {
+ employeeWithoutSchedule();
+
             rosterEntry entry;
 
             cout << string(140, '=') << endl;

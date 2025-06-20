@@ -127,6 +127,7 @@
     <ClCompile Include="addEmployee.cpp" />
     <ClCompile Include="addProduct.cpp" />
     <ClCompile Include="addRoster.cpp" />
+    <ClCompile Include="EmployeeList.cpp" />
     <ClCompile Include="EmployeeMenu.cpp" />
     <ClCompile Include="listOnly.cpp" />
     <ClCompile Include="lowStockAlert.cpp" />
@@ -134,14 +135,12 @@
     <ClCompile Include="db-conn.cpp" />
     <ClCompile Include="deleteProduct.cpp" />
     <ClCompile Include="deleteRoster.cpp" />
-    <ClCompile Include="employeeListwithmenu.cpp" />
-    <ClCompile Include="employeeRoster.cpp" />
-    <ClCompile Include="employees.cpp" />
     <ClCompile Include="generateSku.cpp" />
     <ClCompile Include="inventoryMenu.cpp" />
     <ClCompile Include="login.cpp" />
     <ClCompile Include="MainMenu.cpp" />
     <ClCompile Include="MonthlySalesReport.cpp" />
+    <ClCompile Include="NoSchedules.cpp" />
     <ClCompile Include="productList.cpp" />
     <ClCompile Include="removeEmployee.cpp" />
     <ClCompile Include="rosterList.cpp" />

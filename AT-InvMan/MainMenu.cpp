@@ -36,8 +36,8 @@ void mainMenu()
 
             switch (choice) {
             case '1': inventory(); break;
-            case '2':roster(); break;
-            case '3': employees(); break;
+            case '2': RosterMenu(); break;
+            case '3': employeeMenu(); break;
             case '4': /* salesReportMenu();*/ break;
             case '5': alert(); break;
             case '6': cout << "Exiting the system. Goodbye!\n"; exit(0);
@@ -55,7 +55,7 @@ void mainMenu()
 
             switch (choice) {
             case '1': inventory(); break;
-            case '2':roster(); break;
+            case '2': RosterMenu(); break;
             case '3': cout << "Exiting the system. Goodbye!\n"; exit(0);
             default: cout << "Invalid choice. Please try again.\n"; break;
             }

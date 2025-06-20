@@ -59,46 +59,5 @@ void deleteRoster()
     }
 
     closeDatabase(db);
-
-    int option;
-    cout << "\nRelated options on Employee\n";
-    cout << endl;
-    cout << "1. Make a new schedule\n";
-    cout << "2. Add Employee\n";
-    cout << "3. Update Employee\n";
-    cout << "4. Delete Employee\n";
-    cout << "5. Back to Main Menu\n";
-    cout << "6. Exit Program\n";
-    cout << endl;
-    cout << "Please select an option: ";
-    cin >> option;
-
-    switch (option) {
-    case 1:
-        cout << endl;
-        employeeMasterlist();
-        addRoster();
-        break;
-    case 2:
-        cout << endl;
-        addEmployee();
-        break;
-    case 3:
-        cout << endl;
-        updateEmployee();
-        break;
-    case 4:
-        cout << endl;
-        deleteEmployee();
-        break;
-    case 5:
-        cout << endl;
-        mainMenu();
-        break;
-    case 6:
-        return;
-        exit(0);
-    default:
-        cout << "Invalid option. Please try again." << endl;
-    }
+    RosterMenu();
 }

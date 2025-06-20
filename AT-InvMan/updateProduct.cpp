@@ -39,8 +39,6 @@ void updateProduct() {
         sqlite3_stmt* stmt = nullptr;
         std::string sql;
 
-        int result;
-
         switch (choice) {
         case '1': {
             string newName;

@@ -20,7 +20,7 @@ void productList();
 void addProduct();
 void updateProduct();
 void deleteProduct();
-void inventory();
+void inventory(char skipOption = '\0');
 void ListOnly();
 void productList();
 string generateNextSKU();

@@ -26,11 +26,10 @@ void rosterlist() {
         FROM schedules
     )";
 
-    sqlite3_stmt* stmt;
+    sqlite3_stmt* stmt = nullptr;
     string whereClause;
     bool hasCondition = false;
 
-    // Role-based filtering
     if (isStoreManager()) {
         hasCondition = true;
         whereClause = "WHERE schedules.branch = ?";
@@ -42,11 +41,19 @@ void rosterlist() {
 
     string finalSQL = baseSQL + (hasCondition ? (" " + whereClause) : "") + ";";
 
-    // Prepare statement
+    // Prepare SQL statement
     if (sqlite3_prepare_v2(db, finalSQL.c_str(), -1, &stmt, nullptr) != SQLITE_OK) {
         cerr << "❌ Failed to prepare statement: " << sqlite3_errmsg(db) << endl;
         closeDatabase(db);
         return;
+    }
+
+    // Bind parameters AFTER preparing the statement
+    if (isStoreManager()) {
+        sqlite3_bind_text(stmt, 1, currentUser.branch.c_str(), -1, SQLITE_TRANSIENT);
+    }
+    else if (isEmployee()) {
+        sqlite3_bind_int(stmt, 1, currentUser.id);
     }
 
     // Header
@@ -76,7 +83,6 @@ void rosterlist() {
 
     bool hasData = false;
 
-    // Fetch and print rows
     while (sqlite3_step(stmt) == SQLITE_ROW) {
         hasData = true;
 

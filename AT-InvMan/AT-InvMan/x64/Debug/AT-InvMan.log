@@ -1,3 +1,10 @@
-﻿  rosterList.cpp
-D:\YOOBEE\Aotearoa-Treasures--inventory-management-system\AT-InvMan\rosterList.cpp(47,17): warning C4566: character represented by universal-character-name '\u274C' cannot be represented in the current code page (1252)
+﻿  addRoster.cpp
+D:\YOOBEE\Aotearoa-Treasures--inventory-management-system\AT-InvMan\addRoster.cpp(24,17): warning C4566: character represented by universal-character-name '\u274C' cannot be represented in the current code page (1252)
+D:\YOOBEE\Aotearoa-Treasures--inventory-management-system\AT-InvMan\addRoster.cpp(55,25): warning C4566: character represented by universal-character-name '\u274C' cannot be represented in the current code page (1252)
+D:\YOOBEE\Aotearoa-Treasures--inventory-management-system\AT-InvMan\addRoster.cpp(81,29): warning C4566: character represented by universal-character-name '\u274C' cannot be represented in the current code page (1252)
+D:\YOOBEE\Aotearoa-Treasures--inventory-management-system\AT-InvMan\addRoster.cpp(88,25): warning C4566: character represented by universal-character-name '\u274C' cannot be represented in the current code page (1252)
+D:\YOOBEE\Aotearoa-Treasures--inventory-management-system\AT-InvMan\addRoster.cpp(142,29): warning C4566: character represented by universal-character-name '\u2705' cannot be represented in the current code page (1252)
+D:\YOOBEE\Aotearoa-Treasures--inventory-management-system\AT-InvMan\addRoster.cpp(146,29): warning C4566: character represented by universal-character-name '\u274C' cannot be represented in the current code page (1252)
+D:\YOOBEE\Aotearoa-Treasures--inventory-management-system\AT-InvMan\addRoster.cpp(153,25): warning C4566: character represented by universal-character-name '\u274C' cannot be represented in the current code page (1252)
+D:\YOOBEE\Aotearoa-Treasures--inventory-management-system\AT-InvMan\addRoster.cpp(164,17): warning C4566: character represented by universal-character-name '\u274C' cannot be represented in the current code page (1252)
   AT-InvMan.vcxproj -> D:\YOOBEE\Aotearoa-Treasures--inventory-management-system\AT-InvMan\x64\Debug\AT-InvMan.exe
