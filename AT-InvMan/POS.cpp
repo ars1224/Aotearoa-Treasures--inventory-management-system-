@@ -1,27 +1,31 @@
 ﻿// Dhona created this snippet to implement the POS system
+// It handles scanning, cart management, inventory deduction, and receipt printing.
+
 #include "POS.h"
 #include <sqlite3.h>
 #include <iostream>
 #include <iomanip>
-#include "auth.h"  // For getCurrentUserBranch()
-#include "salesLogger.h"
+#include "auth.h"  // To determine the user's assigned branch
+#include "salesLogger.h" // For logging sales into branch-specific tables
 
 using namespace std;
 
-// Constructor with branch passed from session
+// Constructor using user branch from session (dynamic)
 POS::POS(const std::string& branch) : userBranch(branch) {
     connectDB();
 }
 
-// Default constructor (fallback to Wellington)
+// Default constructor if branch isn't passed (fallback to Wellington)
 POS::POS() : userBranch("Wellington") {
     connectDB();
 }
 
+// Destructor to clean up DB connection
 POS::~POS() {
     closeDB();
 }
 
+// Establish connection to SQLite database
 void POS::connectDB() {
     int rc = sqlite3_open("../db/at-invman.db", &db);
     if (rc) {
@@ -30,21 +34,24 @@ void POS::connectDB() {
     }
 }
 
+// Safely close the SQLite DB connection
 void POS::closeDB() {
     if (db) sqlite3_close(db);
 }
 
+// Scans an item by code and adds to cart if available
 void POS::scanItem() {
     string code;
     cout << "Enter Product Code (e.g. AT1001): ";
     cin >> code;
 
-    // Determine which column to use for stock quantity
+    // Choose correct column based on user's branch
     string qtyColumn;
     if (userBranch == "Auckland") qtyColumn = "ALK_Qty";
     else if (userBranch == "Christchurch") qtyColumn = "CHCH_Qty";
     else qtyColumn = "WLG_Qty";
 
+    // SQL to retrieve product details and current stock
     string sql = "SELECT Product_Name, Product_Price, " + qtyColumn +
         " FROM product WHERE Product_Code = ?;";
 
@@ -58,6 +65,7 @@ void POS::scanItem() {
             double price = sqlite3_column_double(stmt, 1);
             int stockQty = sqlite3_column_int(stmt, 2);
 
+            // Check stock availability
             if (stockQty <= 0) {
                 cout << "\nWarning: \"" << name << "\" is currently out of stock at " << userBranch << ".\n";
                 cout << "Would you like to:\n1. Try another product\n2. Return to POS menu\nSelect an option: ";
@@ -67,6 +75,7 @@ void POS::scanItem() {
                 else return;
             }
 
+            // Prompt for quantity
             int qty;
             cout << "Product: " << name << ", Price: $" << fixed << setprecision(2) << price << endl;
             cout << "Enter quantity to purchase: ";
@@ -81,6 +90,7 @@ void POS::scanItem() {
             }
         }
         else {
+            // If code not found
             cout << "Product not found. Please check the code and try again.\n";
             cout << "Would you like to:\n1. Try again\n2. Return to POS menu\nSelect an option: ";
             int choice;
@@ -96,13 +106,14 @@ void POS::scanItem() {
     }
 }
 
+// Prints receipt and deducts stock only upon confirmed checkout
 void POS::printReceipt() {
     if (cart.empty()) {
         cout << "\n Cannot checkout: your cart is empty.\n";
         return;
     }
 
-    // Step 3: Confirm checkout
+    // Step 3: Confirm before committing sale
     char confirm;
     cout << "\nProceed to checkout and print receipt? (y/n): ";
     cin >> confirm;
@@ -113,8 +124,10 @@ void POS::printReceipt() {
 
     double total = 0.0;
 
-    logSaleToBranchTable(userBranch, cart);  // Log the sale only if confirmed
+    // Log the confirmed sale
+    logSaleToBranchTable(userBranch, cart); 
 
+    // Receipt formatting
     cout << "\n========== RECEIPT ==========\n";
     for (const auto& item : cart) {
         double itemTotal = item.price * item.quantity;
@@ -122,7 +135,8 @@ void POS::printReceipt() {
             << " @ $" << item.price << " = $" << itemTotal << "\n";
         total += itemTotal;
 
-        updateInventory(item.code, item.quantity);  // Stock deducted only here
+        // Update inventory for each item purchased
+        updateInventory(item.code, item.quantity); 
     }
     cout << "-------------------------------\n";
     cout << "Total: $" << fixed << setprecision(2) << total << "\n";
@@ -131,12 +145,12 @@ void POS::printReceipt() {
     cout << "\n Sale completed for branch: " << userBranch << "\n";
 }
 
-// Getter for external receipt/cart preview
+// Exposes the cart (read-only) for display or external use
 std::vector<CartItem> POS::getCart() const {
     return cart;
 }
 
-// Full cashier-like flow
+// Main POS launcher with cashier-friendly interface
 void processPointOfSale() {
     string branch = getCurrentUserBranch();
     cout << "\n Starting POS for branch: " << branch << "\n";
@@ -145,6 +159,7 @@ void processPointOfSale() {
     char choice;
 
     do {
+        // Cashier POS Menu
         cout << "\n========== Point of Sale Menu ==========\n";
         cout << "Logged-in Branch: " << branch << "\n";
         cout << "1. Scan item\n";
@@ -189,7 +204,7 @@ void processPointOfSale() {
     } while (true);
 }
 
-// Inventory deduction for user's branch
+// Updates product stock in DB based on user's location
 void POS::updateInventory(const std::string& code, int qty) {
     std::string col;
     if (userBranch == "Auckland") col = "ALK_Qty";

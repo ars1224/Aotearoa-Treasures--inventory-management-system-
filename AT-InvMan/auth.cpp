@@ -1,11 +1,13 @@
 // Dhona created this snippet to implement the function getCurrentUserBranch for pos.cpp
-// this should be defined in auth.cpp which fixed the linker error (LNK2019, LNK2001)
-// It uses currenUser.branch from session.h / session.cpp assuming currentUser is a global variable or external object.
+// This function should be defined in auth.cpp to resolve linker errors such as LNK2019 or LNK2001
+// It accesses currentUser.branch from session.h / session.cpp,
+// assuming currentUser is declared as a global or external variable representing the authenticated user.
 
-#include "auth.h"
-#include "session.h"
+#include "auth.h"       // Declaration of getCurrentUserBranch()
+#include "session.h"    // Access to the currentUser object which holds session data
 
-// Returns the current user's assigned branch
+// Retrieves and returns the branch assigned to the currently logged-in user.
+// This is typically used to determine branch-specific behavior in POS logic.
 std::string getCurrentUserBranch() {
     return currentUser.branch;
 }
