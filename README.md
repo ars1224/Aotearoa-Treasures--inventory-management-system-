@@ -83,17 +83,21 @@ Managing Director – *Aotearoa Treasures Ltd.*
 
 ---
 
-## ✅ Version Control Best Practice
+## ✅ Version Control Best Practices
 
-# Before contributing:
+To keep the project stable and avoid merge conflicts, please follow these steps before pushing your code:
 
+```bash
+# 🔄 1. Pull the latest changes from the main branch
 git pull origin main
 
-# Then add and commit your changes
+# 📝 2. Stage and commit your changes
+git add .
+git commit -m "Your descriptive commit message"
 
+# ⬆️ 3. Push your changes to the main branch
 git push origin main
 
-# Keep your repo synced and avoid conflicts.
 
 ---
 
