@@ -65,5 +65,7 @@ const char* safeText(const unsigned char* text);
 #endif
 
 // FUNCTIONS FOR TESTING ONLY - Dhona 
-void testPOS();
+/*void testPOS();*/
+
+// FUNCTIONS FOR POINT OF SALE
 void processPointOfSale();  

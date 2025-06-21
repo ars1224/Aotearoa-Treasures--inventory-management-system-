@@ -1,3 +1,4 @@
+// Dhona Created this snippet to implement the POS system launcher
 #include "POS.h"         // For POS class
 #include "auth.h"        // For getCurrentUserBranch()
 #include "db-conn.h"     // For getDB()

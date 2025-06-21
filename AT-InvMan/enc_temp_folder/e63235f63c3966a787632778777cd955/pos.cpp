@@ -72,8 +72,7 @@ void POS::scanItem() {
 void POS::printReceipt() {
     double total = 0.0;
 
-    // Logs the sale
-    logSaleToBranchTable(userBranch, cart);  // This line ensures sales are logged
+	logSaleToBranchTable(userBranch, getCart()); // Log sale to branch table
 
     cout << "\n========== RECEIPT ==========\n";
     for (const auto& item : cart) {

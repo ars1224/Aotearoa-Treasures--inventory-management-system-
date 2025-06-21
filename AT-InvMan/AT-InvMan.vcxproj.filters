@@ -144,6 +144,9 @@
     <ClCompile Include="auth.cpp">
       <Filter>Source Files\features\main</Filter>
     </ClCompile>
+    <ClCompile Include="salesLogger.cpp">
+      <Filter>Source Files\features\POS</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -168,6 +171,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="pos.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="salesLogger.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
