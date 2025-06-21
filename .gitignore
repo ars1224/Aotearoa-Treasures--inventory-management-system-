@@ -5,3 +5,36 @@ AT-InvMan/.vs/AT-InvMan/v17/Browse.VC.opendb
 AT-InvMan/.vs/AT-InvMan/v17/Browse.VC.db-wal
 AT-InvMan/.vs/AT-InvMan/v17/Browse.VC.db-wal
 AT-InvMan/.vs/AT-InvMan/v17/Browse.VC.db-wal
+
+# Build results
+[Bb]in/
+[Oo]bj/
+x64/
+Debug/
+Release/
+
+# VS settings and temp files
+.vs/
+*.user
+*.suo
+*.VC.db
+*.ncb
+*.log
+*.tlog
+*.pdb
+*.sdf
+*.opensdf
+*.cache
+*.tmp
+*.bak
+
+# Compiled files
+*.dll
+*.exe
+*.obj
+*.ipch
+*.pch
+
+# Code analysis & browsing
+*.CodeAnalysisLog.xml
+*.db
