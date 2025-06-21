@@ -165,6 +165,7 @@
     <ClInclude Include="db-conn.h" />
     <ClInclude Include="InventoryManager.h" />
     <ClInclude Include="main-functions.h" />
+    <ClInclude Include="pos.h" />
     <ClInclude Include="session.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
