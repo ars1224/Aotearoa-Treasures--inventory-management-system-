@@ -127,6 +127,7 @@
     <ClCompile Include="addEmployee.cpp" />
     <ClCompile Include="addProduct.cpp" />
     <ClCompile Include="addRoster.cpp" />
+    <ClCompile Include="auth.cpp" />
     <ClCompile Include="EmployeeList.cpp" />
     <ClCompile Include="EmployeeMenu.cpp" />
     <ClCompile Include="listOnly.cpp" />
@@ -142,6 +143,7 @@
     <ClCompile Include="MonthlySalesReport.cpp" />
     <ClCompile Include="NoSchedules.cpp" />
     <ClCompile Include="pos.cpp" />
+    <ClCompile Include="POSLauncher.cpp" />
     <ClCompile Include="productList.cpp" />
     <ClCompile Include="removeEmployee.cpp" />
     <ClCompile Include="rosterList.cpp" />

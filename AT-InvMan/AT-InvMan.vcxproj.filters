@@ -138,6 +138,12 @@
     <ClCompile Include="pos.cpp">
       <Filter>Source Files\features\POS</Filter>
     </ClCompile>
+    <ClCompile Include="POSLauncher.cpp">
+      <Filter>Source Files\features\POS</Filter>
+    </ClCompile>
+    <ClCompile Include="auth.cpp">
+      <Filter>Source Files\features\main</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

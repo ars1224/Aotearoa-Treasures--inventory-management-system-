@@ -1,11 +1,15 @@
-#include "POS.h"
+#include "pos.h"
 #include <sqlite3.h>
 #include <iostream>
 #include <iomanip>
-
+#include "auth.h"        // For getCurrentUserBranch()
 using namespace std;
 
-POS::POS() {
+POS::POS(const std::string& branch) : userBranch(branch) {
+    connectDB();
+}
+
+POS::POS() : userBranch("Wellington") {  // Default branch
     connectDB();
 }
 
@@ -47,6 +51,7 @@ void POS::scanItem() {
 
             cart.push_back({ code, name, price, qty });
             cout << "Item added to cart.\n";
+            updateInventory(code, qty);
         }
         else {
             cout << "Product not found.\n";
@@ -74,8 +79,9 @@ void POS::printReceipt() {
     cout << "=============================\n";
 }
 
-void testPOS() {
-    POS pos;
+void processPointOfSale() {
+	string branch = getCurrentUserBranch();  // Get the current user's branch
+    POS pos(branch);  // Pass branch to constructor
 
     char more = 'y';
     while (more == 'y' || more == 'Y') {
@@ -84,9 +90,36 @@ void testPOS() {
         cin >> more;
     }
 
-    pos.printReceipt();  // Even if empty for now
+    pos.printReceipt();
 }
 
+void POS::updateInventory(const std::string& code, int qty) {
+    std::string col;
+    if (userBranch == "Auckland") col = "ALK_Qty";
+    else if (userBranch == "Christchurch") col = "CHCH_Qty";
+    else if (userBranch == "Wellington") col = "WLG_Qty";
+    else {
+        std::cerr << "Invalid branch.\n";
+        return;
+    }
+
+    std::string sql = "UPDATE product SET " + col + " = " + col + " - ? WHERE Product_Code = ?;";
+    sqlite3_stmt* stmt;
+
+    if (sqlite3_prepare_v2(db, sql.c_str(), -1, &stmt, nullptr) == SQLITE_OK) {
+        sqlite3_bind_int(stmt, 1, qty);
+        sqlite3_bind_text(stmt, 2, code.c_str(), -1, SQLITE_STATIC);
+
+        if (sqlite3_step(stmt) != SQLITE_DONE) {
+            std::cerr << "Failed to update inventory.\n";
+        }
+
+        sqlite3_finalize(stmt);
+    }
+    else {
+        std::cerr << "SQL prepare error.\n";
+    }
+}
 
 
 //TESTING ONLY

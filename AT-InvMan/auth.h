@@ -13,4 +13,6 @@ inline bool isEmployee() {
     return isCashier() || isStockClerk() || isSalesAssociate();
 }
 
+std::string getCurrentUserBranch();  // Dhona Added this line for POS function 
+
 #endif // AUTH_UTILS_H

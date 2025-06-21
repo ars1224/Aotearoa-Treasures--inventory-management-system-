@@ -18,12 +18,17 @@ class POS {
 private:
     std::vector<CartItem> cart;
     sqlite3* db;
+    std::string userBranch;
+
     void connectDB();
     void closeDB();
+    void updateInventory(const std::string& code, int qty);
 
 public:
     POS();                  // Constructor
+    POS(const std::string& branch); // Constructor with branch
     ~POS();                 // Destructor
+
     void scanItem();        // Add item to cart
     void printReceipt();    // Show the receipt
 };
