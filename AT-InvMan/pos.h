@@ -31,6 +31,8 @@ public:
 
     void scanItem();        // Add item to cart
     void printReceipt();    // Show the receipt
+
+    std::vector<CartItem> getCart() const; 
 };
 
 #endif

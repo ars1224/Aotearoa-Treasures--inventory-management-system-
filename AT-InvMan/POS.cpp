@@ -1,15 +1,18 @@
-#include "pos.h"
+﻿#include "POS.h"
 #include <sqlite3.h>
 #include <iostream>
 #include <iomanip>
-#include "auth.h"        // For getCurrentUserBranch()
+#include "auth.h"  // For getCurrentUserBranch()
+
 using namespace std;
 
+// Constructor with branch passed from session
 POS::POS(const std::string& branch) : userBranch(branch) {
     connectDB();
 }
 
-POS::POS() : userBranch("Wellington") {  // Default branch
+// Default constructor (fallback to Wellington)
+POS::POS() : userBranch("Wellington") {
     connectDB();
 }
 
@@ -60,7 +63,7 @@ void POS::scanItem() {
         sqlite3_finalize(stmt);
     }
     else {
-        cerr << "Failed to prepare statement.\n";
+        cerr << "Failed to prepare SQL statement.\n";
     }
 }
 
@@ -74,25 +77,72 @@ void POS::printReceipt() {
             << " @ $" << item.price << " = $" << itemTotal << "\n";
         total += itemTotal;
     }
-    cout << "-----------------------------\n";
+    cout << "-------------------------------\n";
     cout << "Total: $" << fixed << setprecision(2) << total << "\n";
-    cout << "=============================\n";
+    cout << "Branch: " << userBranch << "\n";
+    cout << "===============================\n";
 }
 
+// Getter for external receipt/cart preview
+std::vector<CartItem> POS::getCart() const {
+    return cart;
+}
+
+// Full cashier-like flow
 void processPointOfSale() {
-	string branch = getCurrentUserBranch();  // Get the current user's branch
-    POS pos(branch);  // Pass branch to constructor
+    string branch = getCurrentUserBranch();
+    cout << "\n Starting POS for branch: " << branch << "\n";
 
-    char more = 'y';
-    while (more == 'y' || more == 'Y') {
-        pos.scanItem();
-        cout << "Add another item? (y/n): ";
-        cin >> more;
-    }
+    POS pos(branch);
+    char choice;
 
-    pos.printReceipt();
+    do {
+        cout << "\n========== Point of Sale Menu ==========\n";
+        cout << "Logged-in Branch: " << branch << "\n";
+        cout << "1. Scan item\n";
+        cout << "2. View cart & total\n";
+        cout << "3. Checkout & print receipt\n";
+        cout << "4. Cancel transaction\n";
+        cout << "Select an option: ";
+        cin >> choice;
+
+        switch (choice) {
+        case '1':
+            pos.scanItem();
+            break;
+
+        case '2': {
+            double total = 0.0;
+            cout << "\n------- Current Cart -------\n";
+            for (const auto& item : pos.getCart()) {
+                double itemTotal = item.price * item.quantity;
+                cout << item.name << " x" << item.quantity
+                    << " @ $" << item.price << " = $" << itemTotal << "\n";
+                total += itemTotal;
+            }
+            cout << "----------------------------\n";
+            cout << "Total so far: $" << fixed << setprecision(2) << total << "\n";
+            break;
+        }
+
+        case '3':
+            cout << "\n Finalizing transaction...\n";
+            pos.printReceipt();
+            cout << "Sale completed for branch: " << branch << "\n";
+            return;
+
+        case '4':
+            cout << "\n Transaction canceled. Cart cleared.\n";
+            return;
+
+        default:
+            cout << "Invalid option. Try again.\n";
+        }
+
+    } while (true);
 }
 
+// Inventory deduction for user's branch
 void POS::updateInventory(const std::string& code, int qty) {
     std::string col;
     if (userBranch == "Auckland") col = "ALK_Qty";
