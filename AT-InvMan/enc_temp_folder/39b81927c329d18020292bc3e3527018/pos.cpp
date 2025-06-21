@@ -113,7 +113,7 @@ void POS::printReceipt() {
 
     double total = 0.0;
 
-    logSaleToBranchTable(userBranch, cart);  // Log the sale only if confirmed
+    logSaleToBranchTable(userBranch, cart);  // ✅ Log the sale only if confirmed
 
     cout << "\n========== RECEIPT ==========\n";
     for (const auto& item : cart) {
@@ -122,7 +122,7 @@ void POS::printReceipt() {
             << " @ $" << item.price << " = $" << itemTotal << "\n";
         total += itemTotal;
 
-        updateInventory(item.code, item.quantity);  // Stock deducted only here
+        updateInventory(item.code, item.quantity);  // ✅ Stock deducted only here
     }
     cout << "-------------------------------\n";
     cout << "Total: $" << fixed << setprecision(2) << total << "\n";
@@ -176,6 +176,7 @@ void processPointOfSale() {
         case '3':
             cout << "\n Finalizing transaction...\n";
             pos.printReceipt();
+            cout << "Sale completed for branch: " << branch << "\n";
             return;
 
         case '4':
