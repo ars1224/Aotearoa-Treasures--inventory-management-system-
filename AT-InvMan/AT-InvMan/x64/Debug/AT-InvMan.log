@@ -1,62 +1,76 @@
-﻿  addEmployee.cpp
-C:\Users\Administrator\Desktop\New folder\Aotearoa-Treasures--inventory-management-system-\AT-InvMan\addEmployee.cpp(46,17): warning C4566: character represented by universal-character-name '\u274C' cannot be represented in the current code page (1252)
-C:\Users\Administrator\Desktop\New folder\Aotearoa-Treasures--inventory-management-system-\AT-InvMan\addEmployee.cpp(95,29): warning C4566: character represented by universal-character-name '\u274C' cannot be represented in the current code page (1252)
-C:\Users\Administrator\Desktop\New folder\Aotearoa-Treasures--inventory-management-system-\AT-InvMan\addEmployee.cpp(135,21): warning C4566: character represented by universal-character-name '\u26A0' cannot be represented in the current code page (1252)
-C:\Users\Administrator\Desktop\New folder\Aotearoa-Treasures--inventory-management-system-\AT-InvMan\addEmployee.cpp(152,21): warning C4566: character represented by universal-character-name '\u2705' cannot be represented in the current code page (1252)
+﻿  sqlite3.c
+  addEmployee.cpp
+C:\Users\rr_ob\OneDrive\Documents\yoobee-group5-dhonarepo\SD103-InventoryManageSystem\Aotearoa-Treasures--inventory-management-system-\AT-InvMan\addEmployee.cpp(46,17): warning C4566: character represented by universal-character-name '\u274C' cannot be represented in the current code page (1252)
+C:\Users\rr_ob\OneDrive\Documents\yoobee-group5-dhonarepo\SD103-InventoryManageSystem\Aotearoa-Treasures--inventory-management-system-\AT-InvMan\addEmployee.cpp(95,29): warning C4566: character represented by universal-character-name '\u274C' cannot be represented in the current code page (1252)
+C:\Users\rr_ob\OneDrive\Documents\yoobee-group5-dhonarepo\SD103-InventoryManageSystem\Aotearoa-Treasures--inventory-management-system-\AT-InvMan\addEmployee.cpp(135,21): warning C4566: character represented by universal-character-name '\u26A0' cannot be represented in the current code page (1252)
+C:\Users\rr_ob\OneDrive\Documents\yoobee-group5-dhonarepo\SD103-InventoryManageSystem\Aotearoa-Treasures--inventory-management-system-\AT-InvMan\addEmployee.cpp(152,21): warning C4566: character represented by universal-character-name '\u2705' cannot be represented in the current code page (1252)
   addProduct.cpp
+C:\Users\rr_ob\OneDrive\Documents\yoobee-group5-dhonarepo\SD103-InventoryManageSystem\Aotearoa-Treasures--inventory-management-system-\AT-InvMan\addProduct.cpp(36,17): warning C4566: character represented by universal-character-name '\u26A0' cannot be represented in the current code page (1252)
+C:\Users\rr_ob\OneDrive\Documents\yoobee-group5-dhonarepo\SD103-InventoryManageSystem\Aotearoa-Treasures--inventory-management-system-\AT-InvMan\addProduct.cpp(46,21): warning C4566: character represented by universal-character-name '\u2705' cannot be represented in the current code page (1252)
+C:\Users\rr_ob\OneDrive\Documents\yoobee-group5-dhonarepo\SD103-InventoryManageSystem\Aotearoa-Treasures--inventory-management-system-\AT-InvMan\addProduct.cpp(49,21): warning C4566: character represented by universal-character-name '\u274C' cannot be represented in the current code page (1252)
+C:\Users\rr_ob\OneDrive\Documents\yoobee-group5-dhonarepo\SD103-InventoryManageSystem\Aotearoa-Treasures--inventory-management-system-\AT-InvMan\addProduct.cpp(54,17): warning C4566: character represented by universal-character-name '\u274C' cannot be represented in the current code page (1252)
+C:\Users\rr_ob\OneDrive\Documents\yoobee-group5-dhonarepo\SD103-InventoryManageSystem\Aotearoa-Treasures--inventory-management-system-\AT-InvMan\addProduct.cpp(61,17): warning C4566: character represented by universal-character-name '\u274C' cannot be represented in the current code page (1252)
+C:\Users\rr_ob\OneDrive\Documents\yoobee-group5-dhonarepo\SD103-InventoryManageSystem\Aotearoa-Treasures--inventory-management-system-\AT-InvMan\addProduct.cpp(81,21): warning C4566: character represented by universal-character-name '\u26A0' cannot be represented in the current code page (1252)
+C:\Users\rr_ob\OneDrive\Documents\yoobee-group5-dhonarepo\SD103-InventoryManageSystem\Aotearoa-Treasures--inventory-management-system-\AT-InvMan\addProduct.cpp(141,25): warning C4566: character represented by universal-character-name '\u2705' cannot be represented in the current code page (1252)
+C:\Users\rr_ob\OneDrive\Documents\yoobee-group5-dhonarepo\SD103-InventoryManageSystem\Aotearoa-Treasures--inventory-management-system-\AT-InvMan\addProduct.cpp(144,25): warning C4566: character represented by universal-character-name '\u274C' cannot be represented in the current code page (1252)
+C:\Users\rr_ob\OneDrive\Documents\yoobee-group5-dhonarepo\SD103-InventoryManageSystem\Aotearoa-Treasures--inventory-management-system-\AT-InvMan\addProduct.cpp(150,21): warning C4566: character represented by universal-character-name '\u274C' cannot be represented in the current code page (1252)
   addRoster.cpp
-C:\Users\Administrator\Desktop\New folder\Aotearoa-Treasures--inventory-management-system-\AT-InvMan\addRoster.cpp(24,17): warning C4566: character represented by universal-character-name '\u274C' cannot be represented in the current code page (1252)
-C:\Users\Administrator\Desktop\New folder\Aotearoa-Treasures--inventory-management-system-\AT-InvMan\addRoster.cpp(34,17): warning C4566: character represented by universal-character-name '\u274C' cannot be represented in the current code page (1252)
-C:\Users\Administrator\Desktop\New folder\Aotearoa-Treasures--inventory-management-system-\AT-InvMan\addRoster.cpp(54,21): warning C4566: character represented by universal-character-name '\u274C' cannot be represented in the current code page (1252)
-C:\Users\Administrator\Desktop\New folder\Aotearoa-Treasures--inventory-management-system-\AT-InvMan\addRoster.cpp(80,25): warning C4566: character represented by universal-character-name '\u274C' cannot be represented in the current code page (1252)
-C:\Users\Administrator\Desktop\New folder\Aotearoa-Treasures--inventory-management-system-\AT-InvMan\addRoster.cpp(87,21): warning C4566: character represented by universal-character-name '\u274C' cannot be represented in the current code page (1252)
-C:\Users\Administrator\Desktop\New folder\Aotearoa-Treasures--inventory-management-system-\AT-InvMan\addRoster.cpp(141,25): warning C4566: character represented by universal-character-name '\u2705' cannot be represented in the current code page (1252)
-C:\Users\Administrator\Desktop\New folder\Aotearoa-Treasures--inventory-management-system-\AT-InvMan\addRoster.cpp(145,25): warning C4566: character represented by universal-character-name '\u274C' cannot be represented in the current code page (1252)
-C:\Users\Administrator\Desktop\New folder\Aotearoa-Treasures--inventory-management-system-\AT-InvMan\addRoster.cpp(152,21): warning C4566: character represented by universal-character-name '\u274C' cannot be represented in the current code page (1252)
+C:\Users\rr_ob\OneDrive\Documents\yoobee-group5-dhonarepo\SD103-InventoryManageSystem\Aotearoa-Treasures--inventory-management-system-\AT-InvMan\addRoster.cpp(24,17): warning C4566: character represented by universal-character-name '\u274C' cannot be represented in the current code page (1252)
+C:\Users\rr_ob\OneDrive\Documents\yoobee-group5-dhonarepo\SD103-InventoryManageSystem\Aotearoa-Treasures--inventory-management-system-\AT-InvMan\addRoster.cpp(34,17): warning C4566: character represented by universal-character-name '\u274C' cannot be represented in the current code page (1252)
+C:\Users\rr_ob\OneDrive\Documents\yoobee-group5-dhonarepo\SD103-InventoryManageSystem\Aotearoa-Treasures--inventory-management-system-\AT-InvMan\addRoster.cpp(54,21): warning C4566: character represented by universal-character-name '\u274C' cannot be represented in the current code page (1252)
+C:\Users\rr_ob\OneDrive\Documents\yoobee-group5-dhonarepo\SD103-InventoryManageSystem\Aotearoa-Treasures--inventory-management-system-\AT-InvMan\addRoster.cpp(80,25): warning C4566: character represented by universal-character-name '\u274C' cannot be represented in the current code page (1252)
+C:\Users\rr_ob\OneDrive\Documents\yoobee-group5-dhonarepo\SD103-InventoryManageSystem\Aotearoa-Treasures--inventory-management-system-\AT-InvMan\addRoster.cpp(87,21): warning C4566: character represented by universal-character-name '\u274C' cannot be represented in the current code page (1252)
+C:\Users\rr_ob\OneDrive\Documents\yoobee-group5-dhonarepo\SD103-InventoryManageSystem\Aotearoa-Treasures--inventory-management-system-\AT-InvMan\addRoster.cpp(141,25): warning C4566: character represented by universal-character-name '\u2705' cannot be represented in the current code page (1252)
+C:\Users\rr_ob\OneDrive\Documents\yoobee-group5-dhonarepo\SD103-InventoryManageSystem\Aotearoa-Treasures--inventory-management-system-\AT-InvMan\addRoster.cpp(145,25): warning C4566: character represented by universal-character-name '\u274C' cannot be represented in the current code page (1252)
+C:\Users\rr_ob\OneDrive\Documents\yoobee-group5-dhonarepo\SD103-InventoryManageSystem\Aotearoa-Treasures--inventory-management-system-\AT-InvMan\addRoster.cpp(152,21): warning C4566: character represented by universal-character-name '\u274C' cannot be represented in the current code page (1252)
+  lowStockAlert.cpp
+C:\Users\rr_ob\OneDrive\Documents\yoobee-group5-dhonarepo\SD103-InventoryManageSystem\Aotearoa-Treasures--inventory-management-system-\AT-InvMan\lowStockAlert.cpp(52,37): warning C4566: character represented by universal-character-name '\u2705' cannot be represented in the current code page (1252)
+C:\Users\rr_ob\OneDrive\Documents\yoobee-group5-dhonarepo\SD103-InventoryManageSystem\Aotearoa-Treasures--inventory-management-system-\AT-InvMan\lowStockAlert.cpp(67,41): warning C4566: character represented by universal-character-name '\u2705' cannot be represented in the current code page (1252)
+C:\Users\rr_ob\OneDrive\Documents\yoobee-group5-dhonarepo\SD103-InventoryManageSystem\Aotearoa-Treasures--inventory-management-system-\AT-InvMan\lowStockAlert.cpp(82,39): warning C4566: character represented by universal-character-name '\u2705' cannot be represented in the current code page (1252)
   AT-InvMan.cpp
+  db-conn.cpp
   deleteProduct.cpp
-C:\Users\Administrator\Desktop\New folder\Aotearoa-Treasures--inventory-management-system-\AT-InvMan\deleteProduct.cpp(25,21): warning C4566: character represented by universal-character-name '\u2705' cannot be represented in the current code page (1252)
-C:\Users\Administrator\Desktop\New folder\Aotearoa-Treasures--inventory-management-system-\AT-InvMan\deleteProduct.cpp(28,21): warning C4566: character represented by universal-character-name '\u274C' cannot be represented in the current code page (1252)
+C:\Users\rr_ob\OneDrive\Documents\yoobee-group5-dhonarepo\SD103-InventoryManageSystem\Aotearoa-Treasures--inventory-management-system-\AT-InvMan\deleteProduct.cpp(25,21): warning C4566: character represented by universal-character-name '\u2705' cannot be represented in the current code page (1252)
+C:\Users\rr_ob\OneDrive\Documents\yoobee-group5-dhonarepo\SD103-InventoryManageSystem\Aotearoa-Treasures--inventory-management-system-\AT-InvMan\deleteProduct.cpp(28,21): warning C4566: character represented by universal-character-name '\u274C' cannot be represented in the current code page (1252)
   deleteRoster.cpp
-C:\Users\Administrator\Desktop\New folder\Aotearoa-Treasures--inventory-management-system-\AT-InvMan\deleteRoster.cpp(38,29): warning C4566: character represented by universal-character-name '\u2705' cannot be represented in the current code page (1252)
-C:\Users\Administrator\Desktop\New folder\Aotearoa-Treasures--inventory-management-system-\AT-InvMan\deleteRoster.cpp(42,29): warning C4566: character represented by universal-character-name '\u274C' cannot be represented in the current code page (1252)
-C:\Users\Administrator\Desktop\New folder\Aotearoa-Treasures--inventory-management-system-\AT-InvMan\deleteRoster.cpp(48,25): warning C4566: character represented by universal-character-name '\u274C' cannot be represented in the current code page (1252)
-C:\Users\Administrator\Desktop\New folder\Aotearoa-Treasures--inventory-management-system-\AT-InvMan\deleteRoster.cpp(52,21): warning C4566: character represented by universal-character-name '\u274C' cannot be represented in the current code page (1252)
-C:\Users\Administrator\Desktop\New folder\Aotearoa-Treasures--inventory-management-system-\AT-InvMan\deleteRoster.cpp(58,17): warning C4566: character represented by universal-character-name '\u274C' cannot be represented in the current code page (1252)
+C:\Users\rr_ob\OneDrive\Documents\yoobee-group5-dhonarepo\SD103-InventoryManageSystem\Aotearoa-Treasures--inventory-management-system-\AT-InvMan\deleteRoster.cpp(38,29): warning C4566: character represented by universal-character-name '\u2705' cannot be represented in the current code page (1252)
+C:\Users\rr_ob\OneDrive\Documents\yoobee-group5-dhonarepo\SD103-InventoryManageSystem\Aotearoa-Treasures--inventory-management-system-\AT-InvMan\deleteRoster.cpp(42,29): warning C4566: character represented by universal-character-name '\u274C' cannot be represented in the current code page (1252)
+C:\Users\rr_ob\OneDrive\Documents\yoobee-group5-dhonarepo\SD103-InventoryManageSystem\Aotearoa-Treasures--inventory-management-system-\AT-InvMan\deleteRoster.cpp(48,25): warning C4566: character represented by universal-character-name '\u274C' cannot be represented in the current code page (1252)
+C:\Users\rr_ob\OneDrive\Documents\yoobee-group5-dhonarepo\SD103-InventoryManageSystem\Aotearoa-Treasures--inventory-management-system-\AT-InvMan\deleteRoster.cpp(52,21): warning C4566: character represented by universal-character-name '\u274C' cannot be represented in the current code page (1252)
+C:\Users\rr_ob\OneDrive\Documents\yoobee-group5-dhonarepo\SD103-InventoryManageSystem\Aotearoa-Treasures--inventory-management-system-\AT-InvMan\deleteRoster.cpp(58,17): warning C4566: character represented by universal-character-name '\u274C' cannot be represented in the current code page (1252)
   employeeList.cpp
   employeeRoster.cpp
   employees.cpp
-  generateSalesReport.cpp
   generateSku.cpp
   inventoryMenu.cpp
   login.cpp
   MainMenu.cpp
-C:\Users\Administrator\Desktop\New folder\Aotearoa-Treasures--inventory-management-system-\AT-InvMan\MainMenu.cpp(50,29): warning C4566: character represented by universal-character-name '\u274C' cannot be represented in the current code page (1252)
-C:\Users\Administrator\Desktop\New folder\Aotearoa-Treasures--inventory-management-system-\AT-InvMan\MainMenu.cpp(59,29): warning C4566: character represented by universal-character-name '\u274C' cannot be represented in the current code page (1252)
-C:\Users\Administrator\Desktop\New folder\Aotearoa-Treasures--inventory-management-system-\AT-InvMan\MainMenu.cpp(68,29): warning C4566: character represented by universal-character-name '\u274C' cannot be represented in the current code page (1252)
+C:\Users\rr_ob\OneDrive\Documents\yoobee-group5-dhonarepo\SD103-InventoryManageSystem\Aotearoa-Treasures--inventory-management-system-\AT-InvMan\MainMenu.cpp(50,29): warning C4566: character represented by universal-character-name '\u274C' cannot be represented in the current code page (1252)
+C:\Users\rr_ob\OneDrive\Documents\yoobee-group5-dhonarepo\SD103-InventoryManageSystem\Aotearoa-Treasures--inventory-management-system-\AT-InvMan\MainMenu.cpp(59,29): warning C4566: character represented by universal-character-name '\u274C' cannot be represented in the current code page (1252)
+C:\Users\rr_ob\OneDrive\Documents\yoobee-group5-dhonarepo\SD103-InventoryManageSystem\Aotearoa-Treasures--inventory-management-system-\AT-InvMan\MainMenu.cpp(68,29): warning C4566: character represented by universal-character-name '\u274C' cannot be represented in the current code page (1252)
+  MonthlySalesReport.cpp
   productInventory.cpp
   removeEmployee.cpp
-C:\Users\Administrator\Desktop\New folder\Aotearoa-Treasures--inventory-management-system-\AT-InvMan\removeEmployee.cpp(11,17): warning C4566: character represented by universal-character-name '\u274C' cannot be represented in the current code page (1252)
+C:\Users\rr_ob\OneDrive\Documents\yoobee-group5-dhonarepo\SD103-InventoryManageSystem\Aotearoa-Treasures--inventory-management-system-\AT-InvMan\removeEmployee.cpp(11,17): warning C4566: character represented by universal-character-name '\u274C' cannot be represented in the current code page (1252)
   rosterList.cpp
-  SalesReport.cpp
-C:\Users\Administrator\Desktop\New folder\Aotearoa-Treasures--inventory-management-system-\AT-InvMan\SalesReport.cpp(62,17): warning C4566: character represented by universal-character-name '\u274C' cannot be represented in the current code page (1252)
-C:\Users\Administrator\Desktop\New folder\Aotearoa-Treasures--inventory-management-system-\AT-InvMan\SalesReport.cpp(63,9): error C2561: 'runsalesReport': function must return a value
-      C:\Users\Administrator\Desktop\New folder\Aotearoa-Treasures--inventory-management-system-\AT-InvMan\SalesReport.cpp(16,5):
-      see declaration of 'runsalesReport'
-  
-C:\Users\Administrator\Desktop\New folder\Aotearoa-Treasures--inventory-management-system-\AT-InvMan\SalesReport.cpp(92,22): warning C4566: character represented by universal-character-name '\u274C' cannot be represented in the current code page (1252)
-C:\Users\Administrator\Desktop\New folder\Aotearoa-Treasures--inventory-management-system-\AT-InvMan\SalesReport.cpp(102,22): warning C4566: character represented by universal-character-name '\u274C' cannot be represented in the current code page (1252)
-  salesReportMovement.cpp
-  updateEmployee.cpp
-C:\Users\Administrator\Desktop\New folder\Aotearoa-Treasures--inventory-management-system-\AT-InvMan\updateEmployee.cpp(73,17): warning C4566: character represented by universal-character-name '\u2705' cannot be represented in the current code page (1252)
+  ReportMenu.cpp
   Generating Code...
   Compiling...
+  salesReportMovement.cpp
+  session.cpp
+  StockMovementReport.cpp
+  updateEmployee.cpp
+C:\Users\rr_ob\OneDrive\Documents\yoobee-group5-dhonarepo\SD103-InventoryManageSystem\Aotearoa-Treasures--inventory-management-system-\AT-InvMan\updateEmployee.cpp(73,17): warning C4566: character represented by universal-character-name '\u2705' cannot be represented in the current code page (1252)
   updateProduct.cpp
-C:\Users\Administrator\Desktop\New folder\Aotearoa-Treasures--inventory-management-system-\AT-InvMan\updateProduct.cpp(34,13): warning C4101: 'result': unreferenced local variable
+C:\Users\rr_ob\OneDrive\Documents\yoobee-group5-dhonarepo\SD103-InventoryManageSystem\Aotearoa-Treasures--inventory-management-system-\AT-InvMan\updateProduct.cpp(37,13): warning C4101: 'result': unreferenced local variable
   updateRoster.cpp
-C:\Users\Administrator\Desktop\New folder\Aotearoa-Treasures--inventory-management-system-\AT-InvMan\updateRoster.cpp(32,21): warning C4566: character represented by universal-character-name '\u274C' cannot be represented in the current code page (1252)
-C:\Users\Administrator\Desktop\New folder\Aotearoa-Treasures--inventory-management-system-\AT-InvMan\updateRoster.cpp(39,17): warning C4566: character represented by universal-character-name '\u274C' cannot be represented in the current code page (1252)
-C:\Users\Administrator\Desktop\New folder\Aotearoa-Treasures--inventory-management-system-\AT-InvMan\updateRoster.cpp(77,21): warning C4566: character represented by universal-character-name '\u2705' cannot be represented in the current code page (1252)
-C:\Users\Administrator\Desktop\New folder\Aotearoa-Treasures--inventory-management-system-\AT-InvMan\updateRoster.cpp(81,21): warning C4566: character represented by universal-character-name '\u274C' cannot be represented in the current code page (1252)
-C:\Users\Administrator\Desktop\New folder\Aotearoa-Treasures--inventory-management-system-\AT-InvMan\updateRoster.cpp(87,17): warning C4566: character represented by universal-character-name '\u274C' cannot be represented in the current code page (1252)
+C:\Users\rr_ob\OneDrive\Documents\yoobee-group5-dhonarepo\SD103-InventoryManageSystem\Aotearoa-Treasures--inventory-management-system-\AT-InvMan\updateRoster.cpp(32,21): warning C4566: character represented by universal-character-name '\u274C' cannot be represented in the current code page (1252)
+C:\Users\rr_ob\OneDrive\Documents\yoobee-group5-dhonarepo\SD103-InventoryManageSystem\Aotearoa-Treasures--inventory-management-system-\AT-InvMan\updateRoster.cpp(39,17): warning C4566: character represented by universal-character-name '\u274C' cannot be represented in the current code page (1252)
+C:\Users\rr_ob\OneDrive\Documents\yoobee-group5-dhonarepo\SD103-InventoryManageSystem\Aotearoa-Treasures--inventory-management-system-\AT-InvMan\updateRoster.cpp(77,21): warning C4566: character represented by universal-character-name '\u2705' cannot be represented in the current code page (1252)
+C:\Users\rr_ob\OneDrive\Documents\yoobee-group5-dhonarepo\SD103-InventoryManageSystem\Aotearoa-Treasures--inventory-management-system-\AT-InvMan\updateRoster.cpp(81,21): warning C4566: character represented by universal-character-name '\u274C' cannot be represented in the current code page (1252)
+C:\Users\rr_ob\OneDrive\Documents\yoobee-group5-dhonarepo\SD103-InventoryManageSystem\Aotearoa-Treasures--inventory-management-system-\AT-InvMan\updateRoster.cpp(87,17): warning C4566: character represented by universal-character-name '\u274C' cannot be represented in the current code page (1252)
+  WeeklysalesReport.cpp
+  YearlySalesReport.cpp
   Generating Code...
+MainMenu.obj : error LNK2019: unresolved external symbol "void __cdecl salesReportMenu(void)" (?salesReportMenu@@YAXXZ) referenced in function "void __cdecl mainMenu(void)" (?mainMenu@@YAXXZ)
+C:\Users\rr_ob\OneDrive\Documents\yoobee-group5-dhonarepo\SD103-InventoryManageSystem\Aotearoa-Treasures--inventory-management-system-\AT-InvMan\x64\Debug\AT-InvMan.exe : fatal error LNK1120: 1 unresolved externals
