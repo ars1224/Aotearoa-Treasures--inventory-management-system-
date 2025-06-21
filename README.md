@@ -53,7 +53,7 @@ In **Group 5**, we adopted Scrum methodology and assigned ourselves the followin
 | Name            | GitHub                                      | Scrum Role(s)                                   | Project Role / Feature Focus              |
 |-----------------|---------------------------------------------|--------------------------------------------------|-------------------------------------------|
 | Cameron Moss    | [@Camerondmoss98](https://github.com/Camerondmoss98) | Scrum Master, Developer          | Inventory Module, Team Coordination       |
-| Dhona Obina     | [@dhonaobina](https://github.com/dhonaobina)         | Product Owner,Developer                                       | Point of Sale (POS) Module, Git & Repo Setup |
+| Dhona Obina     | [@dhonaobina](https://github.com/dhonaobina)         | Product Owner, Developer                                       | Point of Sale (POS) Module, Git & Repo Setup |
 | Aries (ars1224) | [@ars1224](https://github.com/ars1224)               | Developer, Stakeholder Representative           | Database Integration, Authentication, Reports |
 
 ---
