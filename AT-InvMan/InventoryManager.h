@@ -18,9 +18,10 @@ struct Product {
 // Function declarations
 void productList();
 void addProduct();
-void updateProduct(sqlite3* db);
-void deleteProduct(sqlite3* db);
-void inventory();
+void updateProduct();
+void deleteProduct();
+void inventory(char skipOption = '\0');
+void ListOnly();
 void productList();
 string generateNextSKU();
 

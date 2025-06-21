@@ -10,12 +10,16 @@ void employeeList();
 void addEmployee();
 void updateEmployee();
 void deleteEmployee();
+void employeeMenu(char skipOption = '\0');
+
+// FUNCTIONS FOR ROSTERS
+void rosterlist(); 
+void RosterMenu(char skipOption = '\0');
 void addRoster();
-void roster();
 void updateRoster();
 void deleteRoster();
 void rosterlist();
-void employeeMasterlist();
+void employeeWithoutSchedule();
 
 // STRUCT FOR EMPLOYEES
 struct employee {
@@ -44,8 +48,8 @@ struct rosterEntry {
 };
 
 // FUNCTIONS FOR REPORTS
-void salesReportMenu();
-void runSalesReport(sqlite3* db);
+//void salesReportMenu();
+//void runSalesReport(sqlite3* db);
 
 // FUNCTIONS FOR LOGIN
 bool login(int empID, const string& password);
@@ -53,4 +57,9 @@ bool login(int empID, const string& password);
 // FUNCTIONS FOR MENUS
 void mainMenu();
 
+//FUNCTIONS FOR ALERTS
+void alert();
+
+// FUNCTIONS FOR ROSTERS
+const char* safeText(const unsigned char* text);
 #endif

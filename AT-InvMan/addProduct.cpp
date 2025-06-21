@@ -57,11 +57,6 @@ void updateBranchStock(sqlite3* db, const string& name, const string& branch, in
 
 
 void addProduct() {
-    if (!isAdmin() && !isStoreManager() && !isStockClerk()) {
-        cout << "\u274c You do not have permission to add products.\n";
-        return;
-    }
-
     char choice;
     do {
         sqlite3* db = connectToDatabase();
@@ -159,6 +154,6 @@ void addProduct() {
     } while (choice == 'y' || choice == 'Y');
 
     cout << endl;
-    inventory(); // Refresh the product list
+    productList(); // Refresh the product list
 }
 

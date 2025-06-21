@@ -20,9 +20,6 @@ void employeeMasterlist() {
     else if (isStoreManager()) {
         sql = "SELECT * FROM employee WHERE branch = ?;";
     }
-    else {
-        sql = "SELECT * FROM employee WHERE Employee_ID = ?;";
-    }
 
     if (sqlite3_prepare_v2(db, sql.c_str(), -1, &stmt, nullptr) != SQLITE_OK) {
         cerr << "Failed to prepare statement: " << sqlite3_errmsg(db) << endl;

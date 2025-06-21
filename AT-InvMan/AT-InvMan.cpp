@@ -7,9 +7,6 @@
 #include <iomanip>
 #include "auth.h"
 using namespace std;
-using namespace std;
-
-/*   */
 
 
 string getHiddenPassword() {
@@ -53,6 +50,7 @@ string getNumericID() {
 }
 
 int main() {
+
  int id;
  string pass;
 bool loggedIn = false;

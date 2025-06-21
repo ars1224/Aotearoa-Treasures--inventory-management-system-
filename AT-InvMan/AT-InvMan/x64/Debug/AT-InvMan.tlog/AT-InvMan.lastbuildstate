@@ -1,2 +1,7 @@
+<<<<<<< HEAD
 PlatformToolSet=v143:VCToolArchitecture=Native64Bit:VCToolsVersion=14.43.34808:TargetPlatformVersion=10.0.22621.0:
 Debug|x64|C:\Users\rr_ob\OneDrive\Documents\yoobee-group5-dhonarepo\SD103-InventoryManageSystem\Aotearoa-Treasures--inventory-management-system-\AT-InvMan\|
+=======
+PlatformToolSet=v143:VCToolArchitecture=Native64Bit:VCToolsVersion=14.44.35207:TargetPlatformVersion=10.0.26100.0:
+Debug|x64|D:\YOOBEE\Aotearoa-Treasures--inventory-management-system\AT-InvMan\|
+>>>>>>> fb4fc3eaf5274a112088e7b4c4e0df8f9cd1fc85
