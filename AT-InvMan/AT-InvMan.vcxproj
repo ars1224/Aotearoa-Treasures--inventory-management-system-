@@ -141,6 +141,7 @@
     <ClCompile Include="MainMenu.cpp" />
     <ClCompile Include="MonthlySalesReport.cpp" />
     <ClCompile Include="NoSchedules.cpp" />
+    <ClCompile Include="pos.cpp" />
     <ClCompile Include="productList.cpp" />
     <ClCompile Include="removeEmployee.cpp" />
     <ClCompile Include="rosterList.cpp" />

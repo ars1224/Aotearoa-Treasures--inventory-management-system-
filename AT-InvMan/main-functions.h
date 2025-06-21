@@ -63,3 +63,6 @@ void alert();
 // FUNCTIONS FOR ROSTERS
 const char* safeText(const unsigned char* text);
 #endif
+
+// FUNCTIONS FOR TESTING ONLY - Dhona 
+void testPOS();

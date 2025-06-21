@@ -33,7 +33,7 @@ void inventory(char skipOption)
             case '2': addProduct(); inventory('2'); break;
             case '3': updateProduct(); inventory('3'); break;
             case '4': deleteProduct(); inventory('4'); break;
-            case '5': /*pos(); inventory('5');*/ break;
+            case '5': testPOS(); inventory('5'); break; // Dhona - remove comment for testing
             case '6': mainMenu(); inventory('6'); break;
             default:
                 cout << "Invalid selection. Please try again.\n";
@@ -51,7 +51,7 @@ void inventory(char skipOption)
 
             switch (choice) {
             case '1': productList(); inventory('1'); break;
-            case '2': /*pos(); inventory('2');*/ break;
+            case '2': testPOS(); inventory('2'); break; // Dhona - remove comment for testing
             case '3': mainMenu(); inventory('3'); break;
             default:
                 cout << "Invalid selection. Please try again.\n";

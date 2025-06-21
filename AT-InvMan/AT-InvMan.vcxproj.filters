@@ -37,6 +37,9 @@
     <Filter Include="Source Files\features\roster">
       <UniqueIdentifier>{477347d3-dbb6-4786-baf5-b54153d918b9}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\features\POS">
+      <UniqueIdentifier>{c7493794-f6e9-41a3-a30d-9c725e9c892a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AT-InvMan.cpp">
@@ -131,6 +134,9 @@
     </ClCompile>
     <ClCompile Include="NoSchedules.cpp">
       <Filter>Source Files\features\roster</Filter>
+    </ClCompile>
+    <ClCompile Include="pos.cpp">
+      <Filter>Source Files\features\POS</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
