@@ -38,7 +38,7 @@ void mainMenu()
             case '1': inventory(); break;
             case '2': RosterMenu(); break;
             case '3': employeeMenu(); break;
-            case '4': /* salesReportMenu();*/ break;
+            case '4': generateMonthlySalesReport(); break;
             case '5': alert(); break;
             case '6': cout << "Exiting the system. Goodbye!\n"; exit(0);
             default: cout << "Invalid choice. Please try again.\n"; break;

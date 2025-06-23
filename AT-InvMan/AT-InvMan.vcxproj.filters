@@ -96,9 +96,6 @@
     <ClCompile Include="WeeklysalesReport.cpp">
       <Filter>Source Files\features\Reports</Filter>
     </ClCompile>
-    <ClCompile Include="MonthlySalesReport.cpp">
-      <Filter>Source Files\features\Reports</Filter>
-    </ClCompile>
     <ClCompile Include="YearlySalesReport.cpp">
       <Filter>Source Files\features\Reports</Filter>
     </ClCompile>

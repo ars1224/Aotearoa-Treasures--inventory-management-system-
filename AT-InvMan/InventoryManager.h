@@ -23,6 +23,8 @@ void deleteProduct();
 void inventory(char skipOption = '\0');
 void ListOnly();
 void productList();
+void salesReport();
 string generateNextSKU();
 
+void generateMonthlySalesReport();
 #endif
