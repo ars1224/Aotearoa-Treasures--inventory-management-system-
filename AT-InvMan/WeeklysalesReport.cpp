@@ -13,9 +13,9 @@ void generateWeeklyReport(sqlite3* db, const string& location) {
     string sql;
     if (location == "ALL") {
         sql =
-            "SELECT " + displayGroup + " AS period, 'WLG' AS location, SUM(quantity) FROM WLG_Sales GROUP BY " + timeGroup + " UNION ALL "
-            "SELECT " + displayGroup + ", 'CHCH', SUM(quantity) FROM CHCH_Sales GROUP BY " + timeGroup + " UNION ALL "
-            "SELECT " + displayGroup + ", 'AKL', SUM(quantity) FROM AKL_Sales GROUP BY " + timeGroup + " ORDER BY period DESC, location;";
+            "SELECT " + displayGroup + " AS period, 'WLGSales' AS location, SUM(quantity) FROM WLGSales GROUP BY " + timeGroup + " UNION ALL "
+            "SELECT " + displayGroup + ", 'CHCHSales', SUM(quantity) FROM CHCHSales GROUP BY " + timeGroup + " UNION ALL "
+            "SELECT " + displayGroup + ", 'AKLSales', SUM(quantity) FROM AKLSales GROUP BY " + timeGroup + " ORDER BY period DESC, location;";
     }
     else {
         string table = location + "_Sales";

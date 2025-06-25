@@ -17,9 +17,9 @@ void logSaleToBranchTable(const std::string& branch, const std::vector<CartItem>
 
     // Determine which sales table to use based on the branch
     std::string tableName;
-    if (branch == "Auckland") tableName = "AKL_sales";
-    else if (branch == "Christchurch") tableName = "CHCH_sales";
-    else if (branch == "Wellington") tableName = "WLG_sales";
+    if (branch == "Auckland") tableName = "AKLSales";
+    else if (branch == "Christchurch") tableName = "CHCHSales";
+    else if (branch == "Wellington") tableName = "WLGSales";
     else return;
 
     // Get the current date in the format DD/MM/YYYY

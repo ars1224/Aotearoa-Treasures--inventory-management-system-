@@ -221,9 +221,9 @@ void generateWeeklySalesReport() {
         return;
     }
 
-    fetchSalesData(db, "WLG_sale", startDate, endDate);
-    fetchSalesData(db, "AKL_sales", startDate, endDate);
-    fetchSalesData(db, "CHCH_sales", startDate, endDate);
+    fetchSalesData(db, "WLGSales", startDate, endDate);
+    fetchSalesData(db, "AKLSales", startDate, endDate);
+    fetchSalesData(db, "CHCHSales", startDate, endDate);
 
     sqlite3_close(db);
 }
@@ -257,9 +257,9 @@ void generateMonthlySalesReport() {
         return;
     }
 
-    fetchMonthlySalesData(db, "WLG_sale", startDate, endDate);
-    fetchMonthlySalesData(db, "AKL_sales", startDate, endDate);
-    fetchMonthlySalesData(db, "CHCH_sales", startDate, endDate);
+    fetchMonthlySalesData(db, "WLGSales", startDate, endDate);
+    fetchMonthlySalesData(db, "AKLSales", startDate, endDate);
+    fetchMonthlySalesData(db, "CHCHSales", startDate, endDate);
 
     sqlite3_close(db);
 }

@@ -40,7 +40,7 @@
     <Filter Include="Source Files\features\POS">
       <UniqueIdentifier>{c7493794-f6e9-41a3-a30d-9c725e9c892a}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\alerts">
+    <Filter Include="Source Files\features\alerts">
       <UniqueIdentifier>{dacd30af-f393-4a78-ac5d-e77bb62bcc98}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
@@ -142,7 +142,7 @@
       <Filter>Source Files\features\POS</Filter>
     </ClCompile>
     <ClCompile Include="lowStockAlert.cpp">
-      <Filter>Source Files\alerts</Filter>
+      <Filter>Source Files\features\alerts</Filter>
     </ClCompile>
     <ClCompile Include="salesReportMovement.cpp">
       <Filter>Source Files\features\Reports</Filter>
