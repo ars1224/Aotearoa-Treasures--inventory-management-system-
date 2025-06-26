@@ -2,7 +2,6 @@
 #define INVENTORYMANAGER_H
 
 #include <string>
-
 using namespace std;
 
 struct Product {
@@ -23,8 +22,7 @@ void deleteProduct();
 void inventory(char skipOption = '\0');
 void ListOnly();
 void productList();
-void salesReport();
 string generateNextSKU();
-
 void generateMonthlySalesReport();
+
 #endif
