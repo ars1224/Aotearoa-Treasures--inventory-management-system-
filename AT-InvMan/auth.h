@@ -16,6 +16,3 @@ inline bool isEmployee() {
 std::string getCurrentUserBranch();
 
 #endif
-
-//Aries
-//Dhona

@@ -7,8 +7,7 @@
 #include <iostream>
 #include <sqlite3.h>
 #include "main-functions.h"
-#include <iomanip> // For table formatting
-
+#include <iomanip> 
 void alert() {
     sqlite3* db;
     sqlite3_stmt* stmt;
