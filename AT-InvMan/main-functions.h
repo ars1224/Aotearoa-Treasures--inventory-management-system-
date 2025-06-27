@@ -1,4 +1,3 @@
-#pragma once
 #ifndef MAIN_FUNCTIONS_H
 #define MAIN_FUNCTIONS_H
 
@@ -47,10 +46,6 @@ struct rosterEntry {
     string sunday;
 };
 
-// FUNCTIONS FOR REPORTS
-//void salesReportMenu();
-//void runSalesReport(sqlite3* db);
-
 // FUNCTIONS FOR LOGIN
 bool login(int empID, const string& password);
 
@@ -62,10 +57,8 @@ void alert();
 
 // FUNCTIONS FOR ROSTERS
 const char* safeText(const unsigned char* text);
-#endif
-
-// FUNCTIONS FOR TESTING ONLY - Dhona 
-/*void testPOS();*/
 
 // FUNCTIONS FOR POINT OF SALE
-void processPointOfSale();  
+void processPointOfSale(); 
+
+#endif

@@ -15,7 +15,6 @@ struct Product {
 };
 
 // Function declarations
-void productList();
 void addProduct();
 void updateProduct();
 void deleteProduct();

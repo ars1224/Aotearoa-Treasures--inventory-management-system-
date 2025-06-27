@@ -8,5 +8,3 @@ sqlite3* connectToDatabase();
 void closeDatabase(sqlite3* db);
 
 #endif
-
-//Aries
