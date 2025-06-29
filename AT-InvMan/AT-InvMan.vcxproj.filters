@@ -22,26 +22,26 @@
     <Filter Include="Source Files\features\Employee">
       <UniqueIdentifier>{31dcd5b8-0ec4-419f-9ff8-b22415e9b7a1}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\session">
-      <UniqueIdentifier>{989856b9-097f-4758-8777-40ed62439c91}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\features\Stock">
       <UniqueIdentifier>{fc03b567-9654-4d85-8751-039de2bd3035}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files\features\main">
       <UniqueIdentifier>{f983e50b-2f33-489a-90eb-0d8dc5445495}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\features\Reports">
-      <UniqueIdentifier>{c09f277f-abab-49e6-8d7f-f3cd2823d5f2}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\features\roster">
       <UniqueIdentifier>{477347d3-dbb6-4786-baf5-b54153d918b9}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\features\POS">
+    <Filter Include="Source Files\features\Stock\POS">
       <UniqueIdentifier>{c7493794-f6e9-41a3-a30d-9c725e9c892a}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\features\alerts">
+    <Filter Include="Source Files\features\Stock\alerts">
       <UniqueIdentifier>{dacd30af-f393-4a78-ac5d-e77bb62bcc98}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\features\Stock\Reports">
+      <UniqueIdentifier>{c09f277f-abab-49e6-8d7f-f3cd2823d5f2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\features\main\session">
+      <UniqueIdentifier>{989856b9-097f-4758-8777-40ed62439c91}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -64,7 +64,7 @@
       <Filter>Source Files\features\Employee</Filter>
     </ClCompile>
     <ClCompile Include="session.cpp">
-      <Filter>Source Files\session</Filter>
+      <Filter>Source Files\features\main\session</Filter>
     </ClCompile>
     <ClCompile Include="login.cpp">
       <Filter>Source Files\features\main</Filter>
@@ -81,9 +81,6 @@
     <ClCompile Include="addProduct.cpp">
       <Filter>Source Files\features\Stock</Filter>
     </ClCompile>
-    <ClCompile Include="generateSku.cpp">
-      <Filter>Source Files\features\Stock</Filter>
-    </ClCompile>
     <ClCompile Include="updateProduct.cpp">
       <Filter>Source Files\features\Stock</Filter>
     </ClCompile>
@@ -91,16 +88,7 @@
       <Filter>Source Files\features\Stock</Filter>
     </ClCompile>
     <ClCompile Include="ReportMenu.cpp">
-      <Filter>Source Files\features\Reports</Filter>
-    </ClCompile>
-    <ClCompile Include="WeeklysalesReport.cpp">
-      <Filter>Source Files\features\Reports</Filter>
-    </ClCompile>
-    <ClCompile Include="YearlySalesReport.cpp">
-      <Filter>Source Files\features\Reports</Filter>
-    </ClCompile>
-    <ClCompile Include="StockMovementReport.cpp">
-      <Filter>Source Files\features\Reports</Filter>
+      <Filter>Source Files\features\Stock\Reports</Filter>
     </ClCompile>
     <ClCompile Include="updateRoster.cpp">
       <Filter>Source Files\features\roster</Filter>
@@ -123,29 +111,20 @@
     <ClCompile Include="EmployeeList.cpp">
       <Filter>Source Files\features\Employee</Filter>
     </ClCompile>
-    <ClCompile Include="listOnly.cpp">
-      <Filter>Source Files\features\Stock</Filter>
-    </ClCompile>
-    <ClCompile Include="NoSchedules.cpp">
-      <Filter>Source Files\features\roster</Filter>
-    </ClCompile>
     <ClCompile Include="pos.cpp">
-      <Filter>Source Files\features\POS</Filter>
+      <Filter>Source Files\features\Stock\POS</Filter>
     </ClCompile>
     <ClCompile Include="POSLauncher.cpp">
-      <Filter>Source Files\features\POS</Filter>
+      <Filter>Source Files\features\Stock\POS</Filter>
     </ClCompile>
     <ClCompile Include="auth.cpp">
       <Filter>Source Files\features\main</Filter>
     </ClCompile>
     <ClCompile Include="salesLogger.cpp">
-      <Filter>Source Files\features\POS</Filter>
+      <Filter>Source Files\features\Stock\POS</Filter>
     </ClCompile>
     <ClCompile Include="lowStockAlert.cpp">
-      <Filter>Source Files\features\alerts</Filter>
-    </ClCompile>
-    <ClCompile Include="salesReportMovement.cpp">
-      <Filter>Source Files\features\Reports</Filter>
+      <Filter>Source Files\features\Stock\alerts</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

@@ -130,17 +130,14 @@
     <ClCompile Include="auth.cpp" />
     <ClCompile Include="EmployeeList.cpp" />
     <ClCompile Include="EmployeeMenu.cpp" />
-    <ClCompile Include="listOnly.cpp" />
     <ClCompile Include="lowStockAlert.cpp" />
     <ClCompile Include="AT-InvMan.cpp" />
     <ClCompile Include="db-conn.cpp" />
     <ClCompile Include="deleteProduct.cpp" />
     <ClCompile Include="deleteRoster.cpp" />
-    <ClCompile Include="generateSku.cpp" />
     <ClCompile Include="inventoryMenu.cpp" />
     <ClCompile Include="login.cpp" />
     <ClCompile Include="MainMenu.cpp" />
-    <ClCompile Include="NoSchedules.cpp" />
     <ClCompile Include="pos.cpp" />
     <ClCompile Include="POSLauncher.cpp" />
     <ClCompile Include="productList.cpp" />
@@ -149,14 +146,10 @@
     <ClCompile Include="ReportMenu.cpp" />
     <ClCompile Include="RosterMenu.cpp" />
     <ClCompile Include="salesLogger.cpp" />
-    <ClCompile Include="salesReportMovement.cpp" />
     <ClCompile Include="session.cpp" />
-    <ClCompile Include="StockMovementReport.cpp" />
     <ClCompile Include="updateEmployee.cpp" />
     <ClCompile Include="updateProduct.cpp" />
     <ClCompile Include="updateRoster.cpp" />
-    <ClCompile Include="WeeklysalesReport.cpp" />
-    <ClCompile Include="YearlySalesReport.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
