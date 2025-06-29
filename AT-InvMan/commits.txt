@@ -1,0 +1,677 @@
+commit f46fc4deff120dd79b232f4bece2a4cec9c20d4c
+Merge: e8869ce ac953c4
+Author: ars1224 <126647608+ars1224@users.noreply.github.com>
+Date:   Sun Jun 29 21:02:19 2025 +1200
+
+    Merge branch 'main' of https://github.com/ars1224/Aotearoa-Treasures--inventory-management-system-
+
+commit e8869ce00c129aff927f84a3c05a15c74f283b95
+Author: ars1224 <126647608+ars1224@users.noreply.github.com>
+Date:   Sun Jun 29 21:02:15 2025 +1200
+
+    deleted some files that not going to use
+
+commit ac953c4ce9e9d14d9247e4f85b69aefd8504e57f
+Merge: 69526df 334e024
+Author: ars1224 <a.tayao1224@gmail.com>
+Date:   Sat Jun 28 11:31:54 2025 +1200
+
+    Merge branch 'main' of https://github.com/ars1224/Aotearoa-Treasures--inventory-management-system-
+
+commit 69526df71cb8552464915cf9b1e6c3e23404b69d
+Author: ars1224 <a.tayao1224@gmail.com>
+Date:   Sat Jun 28 11:31:46 2025 +1200
+
+    Update salesLogger.h
+
+commit 334e024da26a647cd191856f8df0b561d5cfb525
+Author: ars1224 <126647608+ars1224@users.noreply.github.com>
+Date:   Sat Jun 28 11:30:07 2025 +1200
+
+    changes
+
+commit 9db0823cf4bc02a1069fd488c1215f96955c9176
+Author: ars1224 <a.tayao1224@gmail.com>
+Date:   Thu Jun 26 15:55:09 2025 +1200
+
+    changes
+
+commit 03b48def1bda9557939e8ee5c422cfef8b62319e
+Author: ars1224 <126647608+ars1224@users.noreply.github.com>
+Date:   Thu Jun 26 07:23:44 2025 +1200
+
+    fix
+
+commit 53681867d432ad69235b6d4fb4d0a5da60175fdc
+Author: Cameron <camerondmoss98@gmail.com>
+Date:   Tue Jun 24 00:05:18 2025 +1200
+
+    sales report
+
+commit a2cb095368bd5898cf747e56c1acbcf614b1a619
+Author: Cameron <camerondmoss98@gmail.com>
+Date:   Mon Jun 23 21:25:15 2025 +1200
+
+    adding test file
+
+commit 8f33aad08b854c7421a2faaa722a7ae3aee6fd02
+Author: ars1224 <126647608+ars1224@users.noreply.github.com>
+Date:   Sun Jun 22 17:15:56 2025 +1200
+
+    Update AT-InvMan.vcxproj.filters
+
+commit 41d0a67d9a8e56fdb7df807ac28f3f7b771d0251
+Author: dhonaobina <dhona.obina@outlook.com>
+Date:   Sat Jun 21 19:57:24 2025 +1200
+
+    feat: Finalize POS system with inventory deduction, cart review, and sales logging
+    
+    - Implemented cashier-style POS interface with interactive menu.
+    - Added inventory validation per branch before adding to cart.
+    - Delayed stock deduction until checkout confirmation.
+    - Logged all confirmed sales to branch-specific sales tables.
+    - Prevented stock changes if transaction is canceled.
+    - Improved user prompts and error handling for out-of-stock and invalid items.
+    - Added comments throughout code for maintainability and assessment clarity.
+
+commit 30982da2dc460d0a7641d951ea7e958f8efc3ad6
+Author: dhonaobina <dhona.obina@outlook.com>
+Date:   Sat Jun 21 19:42:08 2025 +1200
+
+    Fix POS checkout: prevent duplicate message & restore quantity on cancel
+    
+    - Fixed issue where "Sale completed for branch" appeared twice.
+    - Ensured inventory quantity rolls back if POS transaction is canceled.
+    - Improved checkout clarity and data consistency.
+    - Enhanced user experience for out-of-stock and invalid product entries.
+
+commit e20402152370e75ed44e0d48d3962081b12d5bfa
+Author: dhonaobina <dhona.obina@outlook.com>
+Date:   Sat Jun 21 18:57:18 2025 +1200
+
+    Refactor: Removed purchase order manager to simplify POS system
+    
+    - Deleted purchaseOrderManager.cpp/h to focus only on POS-based sales
+    - Retained direct sales logging to branch-specific sales tables
+    - Simplified project structure to meet assessment requirements
+
+commit 8930c161c16222518358802b2e8e00d346bf74ff
+Author: dhonaobina <dhona.obina@outlook.com>
+Date:   Sat Jun 21 18:44:12 2025 +1200
+
+    Delete pos.cpp
+
+commit ebfbe001080ff3723c6ee01bb000e5a466f4e434
+Author: dhonaobina <dhona.obina@outlook.com>
+Date:   Sat Jun 21 18:40:34 2025 +1200
+
+    added saleslogger and update db file name for sales report
+
+commit 1cad2fda25158933bc71ac7a80d25ae589a2ba18
+Author: dhonaobina <dhona.obina@outlook.com>
+Date:   Sat Jun 21 17:45:16 2025 +1200
+
+    Implement realistic cashier-style POS interface with branch-based inventory updates
+    
+    - Replaced testPOS() with a production-ready cashier workflow via processPointOfSale()
+    - Prompt-based cart addition now reflects actual cashier flow
+    - Receipts now print itemized lists with totals
+    - Inventory updates are tied to user branch (Auckland, Wellington, Christchurch)
+    - Includes fallback to default branch (Wellington) if unspecified
+
+commit 29911d3bb5d504b7cc9742325d2f6dce51879aac
+Author: dhonaobina <dhona.obina@outlook.com>
+Date:   Sat Jun 21 17:20:29 2025 +1200
+
+    Implement POS checkout functionality with branch-specific inventory updates
+    
+    - Renamed testPOS() to processPointOfSale() for clarity
+    - Integrated getCurrentUserBranch() for dynamic branch context
+    - Deducts product quantity from correct branch column (ALK_Qty, CHCH_Qty, WLG_Qty)
+    - Displays scanned items and prints a receipt
+    - Added inventory update logging and validation
+    - Prepares POS system for integration with main menu
+    - Added auth.cpp with definition of getCurrentUserBranch()
+    - Resolved linker errors related to missing external symbol
+
+commit 69eb9f25f6cec5148ee4841a3d6aa7df0284dbee
+Author: CodeGlimpse by DhonaObina <113093370+dhonaobina@users.noreply.github.com>
+Date:   Sat Jun 21 15:10:30 2025 +1200
+
+    Update README.md
+
+commit 936aa99b5d58aaca08d0835b60af034881a1d4c4
+Author: CodeGlimpse by DhonaObina <113093370+dhonaobina@users.noreply.github.com>
+Date:   Sat Jun 21 15:10:14 2025 +1200
+
+    Update README.md
+
+commit fccef5b514d99fd72522e9d2e1d79da0dbc31b91
+Author: CodeGlimpse by DhonaObina <113093370+dhonaobina@users.noreply.github.com>
+Date:   Sat Jun 21 15:07:17 2025 +1200
+
+    Update README.md
+
+commit 31028d773c985bcafb4869254c60d19cec2639aa
+Author: CodeGlimpse by DhonaObina <113093370+dhonaobina@users.noreply.github.com>
+Date:   Sat Jun 21 15:06:48 2025 +1200
+
+    Update README.md
+
+commit 965527a78930e369847fb382dd8d0100a9e78634
+Author: CodeGlimpse by DhonaObina <113093370+dhonaobina@users.noreply.github.com>
+Date:   Sat Jun 21 15:05:44 2025 +1200
+
+    Create README.md
+    
+    Prepared by Dhona
+
+commit 8e66d9e86955a1792328c63461c4ff438a02a03c
+Author: dhonaobina <dhona.obina@outlook.com>
+Date:   Sat Jun 21 14:56:55 2025 +1200
+
+    Added POS logic feature - testing only - not fully functioning
+
+commit 91fb77b61d0ed6374c293e9f353fb8b202e2ee4d
+Author: dhonaobina <dhona.obina@outlook.com>
+Date:   Sat Jun 21 14:22:06 2025 +1200
+
+    created POS.cpp with testPOS() function to begin POS Module
+
+commit e0b1bba898ccf36faa282c3974324ea7e1d076af
+Author: dhonaobina <dhona.obina@outlook.com>
+Date:   Sat Jun 21 13:29:29 2025 +1200
+
+    Added POS filter (VS code and POS.cpp file
+
+commit 550ea301cb8d16526742901c65911059781fa2cf
+Author: dhonaobina <dhona.obina@outlook.com>
+Date:   Sat Jun 21 13:24:33 2025 +1200
+
+    Deleted POS folder and its contents ONLY USED FOR TESTING
+
+commit 979c252d8b3b68094269fe0b341882a0fb8b0259
+Author: dhonaobina <dhona.obina@outlook.com>
+Date:   Sat Jun 21 13:11:39 2025 +1200
+
+    Added POS Folder and blank POS.cpp file to start POS module
+
+commit 02833dd32965503920703da02f04f3c3a1621d22
+Author: dhonaobina <dhona.obina@outlook.com>
+Date:   Sat Jun 21 12:44:52 2025 +1200
+
+    Cleaned up build files and added .gitignore
+
+commit 5bfbebc064f54d6b8d992bca015ce358c8e12b2b
+Merge: b98cbc4 fb4fc3e
+Author: dhonaobina <dhona.obina@outlook.com>
+Date:   Sat Jun 21 12:23:50 2025 +1200
+
+    Resolved merge conflict
+
+commit b98cbc401aaefcd16ed553c39b599c89b62a1a12
+Author: dhonaobina <dhona.obina@outlook.com>
+Date:   Sat Jun 21 12:18:46 2025 +1200
+
+    Dhona pushing to keep data updated
+
+commit fb4fc3eaf5274a112088e7b4c4e0df8f9cd1fc85
+Author: ars1224 <126647608+ars1224@users.noreply.github.com>
+Date:   Sat Jun 21 11:32:34 2025 +1200
+
+    waiting now for pos and sales report
+
+commit 760f84bedc76e47a1402099bb387b5162697304e
+Author: ars1224 <126647608+ars1224@users.noreply.github.com>
+Date:   Fri Jun 20 23:53:21 2025 +1200
+
+    roles attached
+
+commit 7c00e5b4a1357e2b979ae1a369c265284f0fb55a
+Merge: 0c6400d c3e026b
+Author: ars1224 <126647608+ars1224@users.noreply.github.com>
+Date:   Thu Jun 19 22:16:33 2025 +1200
+
+    Merge branch 'main' of https://github.com/ars1224/Aotearoa-Treasures--inventory-management-system-
+
+commit 0c6400d6334b156006ec8d5708e8257f95153ba0
+Author: ars1224 <126647608+ars1224@users.noreply.github.com>
+Date:   Thu Jun 19 22:16:28 2025 +1200
+
+    1
+
+commit c3e026b72286fd93585b3602a0dc485dc1ffb908
+Author: Cameron <camerondmoss98@gmail.com>
+Date:   Thu Jun 19 19:49:31 2025 +1200
+
+    DB updated
+
+commit 4cfa8c552e7d445206f5af9b5f31f1b47d2dd478
+Merge: 7aceacc e770910
+Author: Cameron <camerondmoss98@gmail.com>
+Date:   Wed Jun 18 21:03:08 2025 +1200
+
+    Merge branch 'main' of https://github.com/ars1224/Aotearoa-Treasures--inventory-management-system-
+
+commit e77091017d61bd0a967f794b8ed47bdf30828e32
+Author: ars1224 <126647608+ars1224@users.noreply.github.com>
+Date:   Wed Jun 18 22:01:55 2025 +1200
+
+    Create LOWSTOCKALERT.ipch
+
+commit 4baa021dd09ede22eb8a1a7b8073d224bb4f06cb
+Merge: ceb24d8 16d497e
+Author: ars1224 <126647608+ars1224@users.noreply.github.com>
+Date:   Wed Jun 18 21:59:46 2025 +1200
+
+    Merge branch 'main' of https://github.com/ars1224/Aotearoa-Treasures--inventory-management-system-
+
+commit ceb24d89b15207ec25f2bd5dfe8f6bb375a4281c
+Author: ars1224 <126647608+ars1224@users.noreply.github.com>
+Date:   Wed Jun 18 21:56:41 2025 +1200
+
+    save first
+
+commit 16d497e118ee0c5a5777d2a8920f931e03c03682
+Author: dhonaobina <dhona.obina@outlook.com>
+Date:   Wed Jun 18 21:51:37 2025 +1200
+
+    dhona changed files?
+
+commit 5804e2102df3ca4e0e2f90bf83240875870165c3
+Merge: d0aea38 0ccefe2
+Author: ars1224 <126647608+ars1224@users.noreply.github.com>
+Date:   Wed Jun 18 21:25:28 2025 +1200
+
+    Merge branch 'main' of https://github.com/ars1224/Aotearoa-Treasures--inventory-management-system-
+
+commit d0aea38a41d33d5adb1d39580bbac014e4761488
+Author: ars1224 <126647608+ars1224@users.noreply.github.com>
+Date:   Wed Jun 18 21:05:38 2025 +1200
+
+    aries too
+
+commit 0ccefe2ed6185702121470fea83e5d962b7c3b88
+Author: dhonaobina <dhona.obina@outlook.com>
+Date:   Wed Jun 18 21:04:59 2025 +1200
+
+    aries
+
+commit b4952f704f8d9a38beee3fbbd9fd803b79ee7102
+Author: ars1224 <126647608+ars1224@users.noreply.github.com>
+Date:   Wed Jun 18 20:56:45 2025 +1200
+
+    Update PRODUCTINVENTORY.ipch
+
+commit 5bdb613edf9893af27696e59662dbf38ee30c017
+Author: ars1224 <126647608+ars1224@users.noreply.github.com>
+Date:   Wed Jun 18 20:53:46 2025 +1200
+
+    addProduct done
+
+commit 7aceaccd6c9950142f3c46cc0433d44383b08ad1
+Merge: 6eeed1b 5804e21
+Author: Cameron <camerondmoss98@gmail.com>
+Date:   Wed Jun 18 20:46:10 2025 +1200
+
+    Merge branch 'main' of https://github.com/ars1224/Aotearoa-Treasures--inventory-management-system-
+
+commit 0f4e8de31ad9143779364aebc74c4644ce043c4d
+Author: dhonaobina <dhona.obina@outlook.com>
+Date:   Wed Jun 18 20:44:30 2025 +1200
+
+    update 37 files to main
+
+commit 6eeed1b349aadcebe2e441ea5e86a089502a266f
+Merge: 02eb7fc 0ccefe2
+Author: Cameron <camerondmoss98@gmail.com>
+Date:   Wed Jun 18 20:32:04 2025 +1200
+
+    Merge branch 'main' of https://github.com/ars1224/Aotearoa-Treasures--inventory-management-system-
+
+commit 02eb7fcfc01dc6e84172392641372089c37944b9
+Author: Cameron <camerondmoss98@gmail.com>
+Date:   Wed Jun 18 20:14:47 2025 +1200
+
+    first commit
+
+commit dce181042b6655bf82fea7ca97c08f19cf8e284b
+Author: dhonaobina <dhona.obina@outlook.com>
+Date:   Wed Jun 18 09:47:20 2025 +1200
+
+    update 37 files to main
+
+commit 601345516e1b678b59ba4b1794fc664373e7c5ae
+Author: dhonaobina <dhona.obina@outlook.com>
+Date:   Wed Jun 18 09:32:38 2025 +1200
+
+    Created stock level alert system function (less than 5 items)
+    
+    Segregated into 3 branches
+    file name: lowStockAlert.cpp
+    For Store Owner or Admin Access only
+
+commit 02794ab4f1a458c0da7745a07a701211fe1c5467
+Author: ars1224 <126647608+ars1224@users.noreply.github.com>
+Date:   Wed Jun 18 06:35:22 2025 +1200
+
+    Update at-invman.db
+
+commit 2cdc34922e92f3f064a8857e7efa788d43f63806
+Author: ars1224 <126647608+ars1224@users.noreply.github.com>
+Date:   Wed Jun 18 06:34:56 2025 +1200
+
+    add stock role added(not finish yet)
+
+commit 71ab0016a45fc76ccc686e20f536602a33a7ecec
+Author: ars1224 <a.tayao1224@gmail.com>
+Date:   Tue Jun 17 20:28:04 2025 +1200
+
+    still roles
+
+commit 0b80576da407b7ee8c2197c090ddc4b6a7bf3b71
+Author: ars1224 <126647608+ars1224@users.noreply.github.com>
+Date:   Tue Jun 17 06:02:35 2025 +1200
+
+    role added on stock
+
+commit c2df346a8c33a12034bdf8239959a04195fe4818
+Author: ars1224 <a.tayao1224@gmail.com>
+Date:   Mon Jun 16 16:31:36 2025 +1200
+
+    employee clean up
+
+commit 25081e7cbe056d6f1f5e8ab798dc8975a6adfed9
+Merge: 9ceec1b e51b462
+Author: ars1224 <a.tayao1224@gmail.com>
+Date:   Mon Jun 16 10:17:13 2025 +1200
+
+    Merge branch 'main' of https://github.com/ars1224/Aotearoa-Treasures--inventory-management-system-
+
+commit e51b4621c2184cd8d9d86db81784800d304495de
+Author: ars1224 <126647608+ars1224@users.noreply.github.com>
+Date:   Sun Jun 15 22:12:38 2025 +1200
+
+    -
+
+commit 1844dd8e12d72b0c0423e69608bfa3022e87cb44
+Author: ars1224 <126647608+ars1224@users.noreply.github.com>
+Date:   Sun Jun 15 22:11:45 2025 +1200
+
+    login clean up
+
+commit 026b1fb1785bfe7a3d6518df3346f9f7ec1215ad
+Author: ars1224 <126647608+ars1224@users.noreply.github.com>
+Date:   Sun Jun 15 21:32:46 2025 +1200
+
+    db fixed
+
+commit 10ede3ebae321fa18b0ee459063a8c97df78ff0c
+Merge: fb0404a 3164d5b
+Author: ars1224 <126647608+ars1224@users.noreply.github.com>
+Date:   Sun Jun 15 20:41:19 2025 +1200
+
+    Merge branch 'main' of https://github.com/ars1224/Aotearoa-Treasures--inventory-management-system-
+
+commit fb0404ada5833507e2bb131f6f5aa425f452ef75
+Author: ars1224 <126647608+ars1224@users.noreply.github.com>
+Date:   Sun Jun 15 20:06:42 2025 +1200
+
+    5
+
+commit 9ceec1bbf19b37c31f6b7a4d2c8815050f43f611
+Author: ars1224 <a.tayao1224@gmail.com>
+Date:   Sun Jun 15 20:06:02 2025 +1200
+
+    4
+
+commit ee161d87d4ad12a500fa22a9edac58e82f03e1d8
+Author: ars1224 <126647608+ars1224@users.noreply.github.com>
+Date:   Sun Jun 15 20:05:41 2025 +1200
+
+    3
+
+commit 3164d5bf73da109f1be4a29fc20e507a357e98e3
+Author: ars1224 <a.tayao1224@gmail.com>
+Date:   Sun Jun 15 20:04:39 2025 +1200
+
+    2
+
+commit b0e5950033ec68d02904b0cfe2c69cb492da3ab5
+Merge: 02ac853 912222e
+Author: ars1224 <a.tayao1224@gmail.com>
+Date:   Sun Jun 15 20:04:29 2025 +1200
+
+    Merge branch 'main' of https://github.com/ars1224/Aotearoa-Treasures--inventory-management-system-
+
+commit 02ac853e29ed8da141db2e09ab34960580a04020
+Author: ars1224 <a.tayao1224@gmail.com>
+Date:   Sun Jun 15 20:03:00 2025 +1200
+
+    roster2
+
+commit 912222e52b14b7baa024e92550afd899a01def6a
+Author: Cameron <camerondmoss98@gmail.com>
+Date:   Sun Jun 15 19:44:44 2025 +1200
+
+    Add files via upload
+
+commit 8e0fba5a7db64a6e1aeb4b747b525eef5639aae4
+Author: Cameron <camerondmoss98@gmail.com>
+Date:   Sun Jun 15 19:41:33 2025 +1200
+
+    Add files via upload
+
+commit a5b9fe661f5fb5adabda9dca8bb4638e5cd3e1b5
+Author: Cameron <camerondmoss98@gmail.com>
+Date:   Sun Jun 15 19:39:36 2025 +1200
+
+    Update productInventory.cpp
+
+commit db5ac64e7b30f6c17294a02ceebcee168f9a6237
+Author: Cameron <camerondmoss98@gmail.com>
+Date:   Sun Jun 15 19:36:41 2025 +1200
+
+    Update MainMenu.cpp
+
+commit 25399134f962d0eb91081a7cb148be24f997aa08
+Author: ars1224 <126647608+ars1224@users.noreply.github.com>
+Date:   Sun Jun 15 18:49:53 2025 +1200
+
+    roster list
+
+commit 37f5bec94c635948e4a100121e0ecdf7f39fd2fe
+Author: ars1224 <a.tayao1224@gmail.com>
+Date:   Sat Jun 14 23:39:03 2025 +1200
+
+    some errrors but easy fix
+
+commit 35d3beae47eaae78f5c3256cf16535deaa07ab97
+Author: ars1224 <126647608+ars1224@users.noreply.github.com>
+Date:   Sat Jun 14 10:17:11 2025 +1200
+
+    update.add on going
+
+commit 8f4f436f8dd647535ff0162f48f524241d480a2b
+Author: ars1224 <a.tayao1224@gmail.com>
+Date:   Fri Jun 13 23:39:39 2025 +1200
+
+    roster-add(update)
+
+commit 677e9f602a2a58f4e6c4635f93b88ef47db8242a
+Author: ars1224 <a.tayao1224@gmail.com>
+Date:   Fri Jun 13 19:51:25 2025 +1200
+
+    employeee updates
+
+commit 8a65ceaf155c0ff9bd6fb77611c9cb7a19c906fc
+Author: ars1224 <126647608+ars1224@users.noreply.github.com>
+Date:   Fri Jun 13 00:55:23 2025 +1200
+
+    add employee already has the role based access control
+
+commit 41422b59ab1971f904d284cfdca8316027678608
+Author: ars1224 <a.tayao1224@gmail.com>
+Date:   Thu Jun 12 10:32:48 2025 +1200
+
+    uodate
+
+commit 43dc9ef0838bbe388fedf3659369de454f9827f5
+Author: ars1224 <126647608+ars1224@users.noreply.github.com>
+Date:   Thu Jun 12 00:41:03 2025 +1200
+
+    problem solve
+
+commit dbe96d5d6faf841d201bc7a73edfc378a8485f13
+Author: ars1224 <a.tayao1224@gmail.com>
+Date:   Wed Jun 11 22:43:33 2025 +1200
+
+    still lock
+
+commit fbeeb9350c5b7482852b47e6b408fbeda6739dd3
+Author: ars1224 <a.tayao1224@gmail.com>
+Date:   Wed Jun 11 22:23:11 2025 +1200
+
+    login
+
+commit d8daf89daf028af98625fbd72b4b107e1ad403e9
+Author: ars1224 <126647608+ars1224@users.noreply.github.com>
+Date:   Wed Jun 11 17:30:42 2025 +1200
+
+    login
+
+commit 00ea55f17de1b948efbc1ed4b5324ebfae265fb1
+Author: ars1224 <a.tayao1224@gmail.com>
+Date:   Wed Jun 11 16:08:48 2025 +1200
+
+    log in
+
+commit 559615720edc4e4384e90a1a2f939881428f856e
+Author: ars1224 <a.tayao1224@gmail.com>
+Date:   Tue Jun 10 22:57:05 2025 +1200
+
+    login
+
+commit ace7071b3c856cbff24c38aa17b8b424a3708bab
+Author: ars1224 <126647608+ars1224@users.noreply.github.com>
+Date:   Mon Jun 9 20:31:12 2025 +1200
+
+    :)
+
+commit 69b7c6593fb4fe56bbd62439b27764858bc72ddf
+Author: ars1224 <a.tayao1224@gmail.com>
+Date:   Mon Jun 9 16:09:55 2025 +1200
+
+    roster done, employee list done, add, update delete employee done
+    
+    need review
+
+commit 29074ea1a139fc9cebe6e457beb8ac77bace99fb
+Author: ars1224 <126647608+ars1224@users.noreply.github.com>
+Date:   Mon Jun 9 07:53:03 2025 +1200
+
+    employee nearly finisdh
+
+commit 9e2bb5a6c108275735ea9d5f4e38f7326b87e76b
+Author: ars1224 <126647608+ars1224@users.noreply.github.com>
+Date:   Sat Jun 7 23:48:06 2025 +1200
+
+    employees
+    
+    finished view employees list
+    adding employees
+    update/edit employees
+    delete employees
+    
+    i’ll do a record of employees just for extra feature
+
+commit 9db6a8a9f0c8299a93a35f098f8f98f150b17331
+Author: ars1224 <126647608+ars1224@users.noreply.github.com>
+Date:   Sat Jun 7 21:19:02 2025 +1200
+
+    ?
+
+commit 805319abc34287ccacaa669a2f69f42134954874
+Merge: 84741c0 0818d4e
+Author: ars1224 <126647608+ars1224@users.noreply.github.com>
+Date:   Sat Jun 7 21:18:43 2025 +1200
+
+    ?
+
+commit 84741c0c2312324bde44b85e7bdf7ca2536950c6
+Author: ars1224 <126647608+ars1224@users.noreply.github.com>
+Date:   Sat Jun 7 21:14:36 2025 +1200
+
+    Update Browse.VC.db-wal
+
+commit 0818d4e62a4b09145093f786277e2f6b58ca6072
+Author: ars1224 <a.tayao1224@gmail.com>
+Date:   Sat Jun 7 21:04:24 2025 +1200
+
+    aries
+
+commit d2135daf870169348b4d3afc58b35805ec26b00f
+Author: ars1224 <126647608+ars1224@users.noreply.github.com>
+Date:   Sat Jun 7 19:58:55 2025 +1200
+
+    Update Browse.VC.db-wal
+
+commit 038977df29c23950744c6aeade50ca92062a0059
+Author: ars1224 <126647608+ars1224@users.noreply.github.com>
+Date:   Sat Jun 7 19:58:20 2025 +1200
+
+    LOG IN / EMPLOYEE LIST
+
+commit cf8f86688e21fbbd559241f43ef03c1e014c9fac
+Author: ars1224 <126647608+ars1224@users.noreply.github.com>
+Date:   Sat Jun 7 10:55:02 2025 +1200
+
+    Update at-invman.db
+
+commit 14d150a1027fafd0dc21aef58c528193c171f902
+Author: ars1224 <a.tayao1224@gmail.com>
+Date:   Sat Jun 7 10:10:59 2025 +1200
+
+    db connection done
+
+commit 26fcaf88702267f0a1635c4b431a1d0b2bc2e506
+Author: ars1224 <126647608+ars1224@users.noreply.github.com>
+Date:   Fri Jun 6 19:02:45 2025 +1200
+
+    vs2
+
+commit 1ba16defd5c512d73468c6e049ecf56aee5f4117
+Author: ars1224 <126647608+ars1224@users.noreply.github.com>
+Date:   Fri Jun 6 17:41:09 2025 +1200
+
+    vscode
+
+commit 82dfde76a390a9f7e62f4869e833fbcff5524c04
+Author: ars1224 <126647608+ars1224@users.noreply.github.com>
+Date:   Fri Jun 6 17:38:06 2025 +1200
+
+    folder
+
+commit 02d65c8e8587046cf51174429804d5587239c652
+Author: ars1224 <a.tayao1224@gmail.com>
+Date:   Fri Jun 6 17:22:19 2025 +1200
+
+    sql
+
+commit a8a237ad7d8a75edd1aa3e7f679445adf1ed3cb5
+Author: ars1224 <a.tayao1224@gmail.com>
+Date:   Thu Jun 5 23:37:33 2025 +1200
+
+    sqlite
+
+commit 86ef2937e37c7241118f72f15dd4cab1073a6ddc
+Author: ars1224 <a.tayao1224@gmail.com>
+Date:   Thu Jun 5 23:36:25 2025 +1200
+
+    Create AT-InvMan
+
+commit d518dfa702cb53e56f1caeeeb598d125e4ef9644
+Author: ars1224 <126647608+ars1224@users.noreply.github.com>
+Date:   Mon Jun 2 21:56:29 2025 +1200
+
+    Initial commit

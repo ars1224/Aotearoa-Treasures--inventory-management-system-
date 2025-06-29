@@ -1,6 +1,0 @@
-CREATE TABLE product (
-ProductCode TEXT PRIMARY KEY NOT NULL,
-ProductName TEXT NOT NULL,
-ProductQty INT NOT NULL,
-ProductPrice INT NOT NULL)
-;

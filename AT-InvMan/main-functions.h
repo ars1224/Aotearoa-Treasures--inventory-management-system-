@@ -12,6 +12,7 @@ void addEmployee();
 void updateEmployee();
 void deleteEmployee();
 void employeeMenu(char skipOption = '\0');
+string generateEmployeeId(sqlite3* db);
 
 // FUNCTIONS FOR ROSTERS
 void rosterlist(); 
@@ -21,6 +22,7 @@ void updateRoster();
 void deleteRoster();
 void rosterlist();
 void employeeWithoutSchedule();
+bool scheduleExists(sqlite3* db, int employeeId);
 
 // STRUCT FOR EMPLOYEES
 struct employee {

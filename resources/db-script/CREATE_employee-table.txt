@@ -1,7 +1,0 @@
-CREATE TABLE employee (
-Employee_ID INT PRIMARY KEY NOT NULL,
-Employee_Name TEXT NOT NULL,
-Employee_Possition TEXT NOT NULL,
-Employee_Status TEXT NOT NULL
-password_hash TEXT NOT NULL)
-;

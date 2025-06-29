@@ -1,0 +1,103 @@
+f46fc4deff120dd79b232f4bece2a4cec9c20d4c Merge branch 'main' of https://github.com/ars1224/Aotearoa-Treasures--inventory-management-system-
+e8869ce00c129aff927f84a3c05a15c74f283b95 deleted some files that not going to use
+ac953c4ce9e9d14d9247e4f85b69aefd8504e57f Merge branch 'main' of https://github.com/ars1224/Aotearoa-Treasures--inventory-management-system-
+69526df71cb8552464915cf9b1e6c3e23404b69d Update salesLogger.h
+334e024da26a647cd191856f8df0b561d5cfb525 changes
+9db0823cf4bc02a1069fd488c1215f96955c9176 changes
+03b48def1bda9557939e8ee5c422cfef8b62319e fix
+53681867d432ad69235b6d4fb4d0a5da60175fdc sales report
+a2cb095368bd5898cf747e56c1acbcf614b1a619 adding test file
+8f33aad08b854c7421a2faaa722a7ae3aee6fd02 Update AT-InvMan.vcxproj.filters
+41d0a67d9a8e56fdb7df807ac28f3f7b771d0251 feat: Finalize POS system with inventory deduction, cart review, and sales logging
+30982da2dc460d0a7641d951ea7e958f8efc3ad6 Fix POS checkout: prevent duplicate message & restore quantity on cancel
+e20402152370e75ed44e0d48d3962081b12d5bfa Refactor: Removed purchase order manager to simplify POS system
+8930c161c16222518358802b2e8e00d346bf74ff Delete pos.cpp
+ebfbe001080ff3723c6ee01bb000e5a466f4e434 added saleslogger and update db file name for sales report
+1cad2fda25158933bc71ac7a80d25ae589a2ba18 Implement realistic cashier-style POS interface with branch-based inventory updates
+29911d3bb5d504b7cc9742325d2f6dce51879aac Implement POS checkout functionality with branch-specific inventory updates
+69eb9f25f6cec5148ee4841a3d6aa7df0284dbee Update README.md
+936aa99b5d58aaca08d0835b60af034881a1d4c4 Update README.md
+fccef5b514d99fd72522e9d2e1d79da0dbc31b91 Update README.md
+31028d773c985bcafb4869254c60d19cec2639aa Update README.md
+965527a78930e369847fb382dd8d0100a9e78634 Create README.md
+8e66d9e86955a1792328c63461c4ff438a02a03c Added POS logic feature - testing only - not fully functioning
+91fb77b61d0ed6374c293e9f353fb8b202e2ee4d created POS.cpp with testPOS() function to begin POS Module
+e0b1bba898ccf36faa282c3974324ea7e1d076af Added POS filter (VS code and POS.cpp file
+550ea301cb8d16526742901c65911059781fa2cf Deleted POS folder and its contents ONLY USED FOR TESTING
+979c252d8b3b68094269fe0b341882a0fb8b0259 Added POS Folder and blank POS.cpp file to start POS module
+02833dd32965503920703da02f04f3c3a1621d22 Cleaned up build files and added .gitignore
+5bfbebc064f54d6b8d992bca015ce358c8e12b2b Resolved merge conflict
+b98cbc401aaefcd16ed553c39b599c89b62a1a12 Dhona pushing to keep data updated
+fb4fc3eaf5274a112088e7b4c4e0df8f9cd1fc85 waiting now for pos and sales report
+760f84bedc76e47a1402099bb387b5162697304e roles attached
+7c00e5b4a1357e2b979ae1a369c265284f0fb55a Merge branch 'main' of https://github.com/ars1224/Aotearoa-Treasures--inventory-management-system-
+0c6400d6334b156006ec8d5708e8257f95153ba0 1
+c3e026b72286fd93585b3602a0dc485dc1ffb908 DB updated
+4cfa8c552e7d445206f5af9b5f31f1b47d2dd478 Merge branch 'main' of https://github.com/ars1224/Aotearoa-Treasures--inventory-management-system-
+e77091017d61bd0a967f794b8ed47bdf30828e32 Create LOWSTOCKALERT.ipch
+4baa021dd09ede22eb8a1a7b8073d224bb4f06cb Merge branch 'main' of https://github.com/ars1224/Aotearoa-Treasures--inventory-management-system-
+ceb24d89b15207ec25f2bd5dfe8f6bb375a4281c save first
+16d497e118ee0c5a5777d2a8920f931e03c03682 dhona changed files?
+5804e2102df3ca4e0e2f90bf83240875870165c3 Merge branch 'main' of https://github.com/ars1224/Aotearoa-Treasures--inventory-management-system-
+d0aea38a41d33d5adb1d39580bbac014e4761488 aries too
+0ccefe2ed6185702121470fea83e5d962b7c3b88 aries
+b4952f704f8d9a38beee3fbbd9fd803b79ee7102 Update PRODUCTINVENTORY.ipch
+5bdb613edf9893af27696e59662dbf38ee30c017 addProduct done
+7aceaccd6c9950142f3c46cc0433d44383b08ad1 Merge branch 'main' of https://github.com/ars1224/Aotearoa-Treasures--inventory-management-system-
+0f4e8de31ad9143779364aebc74c4644ce043c4d update 37 files to main
+6eeed1b349aadcebe2e441ea5e86a089502a266f Merge branch 'main' of https://github.com/ars1224/Aotearoa-Treasures--inventory-management-system-
+02eb7fcfc01dc6e84172392641372089c37944b9 first commit
+dce181042b6655bf82fea7ca97c08f19cf8e284b update 37 files to main
+601345516e1b678b59ba4b1794fc664373e7c5ae Created stock level alert system function (less than 5 items)
+02794ab4f1a458c0da7745a07a701211fe1c5467 Update at-invman.db
+2cdc34922e92f3f064a8857e7efa788d43f63806 add stock role added(not finish yet)
+71ab0016a45fc76ccc686e20f536602a33a7ecec still roles
+0b80576da407b7ee8c2197c090ddc4b6a7bf3b71 role added on stock
+c2df346a8c33a12034bdf8239959a04195fe4818 employee clean up
+25081e7cbe056d6f1f5e8ab798dc8975a6adfed9 Merge branch 'main' of https://github.com/ars1224/Aotearoa-Treasures--inventory-management-system-
+e51b4621c2184cd8d9d86db81784800d304495de -
+1844dd8e12d72b0c0423e69608bfa3022e87cb44 login clean up
+026b1fb1785bfe7a3d6518df3346f9f7ec1215ad db fixed
+10ede3ebae321fa18b0ee459063a8c97df78ff0c Merge branch 'main' of https://github.com/ars1224/Aotearoa-Treasures--inventory-management-system-
+fb0404ada5833507e2bb131f6f5aa425f452ef75 5
+9ceec1bbf19b37c31f6b7a4d2c8815050f43f611 4
+ee161d87d4ad12a500fa22a9edac58e82f03e1d8 3
+3164d5bf73da109f1be4a29fc20e507a357e98e3 2
+b0e5950033ec68d02904b0cfe2c69cb492da3ab5 Merge branch 'main' of https://github.com/ars1224/Aotearoa-Treasures--inventory-management-system-
+02ac853e29ed8da141db2e09ab34960580a04020 roster2
+912222e52b14b7baa024e92550afd899a01def6a Add files via upload
+8e0fba5a7db64a6e1aeb4b747b525eef5639aae4 Add files via upload
+a5b9fe661f5fb5adabda9dca8bb4638e5cd3e1b5 Update productInventory.cpp
+db5ac64e7b30f6c17294a02ceebcee168f9a6237 Update MainMenu.cpp
+25399134f962d0eb91081a7cb148be24f997aa08 roster list
+37f5bec94c635948e4a100121e0ecdf7f39fd2fe some errrors but easy fix
+35d3beae47eaae78f5c3256cf16535deaa07ab97 update.add on going
+8f4f436f8dd647535ff0162f48f524241d480a2b roster-add(update)
+677e9f602a2a58f4e6c4635f93b88ef47db8242a employeee updates
+8a65ceaf155c0ff9bd6fb77611c9cb7a19c906fc add employee already has the role based access control
+41422b59ab1971f904d284cfdca8316027678608 uodate
+43dc9ef0838bbe388fedf3659369de454f9827f5 problem solve
+dbe96d5d6faf841d201bc7a73edfc378a8485f13 still lock
+fbeeb9350c5b7482852b47e6b408fbeda6739dd3 login
+d8daf89daf028af98625fbd72b4b107e1ad403e9 login
+00ea55f17de1b948efbc1ed4b5324ebfae265fb1 log in
+559615720edc4e4384e90a1a2f939881428f856e login
+ace7071b3c856cbff24c38aa17b8b424a3708bab :)
+69b7c6593fb4fe56bbd62439b27764858bc72ddf roster done, employee list done, add, update delete employee done
+29074ea1a139fc9cebe6e457beb8ac77bace99fb employee nearly finisdh
+9e2bb5a6c108275735ea9d5f4e38f7326b87e76b employees
+9db6a8a9f0c8299a93a35f098f8f98f150b17331 ?
+805319abc34287ccacaa669a2f69f42134954874 ?
+84741c0c2312324bde44b85e7bdf7ca2536950c6 Update Browse.VC.db-wal
+0818d4e62a4b09145093f786277e2f6b58ca6072 aries
+d2135daf870169348b4d3afc58b35805ec26b00f Update Browse.VC.db-wal
+038977df29c23950744c6aeade50ca92062a0059 LOG IN / EMPLOYEE LIST
+cf8f86688e21fbbd559241f43ef03c1e014c9fac Update at-invman.db
+14d150a1027fafd0dc21aef58c528193c171f902 db connection done
+26fcaf88702267f0a1635c4b431a1d0b2bc2e506 vs2
+1ba16defd5c512d73468c6e049ecf56aee5f4117 vscode
+82dfde76a390a9f7e62f4869e833fbcff5524c04 folder
+02d65c8e8587046cf51174429804d5587239c652 sql
+a8a237ad7d8a75edd1aa3e7f679445adf1ed3cb5 sqlite
+86ef2937e37c7241118f72f15dd4cab1073a6ddc Create AT-InvMan
+d518dfa702cb53e56f1caeeeb598d125e4ef9644 Initial commit
