@@ -130,17 +130,14 @@
     <ClCompile Include="auth.cpp" />
     <ClCompile Include="EmployeeList.cpp" />
     <ClCompile Include="EmployeeMenu.cpp" />
-    <ClCompile Include="listOnly.cpp" />
     <ClCompile Include="lowStockAlert.cpp" />
     <ClCompile Include="AT-InvMan.cpp" />
     <ClCompile Include="db-conn.cpp" />
     <ClCompile Include="deleteProduct.cpp" />
     <ClCompile Include="deleteRoster.cpp" />
-    <ClCompile Include="generateSku.cpp" />
     <ClCompile Include="inventoryMenu.cpp" />
     <ClCompile Include="login.cpp" />
     <ClCompile Include="MainMenu.cpp" />
-    <ClCompile Include="NoSchedules.cpp" />
     <ClCompile Include="pos.cpp" />
     <ClCompile Include="POSLauncher.cpp" />
     <ClCompile Include="productList.cpp" />
@@ -149,14 +146,10 @@
     <ClCompile Include="ReportMenu.cpp" />
     <ClCompile Include="RosterMenu.cpp" />
     <ClCompile Include="salesLogger.cpp" />
-    <ClCompile Include="salesReportMovement.cpp" />
     <ClCompile Include="session.cpp" />
-    <ClCompile Include="StockMovementReport.cpp" />
     <ClCompile Include="updateEmployee.cpp" />
     <ClCompile Include="updateProduct.cpp" />
     <ClCompile Include="updateRoster.cpp" />
-    <ClCompile Include="WeeklysalesReport.cpp" />
-    <ClCompile Include="YearlySalesReport.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -174,11 +167,13 @@
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
     <Import Project="packages\sqlite3_c_plus_plus.1.0.3\build\native\sqlite3_c_plus_plus.targets" Condition="Exists('packages\sqlite3_c_plus_plus.1.0.3\build\native\sqlite3_c_plus_plus.targets')" />
+    <Import Project="packages\Microsoft.googletest.v140.windesktop.msvcstl.static.rt-dyn.1.8.1.7\build\native\Microsoft.googletest.v140.windesktop.msvcstl.static.rt-dyn.targets" Condition="Exists('packages\Microsoft.googletest.v140.windesktop.msvcstl.static.rt-dyn.1.8.1.7\build\native\Microsoft.googletest.v140.windesktop.msvcstl.static.rt-dyn.targets')" />
   </ImportGroup>
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
     <Error Condition="!Exists('packages\sqlite3_c_plus_plus.1.0.3\build\native\sqlite3_c_plus_plus.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\sqlite3_c_plus_plus.1.0.3\build\native\sqlite3_c_plus_plus.targets'))" />
+    <Error Condition="!Exists('packages\Microsoft.googletest.v140.windesktop.msvcstl.static.rt-dyn.1.8.1.7\build\native\Microsoft.googletest.v140.windesktop.msvcstl.static.rt-dyn.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Microsoft.googletest.v140.windesktop.msvcstl.static.rt-dyn.1.8.1.7\build\native\Microsoft.googletest.v140.windesktop.msvcstl.static.rt-dyn.targets'))" />
   </Target>
 </Project>
